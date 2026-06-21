@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b8inoqmk7krim"]
+
+[ext_resource type="PackedScene" uid="uid://x84wh1oe13d6" path="res://levels/spinning/spinning_machine.tscn" id="1_0p5ow"]
+
+[node name="Spinning" type="Node2D" unique_id=1598286406]
+
+[node name="Spinning Machine" parent="." unique_id=1520837573 instance=ExtResource("1_0p5ow")]
+position = Vector2(564, 416)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1214777534]
+position = Vector2(576, 320)
