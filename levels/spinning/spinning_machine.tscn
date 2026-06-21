@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://x84wh1oe13d6"]
+
+[ext_resource type="Texture2D" uid="uid://b4hdvekgm7jtd" path="res://levels/spinning/machine_frame.png" id="1_uh0ve"]
+[ext_resource type="Texture2D" uid="uid://c1y1flu6dgyq1" path="res://levels/spinning/back_pedal_spoke.png" id="2_ikjcq"]
+[ext_resource type="Texture2D" uid="uid://dg82oxw0ffwgo" path="res://levels/spinning/back_pedal.png" id="3_dgv2w"]
+[ext_resource type="Texture2D" uid="uid://crw7j2b53s87w" path="res://levels/spinning/wheel.png" id="4_nxca6"]
+[ext_resource type="Texture2D" uid="uid://bskun771bi6k" path="res://levels/spinning/chain_protection.png" id="5_hvjkv"]
+[ext_resource type="Texture2D" uid="uid://bsa2xyrtaisvp" path="res://levels/spinning/front_pedal_spoke.png" id="6_yj4av"]
+[ext_resource type="Texture2D" uid="uid://dunyrp8sx54xc" path="res://levels/spinning/front_pedal.png" id="7_ovfno"]
+
+[node name="Spinning Machine" type="Sprite2D" unique_id=1520837573]
+texture = ExtResource("1_uh0ve")
+
+[node name="BackPedalSpoke" type="Sprite2D" parent="." unique_id=1506485228]
+position = Vector2(-49.000004, 68)
+rotation = 3.08775
+texture = ExtResource("2_ikjcq")
+offset = Vector2(-28, -15)
+
+[node name="BackPedal" type="Sprite2D" parent="." unique_id=1181478299]
+position = Vector2(15, 95)
+rotation = 0.6889636
+texture = ExtResource("3_dgv2w")
+offset = Vector2(12, 18)
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=1986245956]
+position = Vector2(111, 63)
+rotation = -2.8153598
+texture = ExtResource("4_nxca6")
+
+[node name="ChainProtection" type="Sprite2D" parent="." unique_id=2110361775]
+position = Vector2(24, 66)
+texture = ExtResource("5_hvjkv")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="." unique_id=1110631282]
+position = Vector2(-67, 60)
+texture = ExtResource("6_yj4av")
+
+[node name="FrontPedal" type="Sprite2D" parent="." unique_id=527219056]
+position = Vector2(-90, 56)
+texture = ExtResource("7_ovfno")
