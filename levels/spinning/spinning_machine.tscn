@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://x84wh1oe13d6"]
 
 [ext_resource type="Texture2D" uid="uid://b4hdvekgm7jtd" path="res://levels/spinning/machine_frame.png" id="1_uh0ve"]
+[ext_resource type="Script" uid="uid://b40k6lq8ppqpu" path="res://levels/spinning/spinning_machine.gd" id="2_dgv2w"]
 [ext_resource type="Texture2D" uid="uid://c1y1flu6dgyq1" path="res://levels/spinning/back_pedal_spoke.png" id="2_ikjcq"]
 [ext_resource type="Texture2D" uid="uid://dg82oxw0ffwgo" path="res://levels/spinning/back_pedal.png" id="3_dgv2w"]
 [ext_resource type="Script" uid="uid://b0mymxk2sojjo" path="res://levels/spinning/back_pedal.gd" id="3_ikjcq"]
@@ -9,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://bsa2xyrtaisvp" path="res://levels/spinning/front_pedal_spoke.png" id="6_yj4av"]
 [ext_resource type="Texture2D" uid="uid://dunyrp8sx54xc" path="res://levels/spinning/front_pedal.png" id="7_ovfno"]
 
-[node name="Spinning Machine" type="Sprite2D" unique_id=1520837573]
-texture = ExtResource("1_uh0ve")
+[node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel")]
+script = ExtResource("2_dgv2w")
+front_pedal_spoke = NodePath("FrontPedalSpokeBody")
+back_pedal_spoke = NodePath("BackPedalSpokeBody")
+wheel = NodePath("WheelBody")
+pedaling_force = 70.0
 
 [node name="BackPedalBody" type="RigidBody2D" parent="." unique_id=1531667668]
 position = Vector2(12, 92)
@@ -42,10 +47,15 @@ offset = Vector2(-28, -15)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackPedalSpokeBody" unique_id=318163481]
 polygon = PackedVector2Array(65, 25, 2, -5, -3, -5, -6, -1, -6, 3, 61, 31, 65, 29)
 
+[node name="MachineFrame" type="Sprite2D" parent="." unique_id=1548791016]
+position = Vector2(1, -1)
+texture = ExtResource("1_uh0ve")
+
 [node name="WheelBody" type="RigidBody2D" parent="." unique_id=1725042969]
 position = Vector2(104, 62)
 collision_layer = 0
 collision_mask = 0
+gravity_scale = 0.0
 
 [node name="Wheel" type="Sprite2D" parent="WheelBody" unique_id=1986245956]
 rotation = -2.8153598
@@ -76,6 +86,7 @@ texture = ExtResource("6_yj4av")
 position = Vector2(-102, 37)
 collision_layer = 0
 collision_mask = 0
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FrontPedalBody" unique_id=152693225]
 polygon = PackedVector2Array(-3, -4, -5, 2, 3, 6, 2, 40, 8, 43, 22, 38, 26, 28, 26, 12, 28, 10, 29, 3, 6, -5)
@@ -98,10 +109,9 @@ polygon = PackedVector2Array(-104, -53, -114, -77, -95, -80, -98, -94, -133, -94
 polygon = PackedVector2Array(54, -97, 48, -117, 40, -116, 43, -127, 74, -128, 76, -134, 123, -147, 152, -179, 158, -173, 131, -143, 140, -146, 173, -179, 180, -180, 184, -173, 149, -134, 136, -131, 146, -116, 147, -106, 129, -74, 123, -69, 96, -70, 79, -67, 79, -79, 97, -79, 100, -83, 116, -99, 106, -116, 78, -114, 76, -119, 67, -118, 72, -96)
 
 [node name="WheelJoint" type="PinJoint2D" parent="." unique_id=261821062]
-position = Vector2(105, 61)
+position = Vector2(104, 62)
 node_a = NodePath("../BikeBody")
 node_b = NodePath("../WheelBody")
-softness = 0.5
 
 [node name="FrontPedalBaseJoint" type="PinJoint2D" parent="." unique_id=1268468148]
 position = Vector2(-50, 65)
