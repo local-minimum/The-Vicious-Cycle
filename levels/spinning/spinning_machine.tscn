@@ -16,6 +16,7 @@ front_pedal_spoke = NodePath("FrontPedalSpokeBody")
 back_pedal_spoke = NodePath("BackPedalSpokeBody")
 wheel = NodePath("WheelBody")
 pedaling_force = 70.0
+wheel_velocity_factor = 0.2
 
 [node name="BackPedalBody" type="RigidBody2D" parent="." unique_id=1531667668]
 position = Vector2(12, 92)
@@ -107,11 +108,6 @@ polygon = PackedVector2Array(-104, -53, -114, -77, -95, -80, -98, -94, -133, -94
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="BikeBody" unique_id=114172807]
 polygon = PackedVector2Array(54, -97, 48, -117, 40, -116, 43, -127, 74, -128, 76, -134, 123, -147, 152, -179, 158, -173, 131, -143, 140, -146, 173, -179, 180, -180, 184, -173, 149, -134, 136, -131, 146, -116, 147, -106, 129, -74, 123, -69, 96, -70, 79, -67, 79, -79, 97, -79, 100, -83, 116, -99, 106, -116, 78, -114, 76, -119, 67, -118, 72, -96)
-
-[node name="WheelJoint" type="PinJoint2D" parent="." unique_id=261821062]
-position = Vector2(104, 62)
-node_a = NodePath("../BikeBody")
-node_b = NodePath("../WheelBody")
 
 [node name="FrontPedalBaseJoint" type="PinJoint2D" parent="." unique_id=1268468148]
 position = Vector2(-50, 65)
