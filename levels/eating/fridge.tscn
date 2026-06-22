@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b7bjig5vixkig"]
+
+[ext_resource type="Texture2D" uid="uid://bsr6cbawhm758" path="res://levels/eating/fridge_bg.png" id="1_rxtpx"]
+[ext_resource type="Texture2D" uid="uid://bwaer1tcpcqd6" path="res://levels/eating/shelf1.png" id="2_m1ufg"]
+[ext_resource type="Texture2D" uid="uid://cj7cf6kafmo2p" path="res://levels/eating/shelf2.png" id="3_cltrd"]
+[ext_resource type="Texture2D" uid="uid://dck5rlo4u6cn8" path="res://levels/eating/shelf3.png" id="4_i2nxg"]
+[ext_resource type="Texture2D" uid="uid://dwixth2h7xuui" path="res://levels/eating/shelf4.png" id="5_5m2ia"]
+[ext_resource type="Texture2D" uid="uid://bw6sexta1o54j" path="res://levels/eating/shelf5.png" id="6_tx16s"]
+[ext_resource type="Texture2D" uid="uid://b4mfxmp62iyk2" path="res://levels/eating/shelf6.png" id="7_7rs3b"]
+[ext_resource type="Texture2D" uid="uid://302ptv85fcdi" path="res://levels/eating/box2.png" id="8_jk041"]
+[ext_resource type="Texture2D" uid="uid://cbtr1tj5qigew" path="res://levels/eating/box1.png" id="9_jdlei"]
+[ext_resource type="Texture2D" uid="uid://b5jx3rsqsk30k" path="res://levels/eating/door_shelf3.png" id="10_s73pw"]
+[ext_resource type="Texture2D" uid="uid://chgqktbh7o6tr" path="res://levels/eating/door_shelf2.png" id="11_mwa75"]
+[ext_resource type="Texture2D" uid="uid://bhp1t5wec1vyu" path="res://levels/eating/door_shelf1.png" id="12_xym8u"]
+
+[node name="Fridge" type="Node2D" unique_id=56752052]
+
+[node name="Fridge Back" type="Sprite2D" parent="." unique_id=1194173356]
+texture = ExtResource("1_rxtpx")
+
+[node name="Shelf1" type="Sprite2D" parent="." unique_id=1684010119]
+position = Vector2(-57, -128)
+texture = ExtResource("2_m1ufg")
+
+[node name="Shelf2" type="Sprite2D" parent="." unique_id=129151160]
+position = Vector2(-58, -85)
+texture = ExtResource("3_cltrd")
+
+[node name="Shelf3" type="Sprite2D" parent="." unique_id=637705090]
+position = Vector2(-61, -41)
+texture = ExtResource("4_i2nxg")
+
+[node name="Shelf4" type="Sprite2D" parent="." unique_id=141982405]
+position = Vector2(-60, 2)
+texture = ExtResource("5_5m2ia")
+
+[node name="Shelf5" type="Sprite2D" parent="." unique_id=795275244]
+position = Vector2(-60, 45)
+texture = ExtResource("6_tx16s")
+
+[node name="Shelf6" type="Sprite2D" parent="." unique_id=1553653583]
+position = Vector2(-61, 101)
+texture = ExtResource("7_7rs3b")
+
+[node name="Box2" type="Sprite2D" parent="." unique_id=460300053]
+position = Vector2(-60, 137)
+texture = ExtResource("8_jk041")
+
+[node name="Box1" type="Sprite2D" parent="." unique_id=1566421340]
+position = Vector2(-60, 75)
+texture = ExtResource("9_jdlei")
+
+[node name="DoorShelf3" type="Sprite2D" parent="." unique_id=1475483035]
+position = Vector2(65, 41)
+texture = ExtResource("10_s73pw")
+
+[node name="DoorShelf2" type="Sprite2D" parent="." unique_id=33275556]
+position = Vector2(66, -43)
+texture = ExtResource("11_mwa75")
+
+[node name="DoorShelf1" type="Sprite2D" parent="." unique_id=745640691]
+position = Vector2(65, -125)
+texture = ExtResource("12_xym8u")
