@@ -26,21 +26,21 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 
-[node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel")]
+[node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel", "collapse_joints")]
 script = ExtResource("2_dgv2w")
 front_pedal_spoke = NodePath("Machine FG/FrontPedalSpokeBody")
 back_pedal_spoke = NodePath("Machine Mid G/BackPedalSpokeBody")
 wheel = NodePath("Machine Mid G/WheelBody")
 pedaling_force = 70.0
 wheel_velocity_factor = 0.2
+collapse_joints = [NodePath("Human BG/Back Handle"), NodePath("Human BG/Back Handle2"), NodePath("Human BG/Back Pedal"), NodePath("Human BG/Back Pedal2"), NodePath("Human FG/Pedal"), NodePath("Human FG/Pedal2"), NodePath("Human FG/Handle"), NodePath("Human FG/Handle2"), NodePath("Human FG/Ass Slider"), NodePath("Human FG/Posture"), NodePath("Human FG/Head Posture")]
 
 [node name="Human BG" type="Node2D" parent="." unique_id=737449664]
 
 [node name="Leg Upper" type="RigidBody2D" parent="Human BG" unique_id=1158509884]
 position = Vector2(-62, -113.99999)
 rotation = -0.28374404
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="BackLegUpper" type="Sprite2D" parent="Human BG/Leg Upper" unique_id=894704885]
@@ -56,8 +56,7 @@ polygon = PackedVector2Array(-82, -71, -95, -56, -92, -32, -45, 0, 49, 62, 75, 7
 [node name="Leg Lower" type="RigidBody2D" parent="Human BG" unique_id=1977791279]
 position = Vector2(-9.999999, -12.000001)
 rotation = 0.09962119
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="BackLegLower" type="Sprite2D" parent="Human BG/Leg Lower" unique_id=1842571971]
@@ -73,8 +72,7 @@ polygon = PackedVector2Array(11, -85, -7, -37, -27, 44, -31, 68, -23, 77, -9, 78
 [node name="Foot" type="RigidBody2D" parent="Human BG" unique_id=1058511925]
 position = Vector2(-14, 81)
 rotation = -0.14095815
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="BackFoot" type="Sprite2D" parent="Human BG/Foot" unique_id=1253644441]
@@ -89,8 +87,7 @@ polygon = PackedVector2Array(-31, -19, -32, -13, -37, -7, -35, 18, -24, 19, 8, 1
 
 [node name="Arm Upper" type="RigidBody2D" parent="Human BG" unique_id=58293650]
 position = Vector2(-2, -225)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="BackArmUpper" type="Sprite2D" parent="Human BG/Arm Upper" unique_id=1478580210]
 modulate = Color(0.6858353, 0.68583524, 0.6858352, 1)
@@ -104,8 +101,7 @@ polygon = PackedVector2Array(-52, -52, -56, -37, -37, -16, 21, 42, 37, 42, 42, 3
 
 [node name="Arm Lower" type="RigidBody2D" parent="Human BG" unique_id=1591722727]
 position = Vector2(75, -168)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="BackArmLower" type="Sprite2D" parent="Human BG/Arm Lower" unique_id=986144646]
 modulate = Color(0.6858353, 0.68583524, 0.6858352, 1)
@@ -119,8 +115,7 @@ polygon = PackedVector2Array(-57, -30, -59, -27, -60, -19, 25, 18, 40, 21, 45, 1
 
 [node name="Hand" type="RigidBody2D" parent="Human BG" unique_id=1126133209]
 position = Vector2(135, -161)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="BackHand" type="Sprite2D" parent="Human BG/Hand" unique_id=564970935]
 modulate = Color(0.6858353, 0.68583524, 0.6858352, 1)
@@ -162,17 +157,22 @@ position = Vector2(-136, -144)
 node_a = NodePath("../../Human FG/Torso")
 node_b = NodePath("../Leg Upper")
 
-[node name="Handle" type="PinJoint2D" parent="Human BG" unique_id=487133844]
-position = Vector2(142, -157)
+[node name="Back Handle" type="PinJoint2D" parent="Human BG" unique_id=487133844]
+position = Vector2(137, -151)
 node_a = NodePath("../../Machine Mid G/BikeBody")
 node_b = NodePath("../Hand")
 
-[node name="Pedal" type="PinJoint2D" parent="Human BG" unique_id=352275340]
+[node name="Back Handle2" type="PinJoint2D" parent="Human BG" unique_id=1015434548]
+position = Vector2(146, -166)
+node_a = NodePath("../../Machine Mid G/BikeBody")
+node_b = NodePath("../Hand")
+
+[node name="Back Pedal" type="PinJoint2D" parent="Human BG" unique_id=352275340]
 position = Vector2(30, 68)
 node_a = NodePath("../../Machine Mid G/BackPedalBody")
 node_b = NodePath("../Foot")
 
-[node name="Pedal2" type="PinJoint2D" parent="Human BG" unique_id=1214218797]
+[node name="Back Pedal2" type="PinJoint2D" parent="Human BG" unique_id=1214218797]
 position = Vector2(12, 74)
 node_a = NodePath("../../Machine Mid G/BackPedalBody")
 node_b = NodePath("../Foot")
@@ -277,8 +277,7 @@ position = Vector2(-31, -242)
 
 [node name="Head" type="RigidBody2D" parent="Human FG" unique_id=897913150]
 position = Vector2(41, -74)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="Head" type="Sprite2D" parent="Human FG/Head" unique_id=594074560]
 position = Vector2(-19, 26)
@@ -291,8 +290,7 @@ polygon = PackedVector2Array(-26, 4, -30, 13, -36, 19, -21, 26, -10, 38, 0, 24, 
 
 [node name="Torso" type="RigidBody2D" parent="Human FG" unique_id=946705131]
 position = Vector2(-31, 60)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="Torso" type="Sprite2D" parent="Human FG/Torso" unique_id=1935793999]
 position = Vector2(-71.21747, 39.83983)
@@ -307,8 +305,7 @@ polygon = PackedVector2Array(-25, -23, -41, -8, -68, 0, -86, 5, -101, 17, -110, 
 [node name="Leg Upper" type="RigidBody2D" parent="Human FG" unique_id=248698188]
 position = Vector2(-51, 108)
 rotation = -0.09816082
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Leg Upper" unique_id=587593783]
@@ -323,8 +320,7 @@ offset = Vector2(0, 51.06)
 [node name="Leg Lower" type="RigidBody2D" parent="Human FG" unique_id=9073239]
 position = Vector2(-10.000001, 165.99998)
 rotation = -0.09527189
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="FrontLegLower" type="Sprite2D" parent="Human FG/Leg Lower" unique_id=1617499888]
@@ -339,8 +335,7 @@ polygon = PackedVector2Array(-50, 42, -60, 57, -56, 68, -41, 75, -32, 66, -9, 38
 [node name="Foot" type="RigidBody2D" parent="Human FG" unique_id=1367826425]
 position = Vector2(-62, 260.00003)
 rotation = -0.082030475
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 gravity_scale = 0.0
 
 [node name="FrontFoot" type="Sprite2D" parent="Human FG/Foot" unique_id=871182417]
@@ -354,8 +349,7 @@ polygon = PackedVector2Array(8, -40, -9, -40, -22, -34, -21, -22, 3, 45, 10, 49,
 
 [node name="Upper Arm" type="RigidBody2D" parent="Human FG" unique_id=1630689371]
 position = Vector2(19, 2)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="FrontArmUpper" type="Sprite2D" parent="Human FG/Upper Arm" unique_id=1688380533]
 position = Vector2(-18.728386, -25.68097)
@@ -368,8 +362,7 @@ polygon = PackedVector2Array(-28, -46, -40, -30, -40, -17, 32, 44, 48, 54, 55, 5
 
 [node name="Lower Arm" type="RigidBody2D" parent="Human FG" unique_id=1350694096]
 position = Vector2(115, 67)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="FrontArmLower" type="Sprite2D" parent="Human FG/Lower Arm" unique_id=1673303446]
 position = Vector2(-39, -21)
@@ -382,8 +375,7 @@ polygon = PackedVector2Array(-41, -35, -49, -30, -54, -22, -53, -16, 25, 24, 50,
 
 [node name="Hand" type="RigidBody2D" parent="Human FG" unique_id=129291649]
 position = Vector2(182, 93)
-collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
 [node name="FrontHand" type="Sprite2D" parent="Human FG/Hand" unique_id=928817484]
 position = Vector2(-17, -5)
@@ -427,7 +419,12 @@ node_a = NodePath("../Torso")
 node_b = NodePath("../Leg Upper")
 
 [node name="Handle" type="PinJoint2D" parent="Human FG" unique_id=816799698]
-position = Vector2(186, 93)
+position = Vector2(181, 97)
+node_a = NodePath("../../Machine Mid G/BikeBody")
+node_b = NodePath("../Hand")
+
+[node name="Handle2" type="PinJoint2D" parent="Human FG" unique_id=508679257]
+position = Vector2(191, 85)
 node_a = NodePath("../../Machine Mid G/BikeBody")
 node_b = NodePath("../Hand")
 
@@ -444,7 +441,7 @@ node_b = NodePath("../Head")
 length = 124.0
 stiffness = 17.7
 
-[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Human FG" unique_id=668644858]
+[node name="Ass Slider" type="GrooveJoint2D" parent="Human FG" unique_id=668644858]
 position = Vector2(-31, -59)
 rotation = 0.47730437
 node_a = NodePath("../../HeadAnchor")
@@ -452,12 +449,13 @@ node_b = NodePath("../Torso")
 length = 172.0
 initial_offset = 175.0
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Human FG" unique_id=1986068667]
+[node name="Posture" type="DampedSpringJoint2D" parent="Human FG" unique_id=1986068667]
 position = Vector2(-39, -236)
 rotation = -0.20558684
 node_a = NodePath("../../HeadAnchor")
 node_b = NodePath("../Torso")
 length = 183.0
+rest_length = 160.0
 stiffness = 64.0
 
 [node name="Pedal" type="PinJoint2D" parent="Human FG" unique_id=1632911067]
