@@ -13,6 +13,8 @@ func _enter_tree() -> void:
         push_error("Failed to connect exercise")
     if __SignalBus.on_start_exercise.connect(_handle_start_exercies) != OK:
         push_error("Failed to connect start exercise")
+    if __SignalBus.on_eat.connect(_handle_eat) != OK:
+        push_error("Failed to connect eat")
 
 func _ready() -> void:
     calories_bar.value = calories
@@ -26,6 +28,12 @@ func _handle_exercise(amount: float) -> void:
     calories_bar.value = calories
     if calories == 0:
         __SignalBus.on_exercise_no_calories.emit()
+
+func _handle_eat(food: Food2D) -> void:
+    calories = clampf(calories + food.calories, 0.0, 100.0)
+    calories_bar.value = calories
+    happiness = clampf(happiness + food.happiness, 0.0, 100.0)
+    happiness_bar.value = happiness
 
 func _process(delta: float) -> void:
     if !convert_calories_to_happiness:

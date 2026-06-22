@@ -19,6 +19,19 @@
 [ext_resource type="Texture2D" uid="uid://b553vk0s70516" path="res://levels/eating/apple.png" id="15_i2nxg"]
 [ext_resource type="Texture2D" uid="uid://3f22iiey6le6" path="res://levels/eating/takeaway.png" id="18_7rs3b"]
 [ext_resource type="Texture2D" uid="uid://dnasylbfxf7da" path="res://levels/eating/pickles.png" id="19_jk041"]
+[ext_resource type="Script" uid="uid://d3lrehfhxetvy" path="res://levels/eating/food_group.gd" id="20_jdlei"]
+[ext_resource type="Script" uid="uid://dcdj2nmfgbh70" path="res://levels/eating/food2d.gd" id="21_s73pw"]
+
+[sub_resource type="Resource" id="Resource_jdlei"]
+script = ExtResource("21_s73pw")
+name = "Apple"
+icon = ExtResource("15_i2nxg")
+calories = 5.0
+happiness = 5.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfgv"]
+size = Vector2(141.5, 31)
 
 [node name="Fridge" type="Node2D" unique_id=56752052]
 
@@ -193,3 +206,17 @@ texture = ExtResource("19_jk041")
 [node name="Pickles2" type="Sprite2D" parent="." unique_id=40970068]
 position = Vector2(-57, -152)
 texture = ExtResource("19_jk041")
+
+[node name="Apple Shelf" type="Area2D" parent="." unique_id=159970441 node_paths=PackedStringArray("pieces")]
+position = Vector2(-65, 89)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Apple3"), NodePath("../Apple2"), NodePath("../Apple5"), NodePath("../Apple4"), NodePath("../Apple"), NodePath("../Apple6")]
+food = SubResource("Resource_jdlei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apple Shelf" unique_id=1945107850]
+position = Vector2(2.25, -9)
+shape = SubResource("RectangleShape2D_kjfgv")
+
+[connection signal="input_event" from="Apple Shelf" to="Apple Shelf" method="_on_input_event"]
+[connection signal="mouse_entered" from="Apple Shelf" to="Apple Shelf" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Apple Shelf" to="Apple Shelf" method="_on_mouse_exited"]
