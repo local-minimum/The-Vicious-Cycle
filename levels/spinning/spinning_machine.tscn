@@ -2,129 +2,462 @@
 
 [ext_resource type="Texture2D" uid="uid://b4hdvekgm7jtd" path="res://levels/spinning/machine_frame.png" id="1_uh0ve"]
 [ext_resource type="Script" uid="uid://b40k6lq8ppqpu" path="res://levels/spinning/spinning_machine.gd" id="2_dgv2w"]
+[ext_resource type="Texture2D" uid="uid://coyg6gsf7lwfu" path="res://character/back_arm_upper.png" id="2_ea5yj"]
 [ext_resource type="Texture2D" uid="uid://c1y1flu6dgyq1" path="res://levels/spinning/back_pedal_spoke.png" id="2_ikjcq"]
+[ext_resource type="Texture2D" uid="uid://b04sp1yeolkps" path="res://character/back_arm_lower.png" id="3_78nwm"]
 [ext_resource type="Texture2D" uid="uid://dg82oxw0ffwgo" path="res://levels/spinning/back_pedal.png" id="3_dgv2w"]
 [ext_resource type="Script" uid="uid://b0mymxk2sojjo" path="res://levels/spinning/back_pedal.gd" id="3_ikjcq"]
 [ext_resource type="Texture2D" uid="uid://crw7j2b53s87w" path="res://levels/spinning/wheel.png" id="4_nxca6"]
+[ext_resource type="Texture2D" uid="uid://bbpko3wya1vk3" path="res://character/back_hand.png" id="4_w80hc"]
 [ext_resource type="Texture2D" uid="uid://bskun771bi6k" path="res://levels/spinning/chain_protection.png" id="5_hvjkv"]
+[ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="5_v5qya"]
+[ext_resource type="Texture2D" uid="uid://c43g3y7j4ded2" path="res://character/back_leg_lower.png" id="6_8n1wk"]
 [ext_resource type="Texture2D" uid="uid://bsa2xyrtaisvp" path="res://levels/spinning/front_pedal_spoke.png" id="6_yj4av"]
+[ext_resource type="Texture2D" uid="uid://cli3knxnwompc" path="res://character/back_foot.png" id="7_1nolk"]
 [ext_resource type="Texture2D" uid="uid://dunyrp8sx54xc" path="res://levels/spinning/front_pedal.png" id="7_ovfno"]
+[ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="10_jqn66"]
+[ext_resource type="Texture2D" uid="uid://chf433g5l735s" path="res://character/torso.png" id="10_nxca6"]
+[ext_resource type="Texture2D" uid="uid://rxtbgvvmaltq" path="res://character/front_leg_upper.png" id="11_fwaih"]
+[ext_resource type="Texture2D" uid="uid://w1tbv4elpkbd" path="res://character/front_leg_lower.png" id="12_jqn66"]
+[ext_resource type="Texture2D" uid="uid://4wddwjvmjk0k" path="res://character/front_foot.png" id="13_6h7p5"]
+[ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="14_omjog"]
+[ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="15_ea5yj"]
+[ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="16_78nwm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 
 [node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel")]
 script = ExtResource("2_dgv2w")
-front_pedal_spoke = NodePath("FrontPedalSpokeBody")
-back_pedal_spoke = NodePath("BackPedalSpokeBody")
-wheel = NodePath("WheelBody")
+front_pedal_spoke = NodePath("Machine FG/FrontPedalSpokeBody")
+back_pedal_spoke = NodePath("Machine Mid G/BackPedalSpokeBody")
+wheel = NodePath("Machine Mid G/WheelBody")
 pedaling_force = 70.0
 wheel_velocity_factor = 0.2
 
-[node name="BackPedalBody" type="RigidBody2D" parent="." unique_id=1531667668]
+[node name="Human BG" type="Node2D" parent="." unique_id=737449664]
+
+[node name="Leg Upper" type="RigidBody2D" parent="Human BG" unique_id=1158509884]
+position = Vector2(-78, -92)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BackLegUpper" type="Sprite2D" parent="Human BG/Leg Upper" unique_id=894704885]
+modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
+position = Vector2(-68, -55.999985)
+rotation = 0.7279939
+texture = ExtResource("5_v5qya")
+offset = Vector2(85.185, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human BG/Leg Upper" unique_id=282550392]
+polygon = PackedVector2Array(-82, -71, -95, -56, -92, -32, -45, 0, 49, 62, 75, 71, 92, 62, 95, 45, 29, -6, -32, -59, -60, -83)
+
+[node name="Leg Lower" type="RigidBody2D" parent="Human BG" unique_id=1977791279]
+position = Vector2(-26, 38)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BackLegLower" type="Sprite2D" parent="Human BG/Leg Lower" unique_id=1842571971]
+modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
+position = Vector2(25, -72)
+rotation = 0.16542359
+texture = ExtResource("6_8n1wk")
+offset = Vector2(-5.015, 66.915)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human BG/Leg Lower" unique_id=953421587]
+polygon = PackedVector2Array(11, -85, -7, -37, -27, 44, -31, 68, -23, 77, -9, 78, 2, 67, 45, -47, 47, -74, 38, -90, 21, -91)
+
+[node name="Foot" type="RigidBody2D" parent="Human BG" unique_id=1058511925]
+position = Vector2(-26, 124)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BackFoot" type="Sprite2D" parent="Human BG/Foot" unique_id=1253644441]
+modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
+position = Vector2(-18, -13)
+rotation = -0.2645529
+texture = ExtResource("7_1nolk")
+offset = Vector2(22.795, 9.025)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human BG/Foot" unique_id=433177547]
+polygon = PackedVector2Array(-31, -19, -32, -13, -37, -7, -35, 18, -24, 19, 8, 10, 42, 5, 55, -5, 55, -12, 26, -16, 1, -19, -3, -26, -18, -29, -30, -22)
+
+[node name="Arm Upper" type="RigidBody2D" parent="Human BG" unique_id=58293650]
+position = Vector2(-2, -225)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BackArmUpper" type="Sprite2D" parent="Human BG/Arm Upper" unique_id=1478580210]
+modulate = Color(0.6858353, 0.68583524, 0.6858352, 1)
+position = Vector2(-33, -47)
+rotation = -0.521375
+texture = ExtResource("2_ea5yj")
+offset = Vector2(0, 42.435)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human BG/Arm Upper" unique_id=1367296857]
+polygon = PackedVector2Array(-52, -52, -56, -37, -37, -16, 21, 42, 37, 42, 42, 32, 30, 11, -14, -39, -21, -62, -40, -65)
+
+[node name="Arm Lower" type="RigidBody2D" parent="Human BG" unique_id=1591722727]
+position = Vector2(75, -168)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BackArmLower" type="Sprite2D" parent="Human BG/Arm Lower" unique_id=986144646]
+modulate = Color(0.6858353, 0.68583524, 0.6858352, 1)
+position = Vector2(-45, -23.999985)
+rotation = -0.9412699
+texture = ExtResource("3_78nwm")
+offset = Vector2(10.985, 42.985)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human BG/Arm Lower" unique_id=1962962976]
+polygon = PackedVector2Array(-57, -30, -59, -27, -60, -19, 25, 18, 40, 21, 45, 10, 43, 1, 18, -9, -5, -26, -34, -37, -48, -39)
+
+[node name="Hand" type="RigidBody2D" parent="Human BG" unique_id=1126133209]
+position = Vector2(135, -161)
+collision_layer = 0
+collision_mask = 0
+
+[node name="BackHand" type="Sprite2D" parent="Human BG/Hand" unique_id=564970935]
+modulate = Color(0.6858353, 0.68583524, 0.6858352, 1)
+position = Vector2(-11, 1.5258789e-05)
+rotation = -1.1118059
+texture = ExtResource("4_w80hc")
+offset = Vector2(6.175, 9.975)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human BG/Hand" unique_id=458048316]
+polygon = PackedVector2Array(-16, -7, -19, 1, -18, 9, -8, 13, 10, 15, 19, 8, 24, -7, 18, -12, 9, -15, -4, -10)
+
+[node name="Wrist" type="PinJoint2D" parent="Human BG" unique_id=634665177]
+position = Vector2(123, -157)
+node_a = NodePath("../Arm Lower")
+node_b = NodePath("../Hand")
+
+[node name="Elbow" type="PinJoint2D" parent="Human BG" unique_id=2082587217]
+position = Vector2(25, -193)
+node_a = NodePath("../Arm Upper")
+node_b = NodePath("../Arm Lower")
+
+[node name="Shoulder" type="PinJoint2D" parent="Human BG" unique_id=1494908475]
+position = Vector2(-35, -272)
+node_a = NodePath("../../Human FG/Torso")
+node_b = NodePath("../Arm Upper")
+
+[node name="Ankle" type="PinJoint2D" parent="Human BG" unique_id=954896497]
+position = Vector2(-48, 116)
+node_a = NodePath("../Leg Lower")
+node_b = NodePath("../Foot")
+
+[node name="Knee" type="PinJoint2D" parent="Human BG" unique_id=626216858]
+position = Vector2(0, -38)
+node_a = NodePath("../Leg Upper")
+node_b = NodePath("../Leg Lower")
+
+[node name="Hip" type="PinJoint2D" parent="Human BG" unique_id=1832897246]
+position = Vector2(-136, -144)
+node_a = NodePath("../../Human FG/Torso")
+node_b = NodePath("../Leg Upper")
+
+[node name="Handle" type="PinJoint2D" parent="Human BG" unique_id=487133844]
+position = Vector2(142, -157)
+node_a = NodePath("../../Machine Mid G/BikeBody")
+node_b = NodePath("../Hand")
+
+[node name="Machine Mid G" type="Node2D" parent="." unique_id=1188269322]
+
+[node name="BackPedalBody" type="RigidBody2D" parent="Machine Mid G" unique_id=1531667668]
 position = Vector2(12, 92)
 collision_layer = 0
 collision_mask = 0
 
-[node name="BackPedal" type="Sprite2D" parent="BackPedalBody" unique_id=1181478299]
+[node name="BackPedal" type="Sprite2D" parent="Machine Mid G/BackPedalBody" unique_id=1181478299]
 position = Vector2(3.8146973e-06, 2)
 rotation = 0.6889636
 texture = ExtResource("3_dgv2w")
 offset = Vector2(12, 18)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackPedalBody" unique_id=2071466599]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Machine Mid G/BackPedalBody" unique_id=2071466599]
 polygon = PackedVector2Array(0, -3, -2, -3, -4, 0, -1, 4, 0, 7, -22, 33, -20, 39, -13, 43, -5, 44, 5, 36, 13, 27, 16, 28, 22, 22, 8, 0)
 
-[node name="BackPedalSpokeBody" type="StaticBody2D" parent="." unique_id=605983437 node_paths=PackedStringArray("front_pedal")]
+[node name="BackPedalSpokeBody" type="StaticBody2D" parent="Machine Mid G" unique_id=605983437 node_paths=PackedStringArray("front_pedal")]
 position = Vector2(-50, 65)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("3_ikjcq")
-front_pedal = NodePath("../FrontPedalSpokeBody")
+front_pedal = NodePath("../../Machine FG/FrontPedalSpokeBody")
 
-[node name="BackPedalSpoke" type="Sprite2D" parent="BackPedalSpokeBody" unique_id=1506485228]
+[node name="BackPedalSpoke" type="Sprite2D" parent="Machine Mid G/BackPedalSpokeBody" unique_id=1506485228]
 position = Vector2(1, 1)
 rotation = 3.0544147
 texture = ExtResource("2_ikjcq")
 offset = Vector2(-28, -15)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackPedalSpokeBody" unique_id=318163481]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Machine Mid G/BackPedalSpokeBody" unique_id=318163481]
 polygon = PackedVector2Array(65, 25, 2, -5, -3, -5, -6, -1, -6, 3, 61, 31, 65, 29)
 
-[node name="MachineFrame" type="Sprite2D" parent="." unique_id=1548791016]
+[node name="MachineFrame" type="Sprite2D" parent="Machine Mid G" unique_id=1548791016]
 position = Vector2(1, -1)
 texture = ExtResource("1_uh0ve")
 
-[node name="WheelBody" type="RigidBody2D" parent="." unique_id=1725042969]
+[node name="WheelBody" type="RigidBody2D" parent="Machine Mid G" unique_id=1725042969]
 position = Vector2(104, 62)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 
-[node name="Wheel" type="Sprite2D" parent="WheelBody" unique_id=1986245956]
+[node name="Wheel" type="Sprite2D" parent="Machine Mid G/WheelBody" unique_id=1986245956]
 rotation = -2.8153598
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_nxca6")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WheelBody" unique_id=682486049]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Machine Mid G/WheelBody" unique_id=682486049]
 position = Vector2(-112, -61)
 polygon = PackedVector2Array(66, 11, 83, 2, 108, -6, 132, -3, 152, 7, 169, 24, 181, 43, 182, 65, 178, 85, 171, 101, 161, 110, 150, 120, 122, 126, 91, 129, 72, 122, 53, 108, 42, 82, 40, 62, 48, 37, 57, 20)
 
-[node name="ChainProtection" type="Sprite2D" parent="." unique_id=2110361775]
+[node name="ChainProtection" type="Sprite2D" parent="Machine Mid G" unique_id=2110361775]
 position = Vector2(24, 66)
 texture = ExtResource("5_hvjkv")
 
-[node name="FrontPedalSpokeBody" type="RigidBody2D" parent="." unique_id=1018649772]
-position = Vector2(-48, 67)
+[node name="BikeBody" type="StaticBody2D" parent="Machine Mid G" unique_id=1829410076]
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FrontPedalSpokeBody" unique_id=1230394471]
-polygon = PackedVector2Array(-11, -23, 2, -23, 10, -21, 19, -14, 21, -2, 19, 9, 11, 18, -2, 21, -15, 17, -24, 7, -23, -5, -22, -8, -60, -28, -60, -33, -55, -36, -18, -17)
-
-[node name="FrontPedalSpoke" type="Sprite2D" parent="FrontPedalSpokeBody" unique_id=1110631282]
-position = Vector2(-19, -7)
-texture = ExtResource("6_yj4av")
-
-[node name="FrontPedalBody" type="RigidBody2D" parent="." unique_id=387307422]
-position = Vector2(-102, 37)
-collision_layer = 0
-collision_mask = 0
-gravity_scale = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FrontPedalBody" unique_id=152693225]
-polygon = PackedVector2Array(-3, -4, -5, 2, 3, 6, 2, 40, 8, 43, 22, 38, 26, 28, 26, 12, 28, 10, 29, 3, 6, -5)
-
-[node name="FrontPedal" type="Sprite2D" parent="FrontPedalBody" unique_id=527219056]
-position = Vector2(12, 19)
-texture = ExtResource("7_ovfno")
-
-[node name="BikeBody" type="StaticBody2D" parent="." unique_id=1829410076]
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BikeBody" unique_id=1128149575]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Machine Mid G/BikeBody" unique_id=1128149575]
 polygon = PackedVector2Array(59, -62, -57, 52, -100, -55, -132, -51, -86, 80, -154, 162, -155, 177, -123, 179, -120, 158, 70, -34, 138, 152, 160, 173, 186, 173, 188, 152, 162, 123, 77, -100, 46, -98)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BikeBody" unique_id=1330153328]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Machine Mid G/BikeBody" unique_id=1330153328]
 polygon = PackedVector2Array(-104, -53, -114, -77, -95, -80, -98, -94, -133, -94, -133, -104, -122, -111, -101, -109, -100, -114, -107, -123, -146, -122, -160, -128, -182, -129, -188, -121, -180, -115, -180, -112, -161, -101, -148, -100, -146, -97, -142, -94, -178, -93, -179, -81, -134, -80, -121, -51)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="BikeBody" unique_id=114172807]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Machine Mid G/BikeBody" unique_id=114172807]
 polygon = PackedVector2Array(54, -97, 48, -117, 40, -116, 43, -127, 74, -128, 76, -134, 123, -147, 152, -179, 158, -173, 131, -143, 140, -146, 173, -179, 180, -180, 184, -173, 149, -134, 136, -131, 146, -116, 147, -106, 129, -74, 123, -69, 96, -70, 79, -67, 79, -79, 97, -79, 100, -83, 116, -99, 106, -116, 78, -114, 76, -119, 67, -118, 72, -96)
 
 [node name="FrontPedalBaseJoint" type="PinJoint2D" parent="." unique_id=1268468148]
 position = Vector2(-50, 65)
-node_a = NodePath("../BikeBody")
-node_b = NodePath("../FrontPedalSpokeBody")
+node_a = NodePath("../Machine Mid G/BikeBody")
+node_b = NodePath("../Machine FG/FrontPedalSpokeBody")
 softness = 0.5
 
 [node name="FrontPedalJoint" type="PinJoint2D" parent="." unique_id=1020298294]
 position = Vector2(-103, 37)
-node_a = NodePath("../FrontPedalSpokeBody")
-node_b = NodePath("../FrontPedalBody")
+node_a = NodePath("../Machine FG/FrontPedalSpokeBody")
+node_b = NodePath("../Machine FG/FrontPedalBody")
 
 [node name="BackPedalJoint" type="PinJoint2D" parent="." unique_id=842736694]
 position = Vector2(12, 92)
-node_a = NodePath("../BackPedalSpokeBody")
-node_b = NodePath("../BackPedalBody")
+node_a = NodePath("../Machine Mid G/BackPedalSpokeBody")
+node_b = NodePath("../Machine Mid G/BackPedalBody")
 bias = 0.9
 
-[node name="Node2D" type="Node2D" parent="." unique_id=796478066]
+[node name="Human FG" type="Node2D" parent="." unique_id=796478066]
 position = Vector2(-31, -242)
+
+[node name="Head" type="RigidBody2D" parent="Human FG" unique_id=897913150]
+position = Vector2(41, -74)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Head" type="Sprite2D" parent="Human FG/Head" unique_id=594074560]
+position = Vector2(-19, 26)
+rotation = 0.18203351
+texture = ExtResource("10_jqn66")
+offset = Vector2(-4.29, -23.91)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Head" unique_id=1234937492]
+polygon = PackedVector2Array(-26, 4, -30, 13, -36, 19, -21, 26, -10, 38, 0, 24, 18, 28, 28, 13, 35, 7, 35, -5, 39, -13, 35, -40, 10, -60, -14, -56, -21, -47, -29, -29, -30, -9)
+
+[node name="Torso" type="RigidBody2D" parent="Human FG" unique_id=946705131]
+position = Vector2(-31, 60)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Torso" type="Sprite2D" parent="Human FG/Torso" unique_id=1935793999]
+position = Vector2(-71.21747, 39.83983)
+rotation = 0.6534276
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("10_nxca6")
+offset = Vector2(16.25, -83.96)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Torso" unique_id=1059569299]
+polygon = PackedVector2Array(-25, -23, -41, -8, -68, 0, -86, 5, -101, 17, -110, 34, -106, 49, -82, 60, -55, 67, -16, 52, 24, 23, 56, -14, 65, -59, 67, -89, 60, -111, 46, -123, 27, -120, 3, -102, -8, -76, -12, -45)
+
+[node name="Leg Upper" type="RigidBody2D" parent="Human FG" unique_id=248698188]
+position = Vector2(-48, 115)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Leg Upper" unique_id=587593783]
+polygon = PackedVector2Array(-84, -30, -66, -44, -38, -52, -2, -42, 40, -24, 67, -6, 91, 15, 93, 29, 81, 37, 53, 33, 12, 23, -22, 15, -57, 11, -79, 1, -86, -14)
+
+[node name="FrontLegUpper" type="Sprite2D" parent="Human FG/Leg Upper" unique_id=469489483]
+position = Vector2(-53, -4)
+rotation = -1.6535602
+texture = ExtResource("11_fwaih")
+offset = Vector2(0, 51.06)
+
+[node name="Leg Lower" type="RigidBody2D" parent="Human FG" unique_id=9073239]
+position = Vector2(-13, 178)
+collision_layer = 0
+collision_mask = 0
+
+[node name="FrontLegLower" type="Sprite2D" parent="Human FG/Leg Lower" unique_id=1617499888]
+position = Vector2(42, -46)
+rotation = -1.1103668
+texture = ExtResource("12_jqn66")
+offset = Vector2(-66.055, -12.715)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Leg Lower" unique_id=507845311]
+polygon = PackedVector2Array(-50, 42, -60, 57, -56, 68, -41, 75, -32, 66, -9, 38, 43, -11, 63, -41, 59, -59, 44, -65, 23, -58, 4, -30, -30, 11)
+
+[node name="Foot" type="RigidBody2D" parent="Human FG" unique_id=1367826425]
+position = Vector2(-73, 267)
+collision_layer = 0
+collision_mask = 0
+
+[node name="FrontFoot" type="Sprite2D" parent="Human FG/Foot" unique_id=871182417]
+position = Vector2(4, -20)
+rotation = -0.42836797
+texture = ExtResource("13_6h7p5")
+offset = Vector2(-4.06, 22.51)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Foot" unique_id=1285237972]
+polygon = PackedVector2Array(8, -40, -9, -40, -22, -34, -21, -22, 3, 45, 10, 49, 16, 47, 19, 39, 18, 4, 21, -8, 28, -11, 27, -14)
+
+[node name="Upper Arm" type="RigidBody2D" parent="Human FG" unique_id=1630689371]
+position = Vector2(19, 2)
+collision_layer = 0
+collision_mask = 0
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Human FG/Upper Arm" unique_id=1688380533]
+position = Vector2(-18.728386, -25.68097)
+rotation = -0.80073637
+texture = ExtResource("14_omjog")
+offset = Vector2(2.835, 42.28)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Upper Arm" unique_id=492889875]
+polygon = PackedVector2Array(-28, -46, -40, -30, -40, -17, 32, 44, 48, 54, 55, 50, 60, 38, 54, 29, 22, -7, 8, -23, -1, -44, -9, -48)
+
+[node name="Lower Arm" type="RigidBody2D" parent="Human FG" unique_id=1350694096]
+position = Vector2(115, 67)
+collision_layer = 0
+collision_mask = 0
+
+[node name="FrontArmLower" type="Sprite2D" parent="Human FG/Lower Arm" unique_id=1673303446]
+position = Vector2(-39, -21)
+rotation = -0.98010176
+texture = ExtResource("15_ea5yj")
+offset = Vector2(6.07, 44.42)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Lower Arm" unique_id=2053449257]
+polygon = PackedVector2Array(-41, -35, -49, -30, -54, -22, -53, -16, 25, 24, 50, 33, 58, 31, 59, 20, 54, 10, 40, 7, 14, -5, -7, -19)
+
+[node name="Hand" type="RigidBody2D" parent="Human FG" unique_id=129291649]
+position = Vector2(182, 93)
+collision_layer = 0
+collision_mask = 0
+
+[node name="FrontHand" type="Sprite2D" parent="Human FG/Hand" unique_id=928817484]
+position = Vector2(-17, -5)
+rotation = -0.9978281
+texture = ExtResource("16_78nwm")
+offset = Vector2(7.625, 13.405)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Hand" unique_id=1491736199]
+polygon = PackedVector2Array(-25, -10, -28, -3, -24, 3, -1, 15, 7, 14, 23, -3, 21, -10, 8, -22, -10, -16, -18, -16)
+
+[node name="Wrist" type="PinJoint2D" parent="Human FG" unique_id=617366501]
+position = Vector2(164, 88)
+node_a = NodePath("../Lower Arm")
+node_b = NodePath("../Hand")
+
+[node name="Elbow" type="PinJoint2D" parent="Human FG" unique_id=1840239900]
+position = Vector2(67, 43)
+node_a = NodePath("../Upper Arm")
+node_b = NodePath("../Lower Arm")
+
+[node name="Shoulder" type="PinJoint2D" parent="Human FG" unique_id=268218111]
+position = Vector2(-6, -27)
+node_a = NodePath("../Torso")
+node_b = NodePath("../Upper Arm")
+
+[node name="Ankle" type="PinJoint2D" parent="Human FG" unique_id=1778480299]
+position = Vector2(-65, 242)
+node_a = NodePath("../Leg Lower")
+node_b = NodePath("../Foot")
+
+[node name="Knee" type="PinJoint2D" parent="Human FG" unique_id=1886754022]
+position = Vector2(31, 136)
+node_a = NodePath("../Leg Upper")
+node_b = NodePath("../Leg Lower")
+
+[node name="Hip" type="PinJoint2D" parent="Human FG" unique_id=1248343382]
+position = Vector2(-105, 101)
+node_a = NodePath("../Torso")
+node_b = NodePath("../Leg Upper")
+
+[node name="Handle" type="PinJoint2D" parent="Human FG" unique_id=816799698]
+position = Vector2(186, 93)
+node_a = NodePath("../../Machine Mid G/BikeBody")
+node_b = NodePath("../Hand")
+
+[node name="Neck" type="PinJoint2D" parent="Human FG" unique_id=1515740808]
+position = Vector2(24, -49)
+node_a = NodePath("../Torso")
+node_b = NodePath("../Head")
+
+[node name="Head Posture" type="DampedSpringJoint2D" parent="Human FG" unique_id=961690083]
+position = Vector2(143, -186)
+rotation = 0.7237808
+node_a = NodePath("../../HeadAnchor")
+node_b = NodePath("../Head")
+length = 124.0
+stiffness = 17.7
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="Human FG" unique_id=668644858]
+position = Vector2(-31, -59)
+rotation = 0.47730437
+node_a = NodePath("../../HeadAnchor")
+node_b = NodePath("../Torso")
+length = 172.0
+initial_offset = 175.0
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Human FG" unique_id=1986068667]
+position = Vector2(-39, -236)
+rotation = -0.20558684
+node_a = NodePath("../../HeadAnchor")
+node_b = NodePath("../Torso")
+length = 183.0
+stiffness = 64.0
+
+[node name="Machine FG" type="Node2D" parent="." unique_id=2061551528]
+
+[node name="FrontPedalSpokeBody" type="RigidBody2D" parent="Machine FG" unique_id=1018649772]
+position = Vector2(-48, 67)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Machine FG/FrontPedalSpokeBody" unique_id=1230394471]
+polygon = PackedVector2Array(-11, -23, 2, -23, 10, -21, 19, -14, 21, -2, 19, 9, 11, 18, -2, 21, -15, 17, -24, 7, -23, -5, -22, -8, -60, -28, -60, -33, -55, -36, -18, -17)
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Machine FG/FrontPedalSpokeBody" unique_id=1110631282]
+position = Vector2(-19, -7)
+texture = ExtResource("6_yj4av")
+
+[node name="FrontPedalBody" type="RigidBody2D" parent="Machine FG" unique_id=387307422]
+position = Vector2(-102, 37)
+rotation = -0.46374545
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Machine FG/FrontPedalBody" unique_id=152693225]
+polygon = PackedVector2Array(-3, -4, -5, 2, 3, 6, 2, 40, 8, 43, 22, 38, 26, 28, 26, 12, 28, 10, 29, 3, 6, -5)
+
+[node name="FrontPedal" type="Sprite2D" parent="Machine FG/FrontPedalBody" unique_id=527219056]
+position = Vector2(12, 19)
+texture = ExtResource("7_ovfno")
+
+[node name="HeadAnchor" type="StaticBody2D" parent="." unique_id=373595990]
+position = Vector2(-72, -491)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadAnchor" unique_id=1207205056]
+shape = SubResource("CircleShape2D_kjfgv")
