@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://b8inoqmk7krim"]
 
 [ext_resource type="PackedScene" uid="uid://x84wh1oe13d6" path="res://levels/spinning/spinning_machine.tscn" id="1_0p5ow"]
-[ext_resource type="Texture2D" uid="uid://chkakvssut55y" path="res://ui/barBG.png" id="2_05p7j"]
-[ext_resource type="Script" uid="uid://djjsoha3o4wd7" path="res://ui/status_bars.gd" id="2_wel8g"]
-[ext_resource type="Texture2D" uid="uid://c2sxoxmt275yf" path="res://ui/barFG.png" id="3_wel8g"]
+[ext_resource type="PackedScene" uid="uid://d0oqx6or8yx02" path="res://ui/ui.tscn" id="2_bbsge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfgv"]
 size = Vector2(1600, 20)
@@ -16,42 +14,7 @@ position = Vector2(564, 416)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1214777534]
 position = Vector2(576, 320)
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=2012925188]
-
-[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=854518399]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="StatusBars" type="VBoxContainer" parent="UI/MarginContainer" unique_id=1444154927 node_paths=PackedStringArray("calories_bar", "happiness_bar")]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/separation = 10
-script = ExtResource("2_wel8g")
-calories_bar = NodePath("Calories Bar")
-happiness_bar = NodePath("Happiness Bar")
-
-[node name="Calories Bar" type="TextureProgressBar" parent="UI/MarginContainer/StatusBars" unique_id=1233080450]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-value = 70.0
-texture_under = ExtResource("2_05p7j")
-texture_progress = ExtResource("3_wel8g")
-
-[node name="Happiness Bar" type="TextureProgressBar" parent="UI/MarginContainer/StatusBars" unique_id=455371084]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-value = 40.0
-texture_under = ExtResource("2_05p7j")
-texture_progress = ExtResource("3_wel8g")
+[node name="UI" parent="." unique_id=355930785 instance=ExtResource("2_bbsge")]
 
 [node name="Floor Collider" type="StaticBody2D" parent="." unique_id=504687601]
 position = Vector2(569, 611)

@@ -10,8 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://302ptv85fcdi" path="res://levels/eating/box2.png" id="8_jk041"]
 [ext_resource type="Texture2D" uid="uid://cbtr1tj5qigew" path="res://levels/eating/box1.png" id="9_jdlei"]
 [ext_resource type="Texture2D" uid="uid://b5jx3rsqsk30k" path="res://levels/eating/door_shelf3.png" id="10_s73pw"]
+[ext_resource type="Texture2D" uid="uid://wq6v04mnarcx" path="res://levels/eating/ketchup.png" id="10_tx16s"]
+[ext_resource type="Texture2D" uid="uid://dviyag1ip4f1j" path="res://levels/eating/soda.png" id="11_7rs3b"]
 [ext_resource type="Texture2D" uid="uid://chgqktbh7o6tr" path="res://levels/eating/door_shelf2.png" id="11_mwa75"]
 [ext_resource type="Texture2D" uid="uid://bhp1t5wec1vyu" path="res://levels/eating/door_shelf1.png" id="12_xym8u"]
+[ext_resource type="Texture2D" uid="uid://c48nxn7jlsqqk" path="res://levels/eating/carrot.png" id="13_m1ufg"]
+[ext_resource type="Texture2D" uid="uid://co1s5grnw1pgv" path="res://levels/eating/avocado.png" id="14_cltrd"]
+[ext_resource type="Texture2D" uid="uid://b553vk0s70516" path="res://levels/eating/apple.png" id="15_i2nxg"]
+[ext_resource type="Texture2D" uid="uid://3f22iiey6le6" path="res://levels/eating/takeaway.png" id="18_7rs3b"]
+[ext_resource type="Texture2D" uid="uid://dnasylbfxf7da" path="res://levels/eating/pickles.png" id="19_jk041"]
 
 [node name="Fridge" type="Node2D" unique_id=56752052]
 
@@ -50,6 +57,42 @@ texture = ExtResource("8_jk041")
 position = Vector2(-60, 75)
 texture = ExtResource("9_jdlei")
 
+[node name="Ketchup" type="Sprite2D" parent="." unique_id=775239125]
+position = Vector2(91, 26)
+texture = ExtResource("10_tx16s")
+
+[node name="Ketchup2" type="Sprite2D" parent="." unique_id=1193666382]
+position = Vector2(93, -61)
+texture = ExtResource("10_tx16s")
+
+[node name="Soda" type="Sprite2D" parent="." unique_id=45469675]
+position = Vector2(60, 32)
+texture = ExtResource("11_7rs3b")
+
+[node name="Soda2" type="Sprite2D" parent="." unique_id=1316456168]
+position = Vector2(39, 30)
+texture = ExtResource("11_7rs3b")
+
+[node name="Soda3" type="Sprite2D" parent="." unique_id=1154096833]
+position = Vector2(36, -52)
+texture = ExtResource("11_7rs3b")
+
+[node name="Soda4" type="Sprite2D" parent="." unique_id=844039275]
+position = Vector2(60, -52)
+texture = ExtResource("11_7rs3b")
+
+[node name="Soda5" type="Sprite2D" parent="." unique_id=1113869979]
+position = Vector2(90, -135)
+texture = ExtResource("11_7rs3b")
+
+[node name="Soda6" type="Sprite2D" parent="." unique_id=1206039808]
+position = Vector2(67, -135)
+texture = ExtResource("11_7rs3b")
+
+[node name="Soda7" type="Sprite2D" parent="." unique_id=1990672764]
+position = Vector2(44, -133)
+texture = ExtResource("11_7rs3b")
+
 [node name="DoorShelf3" type="Sprite2D" parent="." unique_id=1475483035]
 position = Vector2(65, 41)
 texture = ExtResource("10_s73pw")
@@ -61,3 +104,92 @@ texture = ExtResource("11_mwa75")
 [node name="DoorShelf1" type="Sprite2D" parent="." unique_id=745640691]
 position = Vector2(65, -125)
 texture = ExtResource("12_xym8u")
+
+[node name="Carrot" type="Sprite2D" parent="." unique_id=199585827]
+position = Vector2(-18, 149)
+rotation = -0.015035022
+texture = ExtResource("13_m1ufg")
+
+[node name="Carrot2" type="Sprite2D" parent="." unique_id=586280014]
+position = Vector2(-24, 153)
+texture = ExtResource("13_m1ufg")
+
+[node name="Carrot3" type="Sprite2D" parent="." unique_id=957089925]
+position = Vector2(-17, 156)
+rotation = 0.053898852
+texture = ExtResource("13_m1ufg")
+
+[node name="Carrot4" type="Sprite2D" parent="." unique_id=662442465]
+position = Vector2(-15, 151)
+rotation = -0.147995
+texture = ExtResource("13_m1ufg")
+
+[node name="Avocado" type="Sprite2D" parent="." unique_id=915657028]
+position = Vector2(-109.99999, 148)
+rotation = 0.009908389
+texture = ExtResource("14_cltrd")
+
+[node name="Avocado2" type="Sprite2D" parent="." unique_id=1285234206]
+position = Vector2(-101.99999, 151)
+rotation = 0.009908389
+texture = ExtResource("14_cltrd")
+
+[node name="Avocado5" type="Sprite2D" parent="." unique_id=798774403]
+position = Vector2(-83, 153)
+rotation = 0.00990839
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("14_cltrd")
+
+[node name="Avocado3" type="Sprite2D" parent="." unique_id=1866152338]
+position = Vector2(-92.99999, 157.99998)
+rotation = 0.009908389
+texture = ExtResource("14_cltrd")
+
+[node name="Avocado4" type="Sprite2D" parent="." unique_id=1792893404]
+position = Vector2(-115.99999, 155.99998)
+rotation = 0.009908389
+texture = ExtResource("14_cltrd")
+
+[node name="Apple" type="Sprite2D" parent="." unique_id=2091224630]
+position = Vector2(-113, 84)
+texture = ExtResource("15_i2nxg")
+
+[node name="Apple2" type="Sprite2D" parent="." unique_id=1750111660]
+position = Vector2(-91, 81)
+texture = ExtResource("15_i2nxg")
+
+[node name="Apple3" type="Sprite2D" parent="." unique_id=1492912909]
+position = Vector2(-97, 87)
+texture = ExtResource("15_i2nxg")
+
+[node name="Apple4" type="Sprite2D" parent="." unique_id=28612866]
+position = Vector2(-62, 83)
+texture = ExtResource("15_i2nxg")
+
+[node name="Apple6" type="Sprite2D" parent="." unique_id=1973014889]
+position = Vector2(-21, 83)
+texture = ExtResource("15_i2nxg")
+
+[node name="Apple5" type="Sprite2D" parent="." unique_id=2063684340]
+position = Vector2(-35, 87)
+texture = ExtResource("15_i2nxg")
+
+[node name="Takeaway" type="Sprite2D" parent="." unique_id=1212805534]
+position = Vector2(-6, 35)
+texture = ExtResource("18_7rs3b")
+
+[node name="Takeaway2" type="Sprite2D" parent="." unique_id=549813425]
+position = Vector2(-40, 31)
+texture = ExtResource("18_7rs3b")
+
+[node name="Takeaway3" type="Sprite2D" parent="." unique_id=2096524520]
+position = Vector2(-109, -12)
+texture = ExtResource("18_7rs3b")
+
+[node name="Pickles" type="Sprite2D" parent="." unique_id=1504532054]
+position = Vector2(-102, -153)
+texture = ExtResource("19_jk041")
+
+[node name="Pickles2" type="Sprite2D" parent="." unique_id=40970068]
+position = Vector2(-57, -152)
+texture = ExtResource("19_jk041")

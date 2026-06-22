@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://djg7mutkmt6py"]
+
+[ext_resource type="PackedScene" uid="uid://b7bjig5vixkig" path="res://levels/eating/fridge.tscn" id="1_e73j3"]
+[ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="2_14ci6"]
+[ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="3_pdp1v"]
+[ext_resource type="Texture2D" uid="uid://w1tbv4elpkbd" path="res://character/front_leg_lower.png" id="4_hiobt"]
+[ext_resource type="Texture2D" uid="uid://cli3knxnwompc" path="res://character/back_foot.png" id="5_40quf"]
+[ext_resource type="Texture2D" uid="uid://chf433g5l735s" path="res://character/torso.png" id="6_4mvm5"]
+[ext_resource type="Texture2D" uid="uid://coyg6gsf7lwfu" path="res://character/back_arm_upper.png" id="6_dsfj8"]
+[ext_resource type="Texture2D" uid="uid://rxtbgvvmaltq" path="res://character/front_leg_upper.png" id="7_dsfj8"]
+[ext_resource type="Texture2D" uid="uid://b04sp1yeolkps" path="res://character/back_arm_lower.png" id="7_lyxv6"]
+[ext_resource type="Texture2D" uid="uid://bbpko3wya1vk3" path="res://character/back_hand.png" id="8_i4lgw"]
+[ext_resource type="Texture2D" uid="uid://4wddwjvmjk0k" path="res://character/front_foot.png" id="8_lyxv6"]
+[ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="12_hlt2s"]
+[ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="13_i6qjo"]
+[ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="14_t18ug"]
+[ext_resource type="PackedScene" uid="uid://d0oqx6or8yx02" path="res://ui/ui.tscn" id="15_lyxv6"]
+
+[node name="Node2D" type="Node2D" unique_id=128111494]
+
+[node name="Fridge" parent="." unique_id=56752052 instance=ExtResource("1_e73j3")]
+position = Vector2(595, 370)
+
+[node name="Character" type="Node2D" parent="." unique_id=1746520596]
+position = Vector2(375, 368)
+scale = Vector2(0.65, 0.65)
+
+[node name="Head" type="Sprite2D" parent="Character" unique_id=1239199095]
+position = Vector2(15.8811035, -199.78317)
+rotation = 0.078941554
+texture = ExtResource("2_14ci6")
+
+[node name="BackLegUpper" type="Sprite2D" parent="Character" unique_id=2022604927]
+position = Vector2(64.8811, 62.216858)
+rotation = 0.3063932
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_pdp1v")
+
+[node name="FrontLegLower" type="Sprite2D" parent="Character" unique_id=215384453]
+position = Vector2(98.8811, 125.21683)
+rotation = -0.8759987
+texture = ExtResource("4_hiobt")
+
+[node name="BackFoot" type="Sprite2D" parent="Character" unique_id=515313006]
+position = Vector2(32.88109, 196.21683)
+rotation = 1.6939094
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_40quf")
+
+[node name="BackArmUpper" type="Sprite2D" parent="Character" unique_id=2017621662]
+position = Vector2(9.230774, -96.923096)
+rotation = -0.22432703
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("6_dsfj8")
+
+[node name="BackArmLower" type="Sprite2D" parent="Character" unique_id=2131367372]
+position = Vector2(72.30771, -87.69232)
+rotation = -2.1606998
+texture = ExtResource("7_lyxv6")
+
+[node name="BackHand" type="Sprite2D" parent="Character" unique_id=1648670923]
+position = Vector2(110.76926, -135.38464)
+rotation = -1.9136415
+texture = ExtResource("8_i4lgw")
+
+[node name="Torso" type="Sprite2D" parent="Character" unique_id=241953497]
+position = Vector2(11.8811035, -60.783173)
+texture = ExtResource("6_4mvm5")
+
+[node name="FrontLegUpper" type="Sprite2D" parent="Character" unique_id=1352260331]
+position = Vector2(4.881073, 78.216736)
+rotation = -0.39721367
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_dsfj8")
+
+[node name="FrontLegLower2" type="Sprite2D" parent="Character" unique_id=365820175]
+position = Vector2(-7.1188965, 210.21689)
+rotation = -1.6084596
+texture = ExtResource("4_hiobt")
+
+[node name="FrontFoot" type="Sprite2D" parent="Character" unique_id=878448805]
+position = Vector2(1.881134, 299.2169)
+rotation = -1.6340251
+texture = ExtResource("8_lyxv6")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Character" unique_id=985636113]
+position = Vector2(27.881119, -99.78317)
+rotation = -0.6182437
+texture = ExtResource("12_hlt2s")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Character" unique_id=169518432]
+position = Vector2(77.8811, -3.7831726)
+rotation = -0.29490945
+texture = ExtResource("13_i6qjo")
+
+[node name="FrontHand" type="Sprite2D" parent="Character" unique_id=1406954438]
+position = Vector2(107.8811, 49.216827)
+rotation = -0.2940038
+texture = ExtResource("14_t18ug")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2070499535]
+position = Vector2(578, 316)
+
+[node name="UI" parent="." unique_id=355930785 instance=ExtResource("15_lyxv6")]

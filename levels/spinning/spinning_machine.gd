@@ -28,6 +28,7 @@ func _handle_no_calories() -> void:
 
 func _ready() -> void:
     _wheel_pos = wheel.position
+    __SignalBus.on_start_exercise.emit()
 
 func _physics_process(delta: float) -> void:
     var balance_force: float = Input.get_axis(&"pedal_right", &"pedal_left")
