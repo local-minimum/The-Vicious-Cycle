@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
     if balance_force < 0:
         var a: float = fposmod(front_pedal_spoke.global_rotation, TAU)
         var force_direction: float = 1.0 if a >= FRONT_ANGLE_MIN && a <= FRONT_ANGLE_MAX else -1.0
-        print_debug(a, balance_force, force_direction, front_pedal_spoke.angular_velocity)
         _apply_force(delta, force_direction * absf(balance_force))
     elif balance_force > 0:
         var a: float = fposmod(back_pedal_spoke.global_rotation + PI, TAU) - PI
