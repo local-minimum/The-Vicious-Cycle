@@ -148,12 +148,12 @@ node_a = NodePath("../../Human FG/Torso")
 node_b = NodePath("../Arm Upper")
 
 [node name="Ankle" type="PinJoint2D" parent="Human BG" unique_id=954896497]
-position = Vector2(-48, 116)
+position = Vector2(-39, 73)
 node_a = NodePath("../Leg Lower")
 node_b = NodePath("../Foot")
 
 [node name="Knee" type="PinJoint2D" parent="Human BG" unique_id=626216858]
-position = Vector2(0, -38)
+position = Vector2(23, -77)
 node_a = NodePath("../Leg Upper")
 node_b = NodePath("../Leg Lower")
 
@@ -171,6 +171,18 @@ node_b = NodePath("../Hand")
 position = Vector2(30, 68)
 node_a = NodePath("../../Machine Mid G/BackPedalBody")
 node_b = NodePath("../Foot")
+
+[node name="Pedal2" type="PinJoint2D" parent="Human BG" unique_id=1214218797]
+position = Vector2(12, 74)
+node_a = NodePath("../../Machine Mid G/BackPedalBody")
+node_b = NodePath("../Foot")
+
+[node name="Knee Toe Spring" type="DampedSpringJoint2D" parent="Human BG" unique_id=1428341029]
+position = Vector2(21, -62)
+node_a = NodePath("../Leg Lower")
+node_b = NodePath("../Foot")
+length = 131.0
+rest_length = 140.0
 
 [node name="Machine Mid G" type="Node2D" parent="." unique_id=1188269322]
 
@@ -326,7 +338,7 @@ polygon = PackedVector2Array(-50, 42, -60, 57, -56, 68, -41, 75, -32, 66, -9, 38
 
 [node name="Foot" type="RigidBody2D" parent="Human FG" unique_id=1367826425]
 position = Vector2(-62, 260.00003)
-rotation = -0.08132609
+rotation = -0.082030475
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
@@ -401,6 +413,8 @@ node_b = NodePath("../Upper Arm")
 position = Vector2(-65, 242)
 node_a = NodePath("../Leg Lower")
 node_b = NodePath("../Foot")
+angular_limit_lower = 0.5235988
+angular_limit_upper = 1.5707964
 
 [node name="Knee" type="PinJoint2D" parent="Human FG" unique_id=1886754022]
 position = Vector2(31, 136)
@@ -446,10 +460,23 @@ node_b = NodePath("../Torso")
 length = 183.0
 stiffness = 64.0
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Human FG" unique_id=1632911067]
+[node name="Pedal" type="PinJoint2D" parent="Human FG" unique_id=1632911067]
 position = Vector2(-50, 298)
 node_a = NodePath("../../Machine FG/FrontPedalBody")
 node_b = NodePath("../Foot")
+
+[node name="Pedal2" type="PinJoint2D" parent="Human FG" unique_id=1432614514]
+position = Vector2(-56, 277)
+node_a = NodePath("../../Machine FG/FrontPedalBody")
+node_b = NodePath("../Foot")
+
+[node name="Knee Toes Spring" type="DampedSpringJoint2D" parent="Human FG" unique_id=861092930]
+position = Vector2(17, 143)
+rotation = 0.45694983
+node_a = NodePath("../Leg Lower")
+node_b = NodePath("../Foot")
+length = 160.0
+rest_length = 130.0
 
 [node name="Machine FG" type="Node2D" parent="." unique_id=2061551528]
 
