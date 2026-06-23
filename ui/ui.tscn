@@ -88,9 +88,11 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 10
 
 [node name="Food Icon" type="TextureRect" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/MarginContainer" unique_id=239406265]
+custom_maximum_size = Vector2(-1, 100)
 layout_mode = 2
 texture = ExtResource("5_tf0e0")
 expand_mode = 5
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=1124830613]
 custom_minimum_size = Vector2(0, 120)
@@ -105,5 +107,10 @@ layout_mode = 2
 size_flags_horizontal = 10
 
 [node name="Eat Btn" type="Button" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=1386700209]
+visible = false
 layout_mode = 2
 text = "EAT"
+
+[node name="Info" type="Label" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=541336388]
+layout_mode = 2
+text = "Left click to eat"

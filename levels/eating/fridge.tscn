@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://dnasylbfxf7da" path="res://levels/eating/pickles.png" id="19_jk041"]
 [ext_resource type="Script" uid="uid://d3lrehfhxetvy" path="res://levels/eating/food_group.gd" id="20_jdlei"]
 [ext_resource type="Script" uid="uid://dcdj2nmfgbh70" path="res://levels/eating/food2d.gd" id="21_s73pw"]
+[ext_resource type="Texture2D" uid="uid://cxhg6aah1lpmj" path="res://levels/eating/egg_carton_bg.png" id="22_6wvue"]
+[ext_resource type="Texture2D" uid="uid://b6rq1csmn45rw" path="res://levels/eating/egg.png" id="23_kg70y"]
+[ext_resource type="Texture2D" uid="uid://drnuyxtvxf18h" path="res://levels/eating/egg_carton_mid.png" id="24_1lxyd"]
+[ext_resource type="Texture2D" uid="uid://ci5w322xrenmn" path="res://levels/eating/egg_carton_fg.png" id="25_c38j6"]
 
 [sub_resource type="Resource" id="Resource_jdlei"]
 script = ExtResource("21_s73pw")
@@ -32,6 +36,88 @@ metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfgv"]
 size = Vector2(141.5, 31)
+
+[sub_resource type="Resource" id="Resource_s73pw"]
+script = ExtResource("21_s73pw")
+name = "Avocado"
+icon = ExtResource("14_cltrd")
+calories = 10.0
+happiness = 8.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwa75"]
+size = Vector2(71.5, 31)
+
+[sub_resource type="Resource" id="Resource_kg70y"]
+script = ExtResource("21_s73pw")
+name = "Egg"
+icon = ExtResource("23_kg70y")
+calories = 10.0
+happiness = 5.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd8yw"]
+size = Vector2(57, 38)
+
+[sub_resource type="Resource" id="Resource_mwa75"]
+script = ExtResource("21_s73pw")
+name = "Carrot"
+icon = ExtResource("13_m1ufg")
+calories = 5.0
+happiness = 5.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xym8u"]
+size = Vector2(71.5, 31)
+
+[sub_resource type="Resource" id="Resource_xym8u"]
+script = ExtResource("21_s73pw")
+name = "Take Away Left Overs"
+icon = ExtResource("18_7rs3b")
+calories = 15.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alg18"]
+size = Vector2(71.5, 38.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wvue"]
+size = Vector2(40.75, 38.5)
+
+[sub_resource type="Resource" id="Resource_alg18"]
+script = ExtResource("21_s73pw")
+name = "Jar of Pickles"
+icon = ExtResource("19_jk041")
+calories = 15.0
+happiness = -5.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg70y"]
+size = Vector2(83, 45.25)
+
+[sub_resource type="Resource" id="Resource_6wvue"]
+script = ExtResource("21_s73pw")
+name = "Soda"
+icon = ExtResource("11_7rs3b")
+calories = 5.0
+happiness = -10.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lxyd"]
+size = Vector2(48.5, 45.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c38j6"]
+size = Vector2(87.25, 45.25)
+
+[sub_resource type="Resource" id="Resource_bd8yw"]
+script = ExtResource("21_s73pw")
+name = "Bottle of Ketchup"
+icon = ExtResource("10_tx16s")
+calories = 10.0
+happiness = -20.0
+metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrsi1"]
+size = Vector2(28.5, 53.625)
 
 [node name="Fridge" type="Node2D" unique_id=56752052]
 
@@ -72,38 +158,47 @@ texture = ExtResource("9_jdlei")
 
 [node name="Ketchup" type="Sprite2D" parent="." unique_id=775239125]
 position = Vector2(91, 26)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_tx16s")
 
 [node name="Ketchup2" type="Sprite2D" parent="." unique_id=1193666382]
 position = Vector2(93, -61)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_tx16s")
 
 [node name="Soda" type="Sprite2D" parent="." unique_id=45469675]
 position = Vector2(60, 32)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="Soda2" type="Sprite2D" parent="." unique_id=1316456168]
 position = Vector2(39, 30)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="Soda3" type="Sprite2D" parent="." unique_id=1154096833]
 position = Vector2(36, -52)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="Soda4" type="Sprite2D" parent="." unique_id=844039275]
 position = Vector2(60, -52)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="Soda5" type="Sprite2D" parent="." unique_id=1113869979]
 position = Vector2(90, -135)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="Soda6" type="Sprite2D" parent="." unique_id=1206039808]
 position = Vector2(67, -135)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="Soda7" type="Sprite2D" parent="." unique_id=1990672764]
 position = Vector2(44, -133)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_7rs3b")
 
 [node name="DoorShelf3" type="Sprite2D" parent="." unique_id=1475483035]
@@ -121,91 +216,154 @@ texture = ExtResource("12_xym8u")
 [node name="Carrot" type="Sprite2D" parent="." unique_id=199585827]
 position = Vector2(-18, 149)
 rotation = -0.015035022
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_m1ufg")
 
 [node name="Carrot2" type="Sprite2D" parent="." unique_id=586280014]
 position = Vector2(-24, 153)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_m1ufg")
 
 [node name="Carrot3" type="Sprite2D" parent="." unique_id=957089925]
 position = Vector2(-17, 156)
 rotation = 0.053898852
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_m1ufg")
 
 [node name="Carrot4" type="Sprite2D" parent="." unique_id=662442465]
 position = Vector2(-15, 151)
 rotation = -0.147995
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_m1ufg")
 
 [node name="Avocado" type="Sprite2D" parent="." unique_id=915657028]
 position = Vector2(-109.99999, 148)
 rotation = 0.009908389
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_cltrd")
 
 [node name="Avocado2" type="Sprite2D" parent="." unique_id=1285234206]
 position = Vector2(-101.99999, 151)
 rotation = 0.009908389
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_cltrd")
 
 [node name="Avocado5" type="Sprite2D" parent="." unique_id=798774403]
 position = Vector2(-83, 153)
 rotation = 0.00990839
-scale = Vector2(1.0000001, 1.0000001)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_cltrd")
 
 [node name="Avocado3" type="Sprite2D" parent="." unique_id=1866152338]
 position = Vector2(-92.99999, 157.99998)
 rotation = 0.009908389
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_cltrd")
 
 [node name="Avocado4" type="Sprite2D" parent="." unique_id=1792893404]
 position = Vector2(-115.99999, 155.99998)
 rotation = 0.009908389
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_cltrd")
 
 [node name="Apple" type="Sprite2D" parent="." unique_id=2091224630]
 position = Vector2(-113, 84)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_i2nxg")
 
 [node name="Apple2" type="Sprite2D" parent="." unique_id=1750111660]
 position = Vector2(-91, 81)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_i2nxg")
 
 [node name="Apple3" type="Sprite2D" parent="." unique_id=1492912909]
 position = Vector2(-97, 87)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_i2nxg")
 
 [node name="Apple4" type="Sprite2D" parent="." unique_id=28612866]
 position = Vector2(-62, 83)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_i2nxg")
 
 [node name="Apple6" type="Sprite2D" parent="." unique_id=1973014889]
 position = Vector2(-21, 83)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_i2nxg")
 
 [node name="Apple5" type="Sprite2D" parent="." unique_id=2063684340]
 position = Vector2(-35, 87)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_i2nxg")
 
 [node name="Takeaway" type="Sprite2D" parent="." unique_id=1212805534]
 position = Vector2(-6, 35)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("18_7rs3b")
 
 [node name="Takeaway2" type="Sprite2D" parent="." unique_id=549813425]
 position = Vector2(-40, 31)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("18_7rs3b")
 
 [node name="Takeaway3" type="Sprite2D" parent="." unique_id=2096524520]
 position = Vector2(-109, -12)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("18_7rs3b")
 
 [node name="Pickles" type="Sprite2D" parent="." unique_id=1504532054]
 position = Vector2(-102, -153)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("19_jk041")
 
 [node name="Pickles2" type="Sprite2D" parent="." unique_id=40970068]
 position = Vector2(-57, -152)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("19_jk041")
+
+[node name="Egg Carton" type="Node2D" parent="." unique_id=1082883136]
+position = Vector2(-54, -55)
+scale = Vector2(0.25, 0.25)
+
+[node name="EggCartonBg" type="Sprite2D" parent="Egg Carton" unique_id=679128863]
+position = Vector2(-5.5, -37)
+texture = ExtResource("22_6wvue")
+
+[node name="Egg5" type="Sprite2D" parent="Egg Carton" unique_id=1112268912]
+position = Vector2(36, -8)
+rotation = -0.33562088
+texture = ExtResource("23_kg70y")
+
+[node name="Egg6" type="Sprite2D" parent="Egg Carton" unique_id=826886703]
+position = Vector2(-44, -8)
+rotation = 0.31365937
+texture = ExtResource("23_kg70y")
+
+[node name="EggCartonMid" type="Sprite2D" parent="Egg Carton" unique_id=494359412]
+position = Vector2(-5, -8)
+texture = ExtResource("24_1lxyd")
+
+[node name="Egg" type="Sprite2D" parent="Egg Carton" unique_id=1365995874]
+position = Vector2(-45, 7)
+texture = ExtResource("23_kg70y")
+
+[node name="Egg2" type="Sprite2D" parent="Egg Carton" unique_id=1161637018]
+position = Vector2(-4, 8)
+rotation = -2.7806606
+texture = ExtResource("23_kg70y")
+
+[node name="Egg3" type="Sprite2D" parent="Egg Carton" unique_id=417322923]
+position = Vector2(36, 8)
+texture = ExtResource("23_kg70y")
+
+[node name="Egg4" type="Sprite2D" parent="Egg Carton" unique_id=792154818]
+position = Vector2(72, 8)
+rotation = 2.9623547
+texture = ExtResource("23_kg70y")
+
+[node name="EggCartonFg" type="Sprite2D" parent="Egg Carton" unique_id=1338264484]
+position = Vector2(-5, 22)
+texture = ExtResource("25_c38j6")
 
 [node name="Apple Shelf" type="Area2D" parent="." unique_id=159970441 node_paths=PackedStringArray("pieces")]
 position = Vector2(-65, 89)
@@ -217,6 +375,113 @@ food = SubResource("Resource_jdlei")
 position = Vector2(2.25, -9)
 shape = SubResource("RectangleShape2D_kjfgv")
 
+[node name="Avocados" type="Area2D" parent="." unique_id=28944969 node_paths=PackedStringArray("pieces")]
+position = Vector2(-68, 159)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Avocado3"), NodePath("../Avocado4"), NodePath("../Avocado5"), NodePath("../Avocado2"), NodePath("../Avocado")]
+food = SubResource("Resource_s73pw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avocados" unique_id=1986698175]
+position = Vector2(-32.75, -9)
+shape = SubResource("RectangleShape2D_mwa75")
+
+[node name="Eggs" type="Area2D" parent="." unique_id=623990893 node_paths=PackedStringArray("pieces")]
+position = Vector2(-25, -52)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Egg Carton/Egg6"), NodePath("../Egg Carton/Egg5"), NodePath("../Egg Carton/Egg3"), NodePath("../Egg Carton/Egg"), NodePath("../Egg Carton/Egg4"), NodePath("../Egg Carton/Egg2")]
+food = SubResource("Resource_kg70y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eggs" unique_id=132898196]
+position = Vector2(-29.5, -9)
+shape = SubResource("RectangleShape2D_bd8yw")
+
+[node name="Carrots" type="Area2D" parent="." unique_id=1248861907 node_paths=PackedStringArray("pieces")]
+position = Vector2(12, 160)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Carrot4"), NodePath("../Carrot3"), NodePath("../Carrot2"), NodePath("../Carrot")]
+food = SubResource("Resource_mwa75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carrots" unique_id=302211302]
+position = Vector2(-32.75, -9)
+shape = SubResource("RectangleShape2D_xym8u")
+
+[node name="Take Away" type="Area2D" parent="." unique_id=496532985 node_paths=PackedStringArray("pieces")]
+position = Vector2(12, 36)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Takeaway2"), NodePath("../Takeaway"), NodePath("../Takeaway3")]
+food = SubResource("Resource_xym8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Take Away" unique_id=307851390]
+position = Vector2(-32.75, -5.25)
+shape = SubResource("RectangleShape2D_alg18")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Take Away" unique_id=416666188]
+position = Vector2(-121.375, -53)
+shape = SubResource("RectangleShape2D_6wvue")
+
+[node name="Jar of Pickles" type="Area2D" parent="." unique_id=891636025 node_paths=PackedStringArray("pieces")]
+position = Vector2(-81, -147)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Pickles2"), NodePath("../Pickles")]
+food = SubResource("Resource_alg18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jar of Pickles" unique_id=1268239313]
+position = Vector2(0.5, -5.625)
+shape = SubResource("RectangleShape2D_kg70y")
+
+[node name="Soda Cans" type="Area2D" parent="." unique_id=1083970483 node_paths=PackedStringArray("pieces")]
+position = Vector2(48, -51)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Soda5"), NodePath("../Soda"), NodePath("../Soda7"), NodePath("../Soda6"), NodePath("../Soda3"), NodePath("../Soda2"), NodePath("../Soda4")]
+food = SubResource("Resource_6wvue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Soda Cans" unique_id=595972784]
+position = Vector2(0.75, 78)
+shape = SubResource("RectangleShape2D_1lxyd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Soda Cans" unique_id=2065872576]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_1lxyd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Soda Cans" unique_id=1908460931]
+position = Vector2(18.375, -87)
+shape = SubResource("RectangleShape2D_c38j6")
+
+[node name="Bottle of Ketchup" type="Area2D" parent="." unique_id=937167160 node_paths=PackedStringArray("pieces")]
+position = Vector2(100, -51)
+script = ExtResource("20_jdlei")
+pieces = [NodePath("../Ketchup2"), NodePath("../Ketchup")]
+food = SubResource("Resource_bd8yw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottle of Ketchup" unique_id=2030455593]
+position = Vector2(-9.25, 73.8125)
+shape = SubResource("RectangleShape2D_nrsi1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottle of Ketchup" unique_id=1946660367]
+position = Vector2(-6, -10)
+shape = SubResource("RectangleShape2D_nrsi1")
+
 [connection signal="input_event" from="Apple Shelf" to="Apple Shelf" method="_on_input_event"]
 [connection signal="mouse_entered" from="Apple Shelf" to="Apple Shelf" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Apple Shelf" to="Apple Shelf" method="_on_mouse_exited"]
+[connection signal="input_event" from="Avocados" to="Avocados" method="_on_input_event"]
+[connection signal="mouse_entered" from="Avocados" to="Avocados" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Avocados" to="Avocados" method="_on_mouse_exited"]
+[connection signal="input_event" from="Eggs" to="Eggs" method="_on_input_event"]
+[connection signal="mouse_entered" from="Eggs" to="Eggs" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Eggs" to="Eggs" method="_on_mouse_exited"]
+[connection signal="input_event" from="Carrots" to="Carrots" method="_on_input_event"]
+[connection signal="mouse_entered" from="Carrots" to="Carrots" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Carrots" to="Carrots" method="_on_mouse_exited"]
+[connection signal="input_event" from="Take Away" to="Take Away" method="_on_input_event"]
+[connection signal="mouse_entered" from="Take Away" to="Take Away" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Take Away" to="Take Away" method="_on_mouse_exited"]
+[connection signal="input_event" from="Jar of Pickles" to="Jar of Pickles" method="_on_input_event"]
+[connection signal="mouse_entered" from="Jar of Pickles" to="Jar of Pickles" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jar of Pickles" to="Jar of Pickles" method="_on_mouse_exited"]
+[connection signal="input_event" from="Soda Cans" to="Soda Cans" method="_on_input_event"]
+[connection signal="mouse_entered" from="Soda Cans" to="Soda Cans" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Soda Cans" to="Soda Cans" method="_on_mouse_exited"]
+[connection signal="input_event" from="Bottle of Ketchup" to="Bottle of Ketchup" method="_on_input_event"]
+[connection signal="mouse_entered" from="Bottle of Ketchup" to="Bottle of Ketchup" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bottle of Ketchup" to="Bottle of Ketchup" method="_on_mouse_exited"]
