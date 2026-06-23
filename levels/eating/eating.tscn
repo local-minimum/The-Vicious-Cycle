@@ -15,6 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="13_i6qjo"]
 [ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="14_t18ug"]
 [ext_resource type="PackedScene" uid="uid://d0oqx6or8yx02" path="res://ui/ui.tscn" id="15_lyxv6"]
+[ext_resource type="PackedScene" uid="uid://b2q7njpc61pf3" path="res://levels/eating/spinwheel/wheel.tscn" id="16_i4lgw"]
+[ext_resource type="Texture2D" uid="uid://m1xhmqph3buj" path="res://levels/eating/spinwheel/pointer.png" id="17_hlt2s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
+radius = 2.236068
 
 [node name="Node2D" type="Node2D" unique_id=128111494]
 
@@ -102,3 +107,23 @@ texture = ExtResource("14_t18ug")
 position = Vector2(578, 316)
 
 [node name="UI" parent="." unique_id=355930785 instance=ExtResource("15_lyxv6")]
+
+[node name="Exit Wheel" type="Node2D" parent="." unique_id=1159522396]
+position = Vector2(529, 389)
+
+[node name="Wheel" parent="Exit Wheel" unique_id=1120826367 instance=ExtResource("16_i4lgw")]
+
+[node name="Pointer" type="Sprite2D" parent="Exit Wheel" unique_id=520195001]
+position = Vector2(0, -228)
+texture = ExtResource("17_hlt2s")
+
+[node name="Pointer Area" type="Area2D" parent="Exit Wheel/Pointer" unique_id=70709045]
+position = Vector2(0, 18)
+collision_layer = 16
+collision_mask = 16
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit Wheel/Pointer/Pointer Area" unique_id=1078210312]
+shape = SubResource("CircleShape2D_kjfgv")
+
+[connection signal="area_entered" from="Exit Wheel/Pointer/Pointer Area" to="Exit Wheel/Wheel" method="_on_pointer_area_area_entered"]

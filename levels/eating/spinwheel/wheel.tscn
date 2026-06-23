@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b2q7njpc61pf3"]
+
+[ext_resource type="Script" uid="uid://bje8xj4vwyww1" path="res://levels/eating/spinwheel/wheel.gd" id="1_2tcu0"]
+[ext_resource type="PackedScene" uid="uid://dwqrou571a0qb" path="res://levels/eating/spinwheel/good_slice.tscn" id="1_446sv"]
+[ext_resource type="PackedScene" uid="uid://dcj3sokrud2u" path="res://levels/eating/spinwheel/bad_slice.tscn" id="2_3gfn1"]
+
+[node name="Wheel" type="Node2D" unique_id=1120826367]
+script = ExtResource("1_2tcu0")
+good_slice = ExtResource("1_446sv")
+bad_slice = ExtResource("2_3gfn1")

@@ -6,6 +6,8 @@ extends PanelContainer
 @export var calory_icon: TextureRect
 @export var happiness_icon: TextureRect
 @export var eat_btn: Button
+@export var happiness_textures: Array[Texture]
+@export var calories_textures: Array[Texture]
 
 func _enter_tree() -> void:
     if __SignalBus.on_start_eating.connect(_handle_start_eating) != OK:
@@ -37,7 +39,27 @@ func _handle_inspect_food(food: Food2D, servings: int, on_eat: Callable) -> void
     icon.texture = food.icon
     icon.visible = food.icon != null
     eat_btn.disabled = servings < 1
+    _set_happiness_icon(food.happiness)
+    _set_calories_icon(food.calories)
     visible = true
+
+func _set_happiness_icon(happiness: float) -> void:
+    if happiness < 0.0:
+        happiness_icon.texture = happiness_textures[0]
+    elif happiness < 5.0:
+        happiness_icon.texture = happiness_textures[1]
+    elif happiness == 5.0:
+        happiness_icon.texture = happiness_textures[2]
+    else:
+        happiness_icon.texture = happiness_textures[3]
+
+func _set_calories_icon(calories: float) -> void:
+    if calories < 10.0:
+        calory_icon.texture = calories_textures[0]
+    elif calories < 15.0:
+        calory_icon.texture = calories_textures[1]
+    else:
+        calory_icon.texture = calories_textures[2]
 
 func _no_callback() -> void:
     push_warning("Tried to eat nothing")

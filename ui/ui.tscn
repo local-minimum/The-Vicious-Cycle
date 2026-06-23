@@ -4,7 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://chkakvssut55y" path="res://ui/barBG.png" id="2_vkava"]
 [ext_resource type="Texture2D" uid="uid://c2sxoxmt275yf" path="res://ui/barFG.png" id="3_tf0e0"]
 [ext_resource type="Script" uid="uid://dlg6vt0u2fdul" path="res://ui/eating_option_panel.gd" id="4_vkava"]
+[ext_resource type="Texture2D" uid="uid://c7tx7sb66xvkd" path="res://ui/happiness_negative.png" id="5_pa1oa"]
 [ext_resource type="Texture2D" uid="uid://c48nxn7jlsqqk" path="res://levels/eating/carrot.png" id="5_tf0e0"]
+[ext_resource type="Texture2D" uid="uid://ebh4g2jbouwu" path="res://ui/happiness_neutral.png" id="6_ay4pc"]
+[ext_resource type="Texture2D" uid="uid://bag4ug1kh1jwf" path="res://ui/happiness_pos.png" id="6_obcwv"]
+[ext_resource type="Texture2D" uid="uid://bx47j4671sciy" path="res://ui/happiness_very_pos.png" id="8_bi8hs"]
+[ext_resource type="Texture2D" uid="uid://c3dehefxtcmcd" path="res://ui/stomach1.png" id="9_hrmpd"]
+[ext_resource type="Texture2D" uid="uid://dyxvgxm04tvw0" path="res://ui/stomach2.png" id="10_x7jpl"]
+[ext_resource type="Texture2D" uid="uid://calnm14lwr0hk" path="res://ui/stomach3.png" id="11_os0ka"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
 font_size = 29
@@ -54,9 +61,11 @@ script = ExtResource("4_vkava")
 title = NodePath("MarginContainer/Eating Option/Food Title")
 count = NodePath("MarginContainer/Eating Option/Count")
 icon = NodePath("MarginContainer/Eating Option/MarginContainer/Food Icon")
-calory_icon = NodePath("MarginContainer/Eating Option/HBoxContainer/Calories")
-happiness_icon = NodePath("MarginContainer/Eating Option/HBoxContainer/Happiness")
+calory_icon = NodePath("MarginContainer/Eating Option/HBoxContainer/CenterContainer2/Calories")
+happiness_icon = NodePath("MarginContainer/Eating Option/HBoxContainer/CenterContainer/Happiness")
 eat_btn = NodePath("MarginContainer/Eating Option/Eat Btn")
+happiness_textures = Array[Texture]([ExtResource("5_pa1oa"), ExtResource("6_ay4pc"), ExtResource("6_obcwv"), ExtResource("8_bi8hs")])
+calories_textures = Array[Texture]([ExtResource("9_hrmpd"), ExtResource("10_x7jpl"), ExtResource("11_os0ka")])
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Eating Option Panel" unique_id=2077980113]
 layout_mode = 2
@@ -98,13 +107,25 @@ stretch_mode = 5
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
-[node name="Calories" type="TextureRect" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/HBoxContainer" unique_id=1782403156]
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/HBoxContainer" unique_id=1132539280]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 
-[node name="Happiness" type="TextureRect" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/HBoxContainer" unique_id=194204367]
+[node name="Calories" type="TextureRect" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/HBoxContainer/CenterContainer2" unique_id=1782403156]
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("9_hrmpd")
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/HBoxContainer" unique_id=610887866]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Happiness" type="TextureRect" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option/HBoxContainer/CenterContainer" unique_id=194204367]
 layout_mode = 2
 size_flags_horizontal = 10
+texture = ExtResource("6_obcwv")
+stretch_mode = 5
 
 [node name="Eat Btn" type="Button" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=1386700209]
 visible = false
@@ -113,4 +134,5 @@ text = "EAT"
 
 [node name="Info" type="Label" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=541336388]
 layout_mode = 2
-text = "Left click to eat"
+text = "Left click to consume"
+horizontal_alignment = 1

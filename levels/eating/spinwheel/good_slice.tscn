@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dwqrou571a0qb"]
+
+[ext_resource type="Texture2D" uid="uid://f27af1k7gjm7" path="res://levels/eating/spinwheel/good_slice.png" id="1_fqvbu"]
+
+[node name="GoodSlice" type="Sprite2D" unique_id=885319222]
+texture = ExtResource("1_fqvbu")
+offset = Vector2(117, 58.5)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1764748721]
+collision_layer = 16
+collision_mask = 16
+input_pickable = false
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=406329054]
+polygon = PackedVector2Array(0, 0, 234, 0, 234, 18, 232, 36, 227, 58, 220, 81, 212, 100, 206, 112, 203, 118)
