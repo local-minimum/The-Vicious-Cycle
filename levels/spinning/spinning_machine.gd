@@ -25,6 +25,7 @@ func _handle_no_calories() -> void:
     for joint: Joint2D in collapse_joints:
         joint.queue_free()
     collapsed = true
+    GlobalStateVicious.crisis_counter += 1
 
 func _ready() -> void:
     _wheel_pos = wheel.position

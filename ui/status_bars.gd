@@ -5,8 +5,17 @@ class_name StatusBars
 @export var happiness_bar: TextureProgressBar
 
 var convert_calories_to_happiness: bool
-var calories: float = 70.0
-var happiness: float = 40.0
+var calories: float:
+    get():
+        return GlobalStateVicious.calories
+    set(value):
+        GlobalStateVicious.calories = clampf(value, 0.0, 100.0)
+
+var happiness: float:
+    get():
+        return GlobalStateVicious.happiness
+    set(value):
+        GlobalStateVicious.happiness = clampf(value, 0.0, 100.0)
 
 func _enter_tree() -> void:
     if __SignalBus.on_exercise.connect(_handle_exercise) != OK:
@@ -24,15 +33,15 @@ func _handle_start_exercies() -> void:
     convert_calories_to_happiness = true
 
 func _handle_exercise(amount: float) -> void:
-    calories = clampf(calories - amount * 0.002, 0.0, 100.0)
+    calories -= amount
     calories_bar.value = calories
     if calories == 0:
         __SignalBus.on_exercise_no_calories.emit()
 
 func _handle_eat(food: Food2D) -> void:
-    calories = clampf(calories + food.calories, 0.0, 100.0)
+    calories += food.calories
     calories_bar.value = calories
-    happiness = clampf(happiness + food.happiness, 0.0, 100.0)
+    happiness += food.happiness
     happiness_bar.value = happiness
 
 func _process(delta: float) -> void:
@@ -47,5 +56,5 @@ func _process(delta: float) -> void:
     else:
         cal_to_happiness = 0.25 * (calories - 45.0)
 
-    happiness = clampf(happiness - cal_to_happiness * delta * 0.1, 0.0, 100.0)
+    happiness -= cal_to_happiness * delta * 0.1
     happiness_bar.value = happiness
