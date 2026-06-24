@@ -38,6 +38,13 @@ func _on_mouse_entered() -> void:
         _focus_food = self
         __SignalBus.on_inspect_food.emit(food, pieces.size(), _handle_eat)
 
+func consume_one_food() -> void:
+    var p: Node2D = pieces.pop_front()
+    if p != null:
+        p.queue_free()
+    if pieces.is_empty():
+        visible = false
+
 func _handle_eat() -> void:
     _clicked_focus = false
     _focus_food = null
