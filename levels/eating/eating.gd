@@ -75,3 +75,5 @@ func _handle_complete_spin(success: bool, can_spin_more: bool) -> void:
     good_slices = maxi(good_slices - 1, 0)
     if !can_spin_more:
         _handle_hide_wheel()
+    else:
+        hide_wheel_btn.visible = true

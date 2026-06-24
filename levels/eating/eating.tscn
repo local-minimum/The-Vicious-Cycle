@@ -126,7 +126,7 @@ position = Vector2(0, -228)
 texture = ExtResource("17_hlt2s")
 
 [node name="Pointer Area" type="Area2D" parent="Exit Wheel/Pointer" unique_id=70709045]
-position = Vector2(0, 18)
+position = Vector2(1, 18)
 collision_layer = 16
 collision_mask = 16
 monitorable = false
