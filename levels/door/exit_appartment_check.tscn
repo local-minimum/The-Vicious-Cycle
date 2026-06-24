@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bfygjashl8l4x"]
+
+[ext_resource type="PackedScene" uid="uid://hacxla3kwpla" path="res://levels/door/door.tscn" id="1_n6gsg"]
+
+[node name="ExitAppartmentCheck" type="Node2D" unique_id=1712316775]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=908046246]
+
+[node name="Door" parent="." unique_id=301636524 instance=ExtResource("1_n6gsg")]
+position = Vector2(0, 16)

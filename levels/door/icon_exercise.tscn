@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cturbdyt0mr2q"]
+
+[ext_resource type="Texture2D" uid="uid://ca2okvh3qlsbk" path="res://levels/door/icon_exercise.png" id="1_l0cl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfgv"]
+size = Vector2(62, 96)
+
+[node name="IconExercise" type="Sprite2D" unique_id=1029113345]
+texture = ExtResource("1_l0cl4")
+
+[node name="IconArea" type="Area2D" parent="." unique_id=1761451556]
+collision_layer = 16
+collision_mask = 16
+input_pickable = false
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IconArea" unique_id=554016504]
+shape = SubResource("RectangleShape2D_kjfgv")

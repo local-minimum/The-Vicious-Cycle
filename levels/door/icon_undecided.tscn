@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://daopbvikmoo13"]
+
+[ext_resource type="Texture2D" uid="uid://b4f4rmgwc4kb8" path="res://levels/door/icon_undecided.png" id="1_1fckd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfgv"]
+size = Vector2(62, 96)
+
+[node name="IconUndecided" type="Sprite2D" unique_id=41922427]
+texture = ExtResource("1_1fckd")
+
+[node name="IconArea" type="Area2D" parent="." unique_id=1261377353]
+collision_layer = 16
+collision_mask = 16
+input_pickable = false
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IconArea" unique_id=205267410]
+shape = SubResource("RectangleShape2D_kjfgv")

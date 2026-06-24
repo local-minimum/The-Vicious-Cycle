@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d2dj8eb0rre0e"]
+
+[ext_resource type="Texture2D" uid="uid://uw5wfiiq06j5" path="res://levels/door/icon_exit.png" id="1_oeqsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjfgv"]
+size = Vector2(62, 96)
+
+[node name="IconExit" type="Sprite2D" unique_id=12234971]
+texture = ExtResource("1_oeqsp")
+
+[node name="IconArea" type="Area2D" parent="." unique_id=1901571511]
+collision_layer = 16
+collision_mask = 16
+input_pickable = false
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IconArea" unique_id=1841930396]
+shape = SubResource("RectangleShape2D_kjfgv")

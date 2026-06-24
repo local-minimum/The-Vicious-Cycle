@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://hacxla3kwpla"]
+
+[ext_resource type="Script" uid="uid://dppjal3kv8dkr" path="res://levels/door/door.gd" id="1_2e5mw"]
+[ext_resource type="Texture2D" uid="uid://cmyt2hn1hstmc" path="res://levels/door/bg_spinners.png" id="1_b8ksc"]
+[ext_resource type="PackedScene" uid="uid://cturbdyt0mr2q" path="res://levels/door/icon_exercise.tscn" id="2_b8ksc"]
+[ext_resource type="PackedScene" uid="uid://d2dj8eb0rre0e" path="res://levels/door/icon_exit.tscn" id="3_2e5mw"]
+[ext_resource type="PackedScene" uid="uid://daopbvikmoo13" path="res://levels/door/icon_undecided.tscn" id="4_43ykg"]
+[ext_resource type="Texture2D" uid="uid://b2r1jrdv56xi5" path="res://levels/door/slider.png" id="5_hasmf"]
+[ext_resource type="Texture2D" uid="uid://8tt7hlf3ge0q" path="res://levels/door/wall_and_frame.png" id="6_kv25o"]
+[ext_resource type="Texture2D" uid="uid://c87fnk6ph0m8o" path="res://levels/door/side.png" id="7_43ykg"]
+[ext_resource type="Texture2D" uid="uid://23r8tl081xbg" path="res://levels/door/door.png" id="7_md4ch"]
+[ext_resource type="Texture2D" uid="uid://d31l4g8hiirml" path="res://levels/door/handle.png" id="8_6em2w"]
+[ext_resource type="Texture2D" uid="uid://bq2cj0glomnh4" path="res://levels/door/lock.png" id="9_xah6j"]
+
+[node name="Door" type="Node2D" unique_id=301636524 node_paths=PackedStringArray("slider", "lock", "handle", "cylinders")]
+script = ExtResource("1_2e5mw")
+icon_exit = ExtResource("3_2e5mw")
+icon_exercise = ExtResource("2_b8ksc")
+icon_undecided = ExtResource("4_43ykg")
+slider = NodePath("Slider")
+lock = NodePath("Lock")
+handle = NodePath("Handle")
+handle_motion_duration = 0.4
+cylinders = [NodePath("Cylinders/Cylinder 1"), NodePath("Cylinders/Cylinder 2"), NodePath("Cylinders/Cylinder 3")]
+cylinder_left = Array[int]([0, 2, 0, 2, 1])
+cylinder_mid = Array[int]([2, 1, 0, 2, 1, 0, 2])
+cylinder_right = Array[int]([1, 2, 0, 2, 2, 0, 1, 2, 0])
+cylinder_spin_duration = 0.3
+cylinder_spin_length = Array[int]([11, 13, 17])
+
+[node name="BgSpinners" type="Sprite2D" parent="." unique_id=502901392]
+position = Vector2(6, -24)
+texture = ExtResource("1_b8ksc")
+
+[node name="Cylinders" type="Node2D" parent="." unique_id=394237981]
+position = Vector2(0, -192)
+
+[node name="Cylinder 1" type="Node2D" parent="Cylinders" unique_id=1008988603]
+position = Vector2(-58, -24)
+
+[node name="Cylinder 2" type="Node2D" parent="Cylinders" unique_id=1489094161]
+position = Vector2(7, -24)
+
+[node name="Cylinder 3" type="Node2D" parent="Cylinders" unique_id=1801489785]
+position = Vector2(72, -24)
+
+[node name="Slider" type="Sprite2D" parent="." unique_id=1623976098]
+position = Vector2(6, -24)
+texture = ExtResource("5_hasmf")
+
+[node name="Side" type="Sprite2D" parent="." unique_id=957910888]
+modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
+position = Vector2(-407, 0)
+texture = ExtResource("7_43ykg")
+
+[node name="Side2" type="Sprite2D" parent="." unique_id=1513647308]
+modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
+position = Vector2(405, 0)
+texture = ExtResource("7_43ykg")
+
+[node name="WallAndFrame" type="Sprite2D" parent="." unique_id=310933283]
+texture = ExtResource("6_kv25o")
+
+[node name="Door" type="Sprite2D" parent="." unique_id=801295515]
+position = Vector2(6, 35)
+texture = ExtResource("7_md4ch")
+
+[node name="Handle" type="Sprite2D" parent="." unique_id=2002041531]
+position = Vector2(104, 96)
+texture = ExtResource("8_6em2w")
+offset = Vector2(-14.495, 0)
+
+[node name="Lock" type="Sprite2D" parent="." unique_id=622600603]
+position = Vector2(106, 77)
+texture = ExtResource("9_xah6j")
