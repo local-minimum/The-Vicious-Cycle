@@ -1,4 +1,5 @@
 extends Node2D
+class_name Door
 
 enum Icon { EXIT, EXERCISE, UNDECIDED }
 enum Phase { LOCKED, SLIDING, READY, SPINNING, SPUN, DONE }
@@ -6,6 +7,11 @@ enum Phase { LOCKED, SLIDING, READY, SPINNING, SPUN, DONE }
 @export var icon_exit: PackedScene
 @export var icon_exercise: PackedScene
 @export var icon_undecided: PackedScene
+
+@export var replace_exit: Texture2D
+@export var replace_exercise: Texture2D
+@export var replace_undecided: Texture2D
+
 @export var icon_height: float = 96
 
 @export var slider: Node2D
@@ -21,6 +27,8 @@ enum Phase { LOCKED, SLIDING, READY, SPINNING, SPUN, DONE }
 @export var cylinder_right: Array[Icon]
 @export var cylinder_spin_duration: float = 0.5
 @export var cylinder_spin_length: Array[int] = [11, 12, 14]
+
+@export var crisis_mods: Array[SlotModification]
 
 #region SaveState
 var _cylinder_offsets: Array[int] = [0, 0, 0]
@@ -48,14 +56,29 @@ func build_cylinders() -> void:
         var icons: Array[Node2D] = []
         _cylinder_icons.append(icons)
         var cyl: Node2D = cylinders[idx]
+        var icon_idx: int = 0
         for icon: Icon in get_icons(idx):
             var scene: PackedScene = get_icon_scene(icon)
             var n: Node2D = scene.instantiate()
+            var mod: SlotModification = get_mod(idx, icon_idx)
+
+            if mod:
+                var replace_ico = mod.icon
+                var replace_sprite: Sprite2D = Sprite2D.new()
+                replace_sprite.texture = replace_ico
+                n.add_child(replace_sprite)
+
             cyl.add_child(n)
             icons.append(n)
+            icon_idx += 1
 
         set_cylinder(idx, 0.0)
 
+func get_mod(cyl_idx: int, icon_idx: int) -> SlotModification:
+    var mod_idx: int = crisis_mods.find_custom(func (mod: SlotModification) -> bool: return mod.cylinder == cyl_idx && mod.position == icon_idx)
+    if mod_idx < 0 || mod_idx >= GlobalStateVicious.crisis_counter:
+        return null
+    return crisis_mods[mod_idx]
 
 func get_icons(cyl_idx: int) -> Array[Icon]:
     if posmod(cyl_idx, 3) == 0:
@@ -112,7 +135,12 @@ func _spin() -> void:
         for idx in _cylinder_offsets.size():
             var icons = get_icons(idx)
             _cylinder_offsets[idx] = posmod(_cylinder_offsets[idx] + cylinder_spin_length[idx], _cylinder_icons[idx].size())
-            results.append(icons[posmod(2 - _cylinder_offsets[idx], icons.size())])
+            var icon_idx: int = posmod(2 - _cylinder_offsets[idx], icons.size())
+            var mod: SlotModification = get_mod(idx, icon_idx)
+            if mod:
+                results.append(mod.icon)
+            else:
+                results.append(icons[icon_idx])
 
         #print_debug(results.map(func (i: Icon) -> String: return Icon.find_key(i)))
         GlobalStateVicious.door_cylinder_offsets.clear()
