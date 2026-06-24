@@ -22,11 +22,18 @@ enum Phase { LOCKED, SLIDING, READY, SPINNING, SPUN, DONE }
 @export var cylinder_spin_duration: float = 0.5
 @export var cylinder_spin_length: Array[int] = [11, 12, 14]
 
+#region SaveState
 var _cylinder_offsets: Array[int] = [0, 0, 0]
+#endregion
 
 var _phase = Phase.LOCKED
 
 func _ready() -> void:
+    if GlobalStateVicious.door_cylinder_offsets.size() > 0:
+        _cylinder_offsets.clear()
+        for off: int in GlobalStateVicious.door_cylinder_offsets:
+            _cylinder_offsets.append(off)
+
     build_cylinders()
 
 var _cylinder_icons: Array[Array] = []
@@ -107,7 +114,10 @@ func _spin() -> void:
             _cylinder_offsets[idx] = posmod(_cylinder_offsets[idx] + cylinder_spin_length[idx], _cylinder_icons[idx].size())
             results.append(icons[posmod(2 - _cylinder_offsets[idx], icons.size())])
 
-        print_debug(results.map(func (i: Icon) -> String: return Icon.find_key(i)))
+        #print_debug(results.map(func (i: Icon) -> String: return Icon.find_key(i)))
+        GlobalStateVicious.door_cylinder_offsets.clear()
+        for off: int in  _cylinder_offsets:
+            GlobalStateVicious.door_cylinder_offsets.append(off)
 
         if results.has(Icon.EXERCISE):
             _phase = Phase.DONE
