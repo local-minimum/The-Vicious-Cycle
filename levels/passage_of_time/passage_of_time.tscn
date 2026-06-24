@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cuph6c5ycw0lk"]
+
+[ext_resource type="PackedScene" uid="uid://beeo0t34o4g4g" path="res://levels/passage_of_time/time_wheel.tscn" id="1_g4s0g"]
+
+[node name="Passage of Time" type="Node2D" unique_id=1788287259]
+
+[node name="Time Wheel" parent="." unique_id=281772505 instance=ExtResource("1_g4s0g")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=509752400]

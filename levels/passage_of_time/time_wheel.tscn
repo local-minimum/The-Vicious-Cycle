@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://beeo0t34o4g4g"]
+
+[ext_resource type="Texture2D" uid="uid://cmcgtrltotmyu" path="res://levels/passage_of_time/wheel.png" id="1_5w2mq"]
+[ext_resource type="Script" uid="uid://bvnxnsnfdc4pv" path="res://levels/passage_of_time/time_wheel.gd" id="1_6i40a"]
+[ext_resource type="Texture2D" uid="uid://hb3sfjuvxlhw" path="res://levels/passage_of_time/wheel_center.png" id="2_5wg6p"]
+[ext_resource type="Texture2D" uid="uid://crmvtmdidapt1" path="res://levels/passage_of_time/bed.png" id="2_a2i68"]
+[ext_resource type="Texture2D" uid="uid://dtve7b1qrp8ww" path="res://levels/passage_of_time/night_line.png" id="4_a2i68"]
+[ext_resource type="Texture2D" uid="uid://b5asxg6gg5n2q" path="res://levels/passage_of_time/night_exercise.png" id="5_jitiu"]
+
+[node name="Time Wheel" type="Node2D" unique_id=281772505 node_paths=PackedStringArray("_wheel", "_bed", "_short_sleep_bed", "_night_line", "_night_exercise")]
+script = ExtResource("1_6i40a")
+_wheel = NodePath("Wheel")
+_bed = NodePath("Wheel/Bed")
+_short_sleep_bed = NodePath("Wheel/ShortSleepBedTarget")
+_night_line = NodePath("Wheel/NightLine")
+_night_exercise = NodePath("Wheel/NightExercise")
+_checkpoint_time_angles = Array[float]([111.0, 86.0, 51.0, -12.0, -32.5, -39.0, -103.0, -121.0, -125.0, -171.0])
+_angle_rotation_duration = 0.05
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=1054595854]
+rotation = 1.9477874
+texture = ExtResource("1_5w2mq")
+
+[node name="NightLine" type="Sprite2D" parent="Wheel" unique_id=238201048]
+position = Vector2(1, 5)
+texture = ExtResource("4_a2i68")
+offset = Vector2(23.85, 104.67)
+
+[node name="Bed" type="Sprite2D" parent="Wheel" unique_id=837429466]
+position = Vector2(-5, 112)
+texture = ExtResource("2_a2i68")
+
+[node name="ShortSleepBedTarget" type="Sprite2D" parent="Wheel" unique_id=203851963]
+visible = false
+position = Vector2(-63.000008, 108.00001)
+rotation = 0.29399395
+texture = ExtResource("2_a2i68")
+
+[node name="NightExercise" type="Sprite2D" parent="Wheel" unique_id=1930503382]
+position = Vector2(87, 113)
+texture = ExtResource("5_jitiu")
+
+[node name="WheelCenter" type="Sprite2D" parent="." unique_id=1750583967]
+position = Vector2(0, -16)
+texture = ExtResource("2_5wg6p")
