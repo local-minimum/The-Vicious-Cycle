@@ -11,7 +11,7 @@ func _exit_tree() -> void:
 ## Activation & Editor Setup
 func _enable_plugin() -> void:
     print_debug("Enable Minimum Convenience")
-    add_free_cam_bindings()
+    #add_free_cam_bindings()
 
 func _create_key_events(keys: Array[Key]) -> Array[InputEvent]:
     var evts: Array[InputEvent]
