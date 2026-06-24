@@ -8,3 +8,4 @@
 script = ExtResource("1_2tcu0")
 good_slice = ExtResource("1_446sv")
 bad_slice = ExtResource("2_3gfn1")
+decay_spin = 0.6

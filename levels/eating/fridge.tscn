@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7bjig5vixkig"]
 
+[ext_resource type="Script" uid="uid://bpe2deqftvujb" path="res://levels/eating/fridge.gd" id="1_kg70y"]
 [ext_resource type="Texture2D" uid="uid://bsr6cbawhm758" path="res://levels/eating/fridge_bg.png" id="1_rxtpx"]
 [ext_resource type="Texture2D" uid="uid://bwaer1tcpcqd6" path="res://levels/eating/shelf1.png" id="2_m1ufg"]
 [ext_resource type="Texture2D" uid="uid://cj7cf6kafmo2p" path="res://levels/eating/shelf2.png" id="3_cltrd"]
@@ -119,7 +120,9 @@ metadata/_custom_type_script = "uid://dcdj2nmfgbh70"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrsi1"]
 size = Vector2(28.5, 53.625)
 
-[node name="Fridge" type="Node2D" unique_id=56752052]
+[node name="Fridge" type="Node2D" unique_id=56752052 node_paths=PackedStringArray("_stock")]
+script = ExtResource("1_kg70y")
+_stock = [NodePath("Apple Shelf"), NodePath("Avocados"), NodePath("Eggs"), NodePath("Carrots"), NodePath("Take Away"), NodePath("Jar of Pickles"), NodePath("Soda Cans"), NodePath("Bottle of Ketchup")]
 
 [node name="Fridge Back" type="Sprite2D" parent="." unique_id=1194173356]
 texture = ExtResource("1_rxtpx")

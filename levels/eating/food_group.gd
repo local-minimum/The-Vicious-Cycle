@@ -5,6 +5,10 @@ class_name FoodGroup
 @export var food: Food2D
 @export var click_to_eat: bool = true
 
+var exhausted: bool:
+    get():
+        return pieces.is_empty()
+
 static var _focus_food: FoodGroup
 var _clicked_focus: bool
 

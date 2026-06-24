@@ -1,4 +1,5 @@
 extends Node2D
+class_name SpinWheel
 
 @export var good_slice: PackedScene
 @export var bad_slice: PackedScene
@@ -11,26 +12,21 @@ const SLICE_DEGREES: float = 30.0
 
 var _good_areas: Array[Area2D]
 var _bad_areas: Array[Area2D]
-var _good_slice: Node2D
+var _good_slices: Array[Node2D]
 
-func _ready() -> void:
-    _create_wheel()
-    spin()
-    release_spin()
-
-func _create_wheel(good_slices: int = 2) -> void:
+func create_wheel(good_slices: int = 2) -> void:
     for child in get_children():
         child.queue_free()
 
     var pieces: Array[Node2D]
     var slices: int = roundi(360 / SLICE_DEGREES)
-    _good_slice = null
+    _good_slices.clear()
 
     for idx: int in slices:
         var is_good: bool = idx < good_slices
         var n: Node2D = good_slice.instantiate() if is_good else bad_slice.instantiate()
-        if idx == 0 && is_good:
-            _good_slice = n
+        if is_good:
+            _good_slices.append(n)
 
         var area: Area2D = n.find_children("", "Area2D")[0]
         if is_good:
@@ -65,6 +61,7 @@ func spin() -> void:
     if _phase != Phase.UNSPUN:
         return
 
+    __SignalBus.on_start_spin.emit()
     _phase = Phase.SPIN
     _held = true
     _angular_velocity = 0.0
@@ -106,11 +103,11 @@ func _handle_spin_end() -> void:
     _angular_velocity = 0.0
     _phase = Phase.STOPPED
     if over_good:
-        __SignalBus.on_complete_spin.emit(true)
-    elif _good_slice != null:
-
+        __SignalBus.on_complete_spin.emit(true, false)
+    elif !_good_slices.is_empty():
+        var good = _good_slices.pop_front()
         await get_tree().create_timer(0.5).timeout
-        var a = _good_slice.rotation
+        var a = good.rotation
 
         var n: Node2D = bad_slice.instantiate()
         add_child(n)
@@ -128,8 +125,11 @@ func _handle_spin_end() -> void:
         await get_tree().create_timer(0.1).timeout
 
         n.visible = true
-        _good_slice.queue_free()
+        good.queue_free()
 
-        __SignalBus.on_complete_spin.emit(false)
+        if !_good_slices.is_empty():
+            _phase = Phase.UNSPUN
+
+        __SignalBus.on_complete_spin.emit(false, _phase == Phase.UNSPUN)
     else:
-        __SignalBus.on_complete_spin.emit(false)
+        __SignalBus.on_complete_spin.emit(false, false)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djg7mutkmt6py"]
 
 [ext_resource type="PackedScene" uid="uid://b7bjig5vixkig" path="res://levels/eating/fridge.tscn" id="1_e73j3"]
+[ext_resource type="Script" uid="uid://dkhkm0rqkuv0u" path="res://levels/eating/eating.gd" id="1_t18ug"]
 [ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="2_14ci6"]
 [ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="3_pdp1v"]
 [ext_resource type="Texture2D" uid="uid://w1tbv4elpkbd" path="res://character/front_leg_lower.png" id="4_hiobt"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="12_hlt2s"]
 [ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="13_i6qjo"]
 [ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="14_t18ug"]
+[ext_resource type="Script" uid="uid://crpdcptrhwytd" path="res://levels/eating/exit_wheel.gd" id="15_i6qjo"]
 [ext_resource type="PackedScene" uid="uid://d0oqx6or8yx02" path="res://ui/ui.tscn" id="15_lyxv6"]
 [ext_resource type="PackedScene" uid="uid://b2q7njpc61pf3" path="res://levels/eating/spinwheel/wheel.tscn" id="16_i4lgw"]
 [ext_resource type="Texture2D" uid="uid://m1xhmqph3buj" path="res://levels/eating/spinwheel/pointer.png" id="17_hlt2s"]
@@ -21,7 +23,16 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 radius = 2.236068
 
-[node name="Node2D" type="Node2D" unique_id=128111494]
+[node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn")]
+script = ExtResource("1_t18ug")
+fridge = NodePath("Fridge")
+wheel_mouse_stopper = NodePath("SpinUI/Mouse Stopper")
+wheel_base = NodePath("Exit Wheel")
+wheel_moving_ui_base = NodePath("SpinUI/Wheel Label")
+wheel = NodePath("Exit Wheel/Wheel")
+show_wheel_btn = NodePath("SpinUI/MarginContainer/Show Wheel Btn")
+hide_wheel_btn = NodePath("SpinUI/MarginContainer/Eat More Btn")
+exit_fridge_btn = NodePath("SpinUI/MarginContainer/Leave Btn")
 
 [node name="Fridge" parent="." unique_id=56752052 instance=ExtResource("1_e73j3")]
 position = Vector2(595, 370)
@@ -103,13 +114,10 @@ position = Vector2(107.8811, 49.216827)
 rotation = -0.2940038
 texture = ExtResource("14_t18ug")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2070499535]
-position = Vector2(578, 316)
-
-[node name="UI" parent="." unique_id=355930785 instance=ExtResource("15_lyxv6")]
-
-[node name="Exit Wheel" type="Node2D" parent="." unique_id=1159522396]
-position = Vector2(529, 389)
+[node name="Exit Wheel" type="Node2D" parent="." unique_id=1159522396 node_paths=PackedStringArray("wheel")]
+position = Vector2(529, 353)
+script = ExtResource("15_i6qjo")
+wheel = NodePath("Wheel")
 
 [node name="Wheel" parent="Exit Wheel" unique_id=1120826367 instance=ExtResource("16_i4lgw")]
 
@@ -126,4 +134,67 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit Wheel/Pointer/Pointer Area" unique_id=1078210312]
 shape = SubResource("CircleShape2D_kjfgv")
 
+[node name="UI" parent="." unique_id=355930785 instance=ExtResource("15_lyxv6")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2070499535]
+position = Vector2(576, 325)
+
+[node name="SpinUI" type="CanvasLayer" parent="." unique_id=1557377903]
+
+[node name="Mouse Stopper" type="Control" parent="SpinUI" unique_id=913691789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wheel Label" type="Label" parent="SpinUI" unique_id=293736475]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -139.0
+offset_top = -25.0
+offset_right = 39.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Spin to leave the fridge"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SpinUI" unique_id=687508401]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Show Wheel Btn" type="Button" parent="SpinUI/MarginContainer" unique_id=1862110250]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Done Eating"
+
+[node name="Eat More Btn" type="Button" parent="SpinUI/MarginContainer" unique_id=647984293]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Eat Some More"
+
+[node name="Leave Btn" type="Button" parent="SpinUI/MarginContainer" unique_id=767440179]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Leave"
+
 [connection signal="area_entered" from="Exit Wheel/Pointer/Pointer Area" to="Exit Wheel/Wheel" method="_on_pointer_area_area_entered"]
+[connection signal="gui_input" from="SpinUI/Mouse Stopper" to="Exit Wheel" method="_on_mouse_stopper_gui_input"]
