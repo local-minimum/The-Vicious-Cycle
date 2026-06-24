@@ -94,6 +94,8 @@ func _process(_delta: float) -> void:
 func _spin() -> void:
     var elapsed: float = (Time.get_ticks_msec() - t0) * 0.001
     var offset: float = elapsed / cylinder_spin_duration
+    if offset < 1.0:
+        offset *= offset
     var done: bool = true
     for idx in _cylinder_icons.size():
         done = set_cylinder(idx, offset) && done
