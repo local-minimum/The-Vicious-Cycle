@@ -99,9 +99,22 @@ func _spin() -> void:
         done = set_cylinder(idx, offset) && done
 
     if done:
+        var results: Array[Icon] = []
         for idx in _cylinder_offsets.size():
+            var icons = get_icons(idx)
             _cylinder_offsets[idx] = posmod(_cylinder_offsets[idx] + cylinder_spin_length[idx], _cylinder_icons[idx].size())
-        _phase = Phase.READY
+            results.append(icons[posmod(2 - _cylinder_offsets[idx], icons.size())])
+
+        print_debug(results.map(func (i: Icon) -> String: return Icon.find_key(i)))
+
+        if results.has(Icon.EXERCISE):
+            _phase = Phase.DONE
+            push_warning("No transition to fail yet")
+        elif results.has(Icon.UNDECIDED):
+            _phase = Phase.READY
+        else:
+            _phase = Phase.DONE
+            push_warning("No transition to success yet")
 
 func set_cylinder(idx: int, offset: float) -> bool:
     var icons: Array[Node2D] = _cylinder_icons[idx]

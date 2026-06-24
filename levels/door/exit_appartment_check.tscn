@@ -8,3 +8,25 @@
 
 [node name="Door" parent="." unique_id=301636524 instance=ExtResource("1_n6gsg")]
 position = Vector2(0, 16)
+
+[node name="SlotMachine UI" type="CanvasLayer" parent="." unique_id=1293306533]
+
+[node name="MarginContainer" type="MarginContainer" parent="SlotMachine UI" unique_id=1949972097]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="SlotMachine UI/MarginContainer" unique_id=1322555614]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "If you think about exercise -
+then you must.
+
+You cannot doubt if you are
+to leave the flat."
