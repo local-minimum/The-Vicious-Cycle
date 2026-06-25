@@ -8,6 +8,7 @@ extends Node2D
 
 @export var collapse_joints: Array[Joint2D]
 var collapsed: bool
+var completed: bool
 
 const FRONT_ANGLE_MIN: float = deg_to_rad(42)
 const FRONT_ANGLE_MAX: float = deg_to_rad(241)
@@ -19,6 +20,18 @@ var _active_setting: int = 0
 func _enter_tree() -> void:
     if __SignalBus.on_exercise_no_calories.connect(_handle_no_calories) != OK:
         push_error("Failed to connect no calories")
+    if __SignalBus.on_exercise_start_step.connect(_handle_start_spin_step) != OK:
+        push_error("Failed to connect exercise start step")
+    if __SignalBus.on_exercise_complete.connect(_handle_spinning_complete) != OK:
+        push_error("Failed to connect spinning complete")
+
+func _handle_start_spin_step(_step: int, resistance: int) -> void:
+    _active_setting = resistance - 1
+
+func _handle_spinning_complete() -> void:
+    completed = true
+    await get_tree().create_timer(1.0).timeout
+    get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _handle_no_calories() -> void:
     for joint: Joint2D in collapse_joints:
@@ -29,6 +42,7 @@ func _handle_no_calories() -> void:
     get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _ready() -> void:
+    completed = false
     _wheel_pos = wheel.position
     __SignalBus.on_start_exercise.emit()
 
@@ -37,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
     _process_speed_decay(delta)
 
-    if !collapsed:
+    if !collapsed && !completed:
         if balance_force < 0:
             var a: float = fposmod(front_pedal_spoke.global_rotation, TAU)
             var force_direction: float = 1.0 if a >= FRONT_ANGLE_MIN && a <= FRONT_ANGLE_MAX else -1.0
