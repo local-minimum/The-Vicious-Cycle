@@ -33,9 +33,18 @@ func _ready() -> void:
     if GlobalStateVicious.time_checkpoint < _PT_WAKUP_FIRST_EXERCISE:
         _wheel.rotation_degrees = _first_day_angle_start
     else:
-        _wheel.rotation_degrees = _checkpoint_time_angles[posmod(GlobalStateVicious.time_checkpoint - 1, 10)]
-    _night_line.visible = false
-    _night_exercise.visible = false
+        _wheel.rotation_degrees = _checkpoint_time_angles[GlobalStateVicious.time_checkpoint]
+
+    if GlobalStateVicious.time_checkpoint == _PT_NIGHT_EXERCISE_OR_SLEEP:
+        _night_line.visible = true
+        _night_exercise.visible = true
+        _night_exercise.rotation = 0
+        _bed.position = _short_sleep_bed.position
+        _bed.rotation = _short_sleep_bed.rotation
+    else:
+        _night_line.visible = false
+        _night_exercise.visible = false
+
     await get_tree().create_timer(_wait_before_next_scene).timeout
     progress_time()
 
@@ -47,7 +56,8 @@ func progress_time() -> void:
 
     var target_a: float = _checkpoint_time_angles[next_time]
     var delta: float = target_a - _wheel.rotation_degrees
-    if delta < 180:
+
+    if delta < -180:
         delta += 360
     elif delta > 180:
         delta -= 360
@@ -83,7 +93,7 @@ func _handle_reach_checkpoint() -> void:
 
         _PT_NIGHT_EXERCISE_OR_SLEEP:
             if _short_sleep:
-                await get_tree().create_timer(_wait_before_next_scene).timeout
+                await get_tree().create_timer(_wait_before_next_scene * 5).timeout
                 get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
             else:
                 await get_tree().create_timer(_wait_before_next_scene).timeout

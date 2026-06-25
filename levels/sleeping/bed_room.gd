@@ -53,6 +53,7 @@ func _animate_going_to_sleep() -> void:
     person_sitting.visible = false
     person_sleeping.visible = true
     await get_tree().create_timer(1.5).timeout
+    GlobalStateVicious.time_checkpoint = _PT_SHORT_SLEEP
     get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _animate_waking_up() -> void:

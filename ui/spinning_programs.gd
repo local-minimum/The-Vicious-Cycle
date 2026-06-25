@@ -16,7 +16,6 @@ func _run_program() -> void:
         arrow.modulate.a = 0
     visible = true
     _run_step(0)
-    print_debug("Run steps")
 
 func _run_step(step: int) -> void:
     step_progress.value = 0
