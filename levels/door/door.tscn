@@ -146,12 +146,10 @@ position = Vector2(6, -24)
 texture = ExtResource("5_hasmf")
 
 [node name="Side" type="Sprite2D" parent="." unique_id=957910888]
-modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
 position = Vector2(-407, 0)
 texture = ExtResource("7_43ykg")
 
 [node name="Side2" type="Sprite2D" parent="." unique_id=1513647308]
-modulate = Color(0.6862745, 0.6862745, 0.6862745, 1)
 position = Vector2(405, 0)
 texture = ExtResource("7_43ykg")
 

@@ -9,6 +9,12 @@ func _enter_tree() -> void:
     visible = false
     if __SignalBus.on_start_exercise.connect(_run_program) != OK:
         push_error("Failed to connect start exercise")
+    if __SignalBus.on_exercise_no_calories.connect(_handle_no_cals) != OK:
+        push_error("Failed to connect no calories")
+
+var collapsed: bool = false
+func _handle_no_cals() -> void:
+    collapsed = true
 
 func _run_program() -> void:
     step_progress.value = 0
@@ -44,7 +50,7 @@ func _run_step(step: int) -> void:
         arrow.modulate.a = 0
         if step + 1 < step_arrows.size():
             _run_step(step + 1)
-        else:
+        elif !collapsed:
             __SignalBus.on_exercise_complete.emit()
         ,
     )

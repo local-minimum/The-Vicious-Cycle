@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="14_esy2h"]
 [ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="15_v3xhr"]
 [ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="16_80h62"]
+[ext_resource type="Texture2D" uid="uid://4jbohydo006a" path="res://levels/sleeping/motivation_carpe.png" id="17_i8rb1"]
 
 [node name="BedRoom" type="Node2D" unique_id=1936281499 node_paths=PackedStringArray("small_clock_2200", "small_clock_0145", "small_clock_0529", "small_clock_0530", "large_clock_colon", "large_clock_no_colon", "person_standing", "person_sitting", "person_sleeping")]
 script = ExtResource("1_d87cn")
@@ -247,3 +248,7 @@ scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("7_y6osd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=99744274]
+
+[node name="MotivationCarpe" type="Sprite2D" parent="." unique_id=950484865]
+position = Vector2(439, -36)
+texture = ExtResource("17_i8rb1")

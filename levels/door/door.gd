@@ -66,6 +66,11 @@ func build_cylinders() -> void:
                 var replace_ico: Texture2D = get_replacement_icons(mod.icon)
                 var replace_sprite: Sprite2D = Sprite2D.new()
                 replace_sprite.texture = replace_ico
+                replace_sprite.rotation_degrees = randf_range(-2.0, 2.0)
+                if replace_sprite.rotation_degrees < 0:
+                    replace_sprite.rotation_degrees -= 2.0
+                else:
+                    replace_sprite.rotation_degrees += 2.0
                 n.add_child(replace_sprite)
 
             cyl.add_child(n)

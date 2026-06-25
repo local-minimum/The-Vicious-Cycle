@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bfygjashl8l4x"]
 
 [ext_resource type="PackedScene" uid="uid://hacxla3kwpla" path="res://levels/door/door.tscn" id="1_n6gsg"]
+[ext_resource type="Texture2D" uid="uid://csn6itjfe11nu" path="res://levels/door/motivation_doubt.png" id="2_p71ee"]
+[ext_resource type="Texture2D" uid="uid://8lys768yt5ok" path="res://levels/door/motivation_exercise.png" id="3_eoqwi"]
 
 [node name="ExitAppartmentCheck" type="Node2D" unique_id=1712316775]
 
@@ -12,24 +14,11 @@ icon_height = 96.0
 slider_duration = 1.0
 slider_distance = 222.0
 
-[node name="SlotMachine UI" type="CanvasLayer" parent="." unique_id=1293306533]
+[node name="MotivationDoubt" type="Sprite2D" parent="." unique_id=260335372]
+position = Vector2(381, -136)
+texture = ExtResource("2_p71ee")
 
-[node name="MarginContainer" type="MarginContainer" parent="SlotMachine UI" unique_id=1949972097]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="Label" type="Label" parent="SlotMachine UI/MarginContainer" unique_id=1322555614]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "If you think about exercise -
-then you must.
-
-You cannot doubt if you are
-to leave the flat."
+[node name="MotivationExercise" type="Sprite2D" parent="." unique_id=615048744]
+position = Vector2(-394, -52)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_eoqwi")
