@@ -17,6 +17,10 @@ func is_empty() -> bool:
 
     return true
 
+func refuse_more_eating() -> void:
+    for group: FoodGroup in _stock:
+        group.refuse = true
+
 func _ready() -> void:
     for food_name: String in GlobalStateVicious.eaten_food:
         var count: int = GlobalStateVicious.eaten_food[food_name]

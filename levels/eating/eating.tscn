@@ -19,11 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://d0oqx6or8yx02" path="res://ui/ui.tscn" id="15_lyxv6"]
 [ext_resource type="PackedScene" uid="uid://b2q7njpc61pf3" path="res://levels/eating/spinwheel/wheel.tscn" id="16_i4lgw"]
 [ext_resource type="Texture2D" uid="uid://m1xhmqph3buj" path="res://levels/eating/spinwheel/pointer.png" id="17_hlt2s"]
+[ext_resource type="Texture2D" uid="uid://dbcsekliasden" path="res://levels/eating/text_better.png" id="20_k1yxi"]
+[ext_resource type="Texture2D" uid="uid://oe3o0qp7bfba" path="res://levels/eating/text_cannot.png" id="21_h6tou"]
+[ext_resource type="Texture2D" uid="uid://b3v36xepwpg51" path="res://levels/eating/text_healthy.png" id="22_olhua"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 radius = 2.236068
 
-[node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn")]
+[node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn", "refuse_food_happiness")]
 script = ExtResource("1_t18ug")
 fridge = NodePath("Fridge")
 wheel_mouse_stopper = NodePath("SpinUI/Mouse Stopper")
@@ -33,6 +36,22 @@ wheel = NodePath("Exit Wheel/Wheel")
 show_wheel_btn = NodePath("SpinUI/MarginContainer/Show Wheel Btn")
 hide_wheel_btn = NodePath("SpinUI/MarginContainer/Eat More Btn")
 exit_fridge_btn = NodePath("SpinUI/MarginContainer/Leave Btn")
+refuse_food_happiness = [NodePath("TextBetter"), NodePath("TextCannot"), NodePath("TextHealthy")]
+
+[node name="TextBetter" type="Sprite2D" parent="." unique_id=532014473]
+position = Vector2(2155, 337)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_k1yxi")
+
+[node name="TextCannot" type="Sprite2D" parent="." unique_id=1360639855]
+position = Vector2(-707.5, 134)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_h6tou")
+
+[node name="TextHealthy" type="Sprite2D" parent="." unique_id=2091394393]
+position = Vector2(-626.5, 528)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("22_olhua")
 
 [node name="Fridge" parent="." unique_id=56752052 instance=ExtResource("1_e73j3")]
 position = Vector2(595, 370)

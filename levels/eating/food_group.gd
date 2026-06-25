@@ -5,6 +5,8 @@ class_name FoodGroup
 @export var food: Food2D
 @export var click_to_eat: bool = true
 
+var refuse: bool
+
 var exhausted: bool:
     get():
         return pieces.is_empty()
@@ -13,6 +15,9 @@ static var _focus_food: FoodGroup
 var _clicked_focus: bool
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+    if refuse:
+        return
+
     if event is InputEventMouseButton:
         var m_event: InputEventMouseButton = event
         if m_event.is_echo() || !m_event.is_pressed() || m_event.button_index != MOUSE_BUTTON_LEFT:
@@ -31,6 +36,9 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
         __SignalBus.on_inspect_food.emit(food, pieces.size(), _handle_eat)
 
 func _on_mouse_entered() -> void:
+    if refuse:
+        return
+
     if _focus_food != self:
         _clicked_focus = false
 
@@ -48,9 +56,21 @@ func consume_one_food() -> void:
 func _handle_eat() -> void:
     _clicked_focus = false
     _focus_food = null
+
+    if GlobalStateVicious.calories == 100.0:
+        __SignalBus.on_refuse_food.emit(food, _SignalBus.RefuseFood.CALORIES)
+        return
+    elif food.happiness + GlobalStateVicious.happiness < 0:
+        __SignalBus.on_refuse_food.emit(food, _SignalBus.RefuseFood.HAPPINESS)
+        return
     var p: Node2D = pieces.pop_front()
     if p != null:
         p.queue_free()
+
+        if GlobalStateVicious.calories + food.calories > 100:
+            GlobalStateVicious.crisis_counter += 1
+            print_debug("Gained crisis by over-eating")
+
         __SignalBus.on_eat.emit(food)
     if pieces.is_empty():
         visible = false

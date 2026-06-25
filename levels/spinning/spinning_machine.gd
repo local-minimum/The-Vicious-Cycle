@@ -10,6 +10,8 @@ extends Node2D
 var collapsed: bool
 var completed: bool
 
+const _PT_NIGHT_EXERCISE_OR_SLEEP: int = 8
+
 const FRONT_ANGLE_MIN: float = deg_to_rad(42)
 const FRONT_ANGLE_MAX: float = deg_to_rad(241)
 const BACK_ANGLE_MIN: float = deg_to_rad(-137)
@@ -37,11 +39,16 @@ func _handle_no_calories() -> void:
     for joint: Joint2D in collapse_joints:
         joint.queue_free()
     collapsed = true
+    print_debug("Gained crisis by collapsing")
     GlobalStateVicious.crisis_counter += 1
     await get_tree().create_timer(5.0).timeout
     get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _ready() -> void:
+    if GlobalStateVicious.time_checkpoint == _PT_NIGHT_EXERCISE_OR_SLEEP:
+        GlobalStateVicious.crisis_counter += 1
+        print_debug("Gained crisis by late exercise")
+
     completed = false
     _wheel_pos = wheel.position
     __SignalBus.on_start_exercise.emit()

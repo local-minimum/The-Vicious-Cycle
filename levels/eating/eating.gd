@@ -8,6 +8,7 @@ extends Node2D
 @export var show_wheel_btn: Button
 @export var hide_wheel_btn: Button
 @export var exit_fridge_btn: Button
+@export var refuse_food_happiness: Array[Node2D]
 
 var good_slices: int = 0
 
@@ -21,6 +22,9 @@ func _enter_tree() -> void:
     if __SignalBus.on_start_spin.connect(_handle_start_spin) != OK:
         push_error("Failed to connect start spin")
 
+    if __SignalBus.on_refuse_food.connect(_handle_refuse_eat) != OK:
+        push_error("Failed to connect refuse food")
+
     if show_wheel_btn.pressed.connect(_handle_show_wheel) != OK:
         push_error("Failed to connect show wheel")
 
@@ -31,18 +35,56 @@ func _enter_tree() -> void:
         push_error("Failed to connect exit fridge")
 
 func _ready() -> void:
-    exit_fridge_btn.visible = fridge.is_empty()
+    exit_fridge_btn.visible = fridge.is_empty() || GlobalStateVicious.calories == 100.0
     show_wheel_btn.visible =  good_slices > 0
     _handle_hide_wheel()
+
+var _refuse_tween: Tween
+var _refusals: int = 0
+
+func _handle_refuse_eat(_food: Food2D, reason: _SignalBus.RefuseFood) -> void:
+    if reason == _SignalBus.RefuseFood.CALORIES:
+        exit_fridge_btn.visible = true
+        show_wheel_btn.visible = false
+        return
+
+    if _refuse_tween && _refuse_tween.is_running():
+        _refuse_tween.kill()
+        for n in refuse_food_happiness:
+            if n.position.x > 600:
+                n.position.x = 2200
+            else:
+                n.position.x = -1000
+
+    _refuse_tween = create_tween()
+    _refuse_tween.set_parallel()
+    for n in refuse_food_happiness:
+        _refuse_tween.tween_property(n, "position:x", -1000.0 if n.position.x > 0 else 2200.0, 6.0)
+
+    _refusals += 1
+    if _refusals >= 3:
+        GlobalStateVicious.crisis_counter += 1
+        print_debug("Gained crisis by refusing food")
+        show_wheel_btn.visible = false
+        exit_fridge_btn.visible = true
+        fridge.refuse_more_eating()
+        __SignalBus.on_stop_inspect_food.emit()
 
 func _handle_eat(food: Food2D) -> void:
     if fridge.is_empty():
         exit_fridge_btn.visible = true
         show_wheel_btn.visible = false
+        GlobalStateVicious.crisis_counter += 1
+        print_debug("Gained crisis by eating last food")
         return
 
     good_slices += ceili(food.calories / 5.0)
-    show_wheel_btn.visible = good_slices > 0
+
+    if GlobalStateVicious.calories == 100.0:
+        exit_fridge_btn.visible = true
+        show_wheel_btn.visible = false
+    else:
+        show_wheel_btn.visible = good_slices > 0
 
 func _handle_show_wheel() -> void:
     wheel_mouse_stopper.visible = true
@@ -51,6 +93,7 @@ func _handle_show_wheel() -> void:
     show_wheel_btn.visible = false
     hide_wheel_btn.visible = true
     wheel.create_wheel(good_slices)
+    __SignalBus.on_stop_inspect_food.emit()
 
 func _handle_hide_wheel() -> void:
     hide_wheel_btn.visible = false
