@@ -5,6 +5,8 @@ class_name _SignalBus
 signal on_start_exercise()
 signal on_exercise(amount: float)
 signal on_exercise_no_calories()
+signal on_exercise_start_step(step: int, resistance: int)
+signal on_exercise_complete()
 
 signal on_start_eating()
 signal on_inspect_food(food: Food2D, servings: int, on_eat: Callable)

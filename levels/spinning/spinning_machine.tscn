@@ -40,7 +40,6 @@ metadata/_custom_type_script = "uid://j7ssncj7u68p"
 script = ExtResource("2_8n1wk")
 angular_speed_decay_per_second = 0.05
 pedaling_force = 130.0
-wheel_velocity_factor = 0.15
 metadata/_custom_type_script = "uid://j7ssncj7u68p"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]

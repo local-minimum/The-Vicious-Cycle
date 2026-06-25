@@ -14,7 +14,7 @@ const FRONT_ANGLE_MAX: float = deg_to_rad(241)
 const BACK_ANGLE_MIN: float = deg_to_rad(-137)
 const BACK_ANGLE_MAX: float = deg_to_rad(62)
 var _wheel_pos: Vector2
-var _active_setting: int = 2
+var _active_setting: int = 0
 
 func _enter_tree() -> void:
     if __SignalBus.on_exercise_no_calories.connect(_handle_no_calories) != OK:

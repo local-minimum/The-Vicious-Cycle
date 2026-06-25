@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://c3dehefxtcmcd" path="res://ui/stomach1.png" id="9_hrmpd"]
 [ext_resource type="Texture2D" uid="uid://dyxvgxm04tvw0" path="res://ui/stomach2.png" id="10_x7jpl"]
 [ext_resource type="Texture2D" uid="uid://calnm14lwr0hk" path="res://ui/stomach3.png" id="11_os0ka"]
+[ext_resource type="Texture2D" uid="uid://lnk7s21h2b5j" path="res://levels/spinning/display.png" id="13_x7jpl"]
+[ext_resource type="Texture2D" uid="uid://cfwjv5s21uotq" path="res://levels/spinning/rprogress_frame.png" id="14_diyc5"]
+[ext_resource type="Script" uid="uid://be5du7he8youa" path="res://ui/spinning_programs.gd" id="14_ju45i"]
+[ext_resource type="Texture2D" uid="uid://bxs2bi6e2u5j0" path="res://levels/spinning/rprogress_filled.png" id="15_mf2ns"]
+[ext_resource type="Texture2D" uid="uid://cllkwqnrws3lv" path="res://levels/spinning/pointer.png" id="17_74toj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
 font_size = 29
@@ -136,3 +141,69 @@ text = "EAT"
 layout_mode = 2
 text = "Left click to consume"
 horizontal_alignment = 1
+
+[node name="Spinning Programs" type="TextureRect" parent="MarginContainer" unique_id=52752878 node_paths=PackedStringArray("step_progress", "step_arrows")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("13_x7jpl")
+stretch_mode = 2
+script = ExtResource("14_ju45i")
+step_progress = NodePath("Step Progress")
+step_arrows = [NodePath("HBoxContainer/TextureRect"), NodePath("HBoxContainer/TextureRect2"), NodePath("HBoxContainer/TextureRect3"), NodePath("HBoxContainer/TextureRect4"), NodePath("HBoxContainer/TextureRect5"), NodePath("HBoxContainer/TextureRect6"), NodePath("HBoxContainer/TextureRect7")]
+step_resistances = Array[int]([1, 3, 2, 3, 1, 3, 2])
+
+[node name="Step Progress" type="TextureProgressBar" parent="MarginContainer/Spinning Programs" unique_id=78309173]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.5
+offset_top = 40.0
+offset_right = 194.5
+offset_bottom = 83.0
+grow_horizontal = 2
+value = 70.0
+texture_over = ExtResource("14_diyc5")
+texture_progress = ExtResource("15_mf2ns")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Spinning Programs" unique_id=1872089902]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -63.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=1386591906]
+layout_mode = 2
+texture = ExtResource("17_74toj")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=514442057]
+layout_mode = 2
+texture = ExtResource("17_74toj")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=1534722824]
+layout_mode = 2
+texture = ExtResource("17_74toj")
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=2021821932]
+layout_mode = 2
+texture = ExtResource("17_74toj")
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=174300702]
+layout_mode = 2
+texture = ExtResource("17_74toj")
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=397930761]
+layout_mode = 2
+texture = ExtResource("17_74toj")
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/Spinning Programs/HBoxContainer" unique_id=1867547333]
+layout_mode = 2
+texture = ExtResource("17_74toj")
