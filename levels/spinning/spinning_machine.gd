@@ -4,9 +4,7 @@ extends Node2D
 @export var back_pedal_spoke: Node2D
 @export var wheel: RigidBody2D
 
-@export var angular_speed_decay_per_second: float = 0.1
-@export var pedaling_force: float = 2.0
-@export var wheel_velocity_factor: float = 0.4
+@export var spinning_settings: Array[SpinningSetting]
 
 @export var collapse_joints: Array[Joint2D]
 var collapsed: bool
@@ -16,6 +14,7 @@ const FRONT_ANGLE_MAX: float = deg_to_rad(241)
 const BACK_ANGLE_MIN: float = deg_to_rad(-137)
 const BACK_ANGLE_MAX: float = deg_to_rad(62)
 var _wheel_pos: Vector2
+var _active_setting: int = 2
 
 func _enter_tree() -> void:
     if __SignalBus.on_exercise_no_calories.connect(_handle_no_calories) != OK:
@@ -52,12 +51,13 @@ func _physics_process(delta: float) -> void:
 
 
 func _process_speed_decay(delta: float) -> void:
-    front_pedal_spoke.angular_velocity *= (1.0 - delta * angular_speed_decay_per_second)
+    front_pedal_spoke.angular_velocity *= (1.0 - delta * spinning_settings[_active_setting].angular_speed_decay_per_second)
 
 func _apply_force(delta: float, direction: float) -> void:
-    var effort = direction * delta * pedaling_force
+    var setting: SpinningSetting = spinning_settings[_active_setting]
+    var effort = direction * delta * setting.pedaling_force
     front_pedal_spoke.angular_velocity += effort
     if front_pedal_spoke.angular_velocity > 0:
-        wheel.angular_velocity = wheel_velocity_factor * front_pedal_spoke.angular_velocity / angular_speed_decay_per_second
+        wheel.angular_velocity = setting.wheel_velocity_factor * front_pedal_spoke.angular_velocity / setting.angular_speed_decay_per_second
     if effort > 0:
-        __SignalBus.on_exercise.emit(effort / angular_speed_decay_per_second)
+        __SignalBus.on_exercise.emit(effort / setting.angular_speed_decay_per_second)

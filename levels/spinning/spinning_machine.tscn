@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://x84wh1oe13d6"]
 
 [ext_resource type="Texture2D" uid="uid://b4hdvekgm7jtd" path="res://levels/spinning/machine_frame.png" id="1_uh0ve"]
+[ext_resource type="Script" uid="uid://j7ssncj7u68p" path="res://levels/spinning/spinning_setting.gd" id="2_8n1wk"]
 [ext_resource type="Script" uid="uid://b40k6lq8ppqpu" path="res://levels/spinning/spinning_machine.gd" id="2_dgv2w"]
 [ext_resource type="Texture2D" uid="uid://coyg6gsf7lwfu" path="res://character/back_arm_upper.png" id="2_ea5yj"]
 [ext_resource type="Texture2D" uid="uid://c1y1flu6dgyq1" path="res://levels/spinning/back_pedal_spoke.png" id="2_ikjcq"]
@@ -24,6 +25,24 @@
 [ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="15_ea5yj"]
 [ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="16_78nwm"]
 
+[sub_resource type="Resource" id="Resource_v5qya"]
+script = ExtResource("2_8n1wk")
+metadata/_custom_type_script = "uid://j7ssncj7u68p"
+
+[sub_resource type="Resource" id="Resource_8n1wk"]
+script = ExtResource("2_8n1wk")
+angular_speed_decay_per_second = 0.25
+pedaling_force = 65.0
+wheel_velocity_factor = 0.35
+metadata/_custom_type_script = "uid://j7ssncj7u68p"
+
+[sub_resource type="Resource" id="Resource_1nolk"]
+script = ExtResource("2_8n1wk")
+angular_speed_decay_per_second = 0.05
+pedaling_force = 130.0
+wheel_velocity_factor = 0.15
+metadata/_custom_type_script = "uid://j7ssncj7u68p"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 
 [node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel", "collapse_joints")]
@@ -31,8 +50,7 @@ script = ExtResource("2_dgv2w")
 front_pedal_spoke = NodePath("Machine FG/FrontPedalSpokeBody")
 back_pedal_spoke = NodePath("Machine Mid G/BackPedalSpokeBody")
 wheel = NodePath("Machine Mid G/WheelBody")
-pedaling_force = 70.0
-wheel_velocity_factor = 0.2
+spinning_settings = Array[ExtResource("2_8n1wk")]([SubResource("Resource_v5qya"), SubResource("Resource_8n1wk"), SubResource("Resource_1nolk")])
 collapse_joints = [NodePath("Human BG/Back Handle"), NodePath("Human BG/Back Handle2"), NodePath("Human BG/Back Pedal"), NodePath("Human BG/Back Pedal2"), NodePath("Human FG/Pedal"), NodePath("Human FG/Pedal2"), NodePath("Human FG/Handle"), NodePath("Human FG/Handle2"), NodePath("Human FG/Ass Slider"), NodePath("Human FG/Posture"), NodePath("Human FG/Head Posture")]
 
 [node name="Human BG" type="Node2D" parent="." unique_id=737449664]

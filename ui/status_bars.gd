@@ -33,7 +33,7 @@ func _handle_start_exercies() -> void:
     convert_calories_to_happiness = true
 
 func _handle_exercise(amount: float) -> void:
-    calories -= amount
+    calories -= amount * 0.001
     calories_bar.value = calories
     if calories == 0:
         __SignalBus.on_exercise_no_calories.emit()
