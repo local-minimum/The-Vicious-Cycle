@@ -17,6 +17,8 @@ extends Node2D
 @export var _angle_rotation_duration: float = 0.1
 @export var _wait_before_next_scene: float = 1.0
 
+@export var _calories_drop_per_day_step: float = 10.0
+
 
 const _PT_WAKUP_FIRST_EXERCISE: int = 0
 const _PT_BREAKFAST: int = 1
@@ -46,10 +48,14 @@ func _ready() -> void:
         _night_exercise.visible = false
 
     await get_tree().create_timer(_wait_before_next_scene).timeout
+
     progress_time()
 
 func progress_time() -> void:
     var next_time: int = posmod(GlobalStateVicious.time_checkpoint + 1, 10)
+
+    if ![_PT_BREAKFAST, _PT_LUNCH, _PT_SUPPER].has(GlobalStateVicious.time_checkpoint):
+        GlobalStateVicious.calories = maxf(0, GlobalStateVicious.calories - _calories_drop_per_day_step)
 
     if next_time == 0:
         GlobalStateVicious.day += 1

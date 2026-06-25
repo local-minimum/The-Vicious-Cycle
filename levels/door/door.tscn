@@ -33,6 +33,75 @@ cylinder = 1
 position = 6
 metadata/_custom_type_script = "uid://b2qcce36plhc3"
 
+[sub_resource type="Resource" id="Resource_jitiu"]
+script = ExtResource("5_v3qvo")
+cylinder = 2
+position = 4
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_3qago"]
+script = ExtResource("5_v3qvo")
+cylinder = 1
+position = 1
+icon = 2
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_n8jlp"]
+script = ExtResource("5_v3qvo")
+cylinder = 2
+position = 1
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_e83ii"]
+script = ExtResource("5_v3qvo")
+cylinder = 1
+position = 4
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_g1b8l"]
+script = ExtResource("5_v3qvo")
+cylinder = 1
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_y2w7o"]
+script = ExtResource("5_v3qvo")
+cylinder = 2
+position = 7
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_i0bcp"]
+script = ExtResource("5_v3qvo")
+position = 1
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_md4ch"]
+script = ExtResource("5_v3qvo")
+cylinder = 1
+position = 3
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_6em2w"]
+script = ExtResource("5_v3qvo")
+cylinder = 2
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_xah6j"]
+script = ExtResource("5_v3qvo")
+cylinder = 2
+position = 3
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_exx0c"]
+script = ExtResource("5_v3qvo")
+position = 4
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
+[sub_resource type="Resource" id="Resource_chhki"]
+script = ExtResource("5_v3qvo")
+cylinder = 1
+position = 1
+metadata/_custom_type_script = "uid://b2qcce36plhc3"
+
 [node name="Door" type="Node2D" unique_id=301636524 node_paths=PackedStringArray("slider", "lock", "handle", "cylinders")]
 script = ExtResource("1_2e5mw")
 icon_exit = ExtResource("3_2e5mw")
@@ -54,7 +123,7 @@ cylinder_mid = Array[int]([2, 1, 0, 2, 1, 0, 2])
 cylinder_right = Array[int]([1, 2, 0, 2, 2, 0, 1, 2, 0])
 cylinder_spin_duration = 0.3
 cylinder_spin_length = Array[int]([11, 13, 17])
-crisis_mods = Array[ExtResource("5_v3qvo")]([SubResource("Resource_43ykg"), SubResource("Resource_v3qvo"), SubResource("Resource_hasmf")])
+crisis_mods = Array[ExtResource("5_v3qvo")]([SubResource("Resource_43ykg"), SubResource("Resource_v3qvo"), SubResource("Resource_hasmf"), SubResource("Resource_jitiu"), SubResource("Resource_3qago"), SubResource("Resource_n8jlp"), SubResource("Resource_e83ii"), SubResource("Resource_g1b8l"), SubResource("Resource_y2w7o"), SubResource("Resource_i0bcp"), SubResource("Resource_md4ch"), SubResource("Resource_6em2w"), SubResource("Resource_xah6j"), SubResource("Resource_exx0c"), SubResource("Resource_chhki")])
 
 [node name="BgSpinners" type="Sprite2D" parent="." unique_id=502901392]
 position = Vector2(6, -24)
