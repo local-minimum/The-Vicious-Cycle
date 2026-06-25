@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://ckpaobcup55jo"]
+
+[ext_resource type="Texture2D" uid="uid://4auichsiqamg" path="res://levels/sleeping/bedroom.png" id="1_4dqq6"]
+[ext_resource type="Script" uid="uid://3krgj0tfi4ke" path="res://levels/sleeping/bed_room.gd" id="1_d87cn"]
+[ext_resource type="Texture2D" uid="uid://4c0ygh8ohd4e" path="res://levels/sleeping/alarm_clock_small_2200.png" id="2_y6osd"]
+[ext_resource type="Texture2D" uid="uid://cbrv6xsvo62hu" path="res://levels/sleeping/alarm_clock_small_0529.png" id="3_d87cn"]
+[ext_resource type="Texture2D" uid="uid://c1vklk5xrtd0e" path="res://levels/sleeping/alarm_clock_small_0530.png" id="4_mpjq2"]
+[ext_resource type="Texture2D" uid="uid://nxk3hgxngsxa" path="res://levels/sleeping/alarm_clock_small_0145.png" id="5_i0n3l"]
+[ext_resource type="Texture2D" uid="uid://c37rdqebryold" path="res://levels/sleeping/alarm_clock_big.png" id="6_6df56"]
+[ext_resource type="Texture2D" uid="uid://c71rxbk8vo0nh" path="res://levels/sleeping/alarm_clock_big_no_colon.png" id="7_y6osd"]
+[ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="9_g7ktq"]
+[ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="10_i8rb1"]
+[ext_resource type="Texture2D" uid="uid://c43g3y7j4ded2" path="res://character/back_leg_lower.png" id="11_6o3y2"]
+[ext_resource type="Texture2D" uid="uid://cli3knxnwompc" path="res://character/back_foot.png" id="12_0ovry"]
+[ext_resource type="Texture2D" uid="uid://chf433g5l735s" path="res://character/torso.png" id="13_hqqo5"]
+[ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="14_esy2h"]
+[ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="15_v3xhr"]
+[ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="16_80h62"]
+
+[node name="BedRoom" type="Node2D" unique_id=1936281499 node_paths=PackedStringArray("small_clock_2200", "small_clock_0145", "small_clock_0529", "small_clock_0530", "large_clock_colon", "large_clock_no_colon", "person_standing", "person_sitting", "person_sleeping")]
+script = ExtResource("1_d87cn")
+small_clock_2200 = NodePath("AlarmClockSmall2200")
+small_clock_0145 = NodePath("AlarmClockSmall0145")
+small_clock_0529 = NodePath("AlarmClockSmall0529")
+small_clock_0530 = NodePath("AlarmClockSmall0530")
+large_clock_colon = NodePath("AlarmClockBig")
+large_clock_no_colon = NodePath("AlarmClockBigNoColon")
+person_standing = NodePath("Standing")
+person_sitting = NodePath("Sitting")
+person_sleeping = NodePath("Sleeping")
+
+[node name="Bedroom" type="Sprite2D" parent="." unique_id=640677745]
+texture = ExtResource("1_4dqq6")
+
+[node name="AlarmClockSmall2200" type="Sprite2D" parent="." unique_id=1725486705]
+visible = false
+position = Vector2(-161, 59)
+texture = ExtResource("2_y6osd")
+
+[node name="AlarmClockSmall0529" type="Sprite2D" parent="." unique_id=1712364102]
+visible = false
+position = Vector2(-161, 59)
+texture = ExtResource("3_d87cn")
+
+[node name="AlarmClockSmall0530" type="Sprite2D" parent="." unique_id=1995842952]
+visible = false
+position = Vector2(-161, 59)
+texture = ExtResource("4_mpjq2")
+
+[node name="AlarmClockSmall0145" type="Sprite2D" parent="." unique_id=1583589525]
+visible = false
+position = Vector2(-160, 59)
+texture = ExtResource("5_i0n3l")
+
+[node name="AlarmClockBig" type="Sprite2D" parent="." unique_id=998671022]
+visible = false
+position = Vector2(3, 23)
+texture = ExtResource("6_6df56")
+
+[node name="AlarmClockBigNoColon" type="Sprite2D" parent="." unique_id=1577401420]
+visible = false
+position = Vector2(7, 21)
+texture = ExtResource("7_y6osd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=99744274]
+
+[node name="Standing" type="Node2D" parent="." unique_id=1391220897]
+position = Vector2(28.999998, -58.999996)
+scale = Vector2(0.8, 0.8)
+
+[node name="Head" type="Sprite2D" parent="Standing" unique_id=1308739912]
+position = Vector2(-430, -148)
+texture = ExtResource("9_g7ktq")
+
+[node name="Leg" type="Node2D" parent="Standing" unique_id=1792875036]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Standing/Leg" unique_id=669205173]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("10_i8rb1")
+
+[node name="BackLegLower" type="Sprite2D" parent="Standing/Leg" unique_id=1455884220]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("11_6o3y2")
+
+[node name="BackFoot" type="Sprite2D" parent="Standing/Leg" unique_id=241135703]
+position = Vector2(-434, 391)
+texture = ExtResource("12_0ovry")
+
+[node name="Torso" type="Sprite2D" parent="Standing" unique_id=2093560723]
+position = Vector2(-433, -12)
+texture = ExtResource("13_hqqo5")
+
+[node name="Leg2" type="Node2D" parent="Standing" unique_id=1032225319]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Standing/Leg2" unique_id=300267434]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("10_i8rb1")
+
+[node name="BackLegLower" type="Sprite2D" parent="Standing/Leg2" unique_id=1670993441]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("11_6o3y2")
+
+[node name="BackFoot" type="Sprite2D" parent="Standing/Leg2" unique_id=1623726491]
+position = Vector2(-413, 389)
+texture = ExtResource("12_0ovry")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Standing" unique_id=1305066402]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("14_esy2h")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Standing" unique_id=1251556139]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("15_v3xhr")
+
+[node name="FrontHand" type="Sprite2D" parent="Standing" unique_id=15723047]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("16_80h62")
+
+[node name="Sitting" type="Node2D" parent="." unique_id=1782715167]
+position = Vector2(-196, -9)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Head" type="Sprite2D" parent="Sitting" unique_id=2102645276]
+position = Vector2(-430, -148)
+texture = ExtResource("9_g7ktq")
+
+[node name="Leg" type="Node2D" parent="Sitting" unique_id=1204746041]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Sitting/Leg" unique_id=633474628]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("10_i8rb1")
+
+[node name="BackLegLower" type="Sprite2D" parent="Sitting/Leg" unique_id=143857926]
+position = Vector2(-319.49997, 260.19135)
+rotation = -0.15419236
+texture = ExtResource("11_6o3y2")
+
+[node name="BackFoot" type="Sprite2D" parent="Sitting/Leg" unique_id=1140161743]
+position = Vector2(-294.5, 344.19135)
+texture = ExtResource("12_0ovry")
+
+[node name="Torso" type="Sprite2D" parent="Sitting" unique_id=1087350117]
+position = Vector2(-433, -12)
+texture = ExtResource("13_hqqo5")
+
+[node name="Leg2" type="Node2D" parent="Sitting" unique_id=1291580523]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Sitting/Leg2" unique_id=859262271]
+position = Vector2(-402, 129.99998)
+rotation = 0.28173184
+texture = ExtResource("10_i8rb1")
+
+[node name="BackLegLower" type="Sprite2D" parent="Sitting/Leg2" unique_id=595510578]
+position = Vector2(-327.5, 211.55573)
+rotation = 0.113554694
+texture = ExtResource("11_6o3y2")
+
+[node name="BackFoot" type="Sprite2D" parent="Sitting/Leg2" unique_id=1878398816]
+position = Vector2(-322.5, 297.55573)
+texture = ExtResource("12_0ovry")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Sitting" unique_id=1781270528]
+position = Vector2(-468, 56.000008)
+rotation = 0.22171073
+texture = ExtResource("14_esy2h")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Sitting" unique_id=1302730048]
+position = Vector2(-456.00003, -44)
+rotation = 0.06973949
+texture = ExtResource("15_v3xhr")
+
+[node name="FrontHand" type="Sprite2D" parent="Sitting" unique_id=1521580701]
+position = Vector2(-464, 126)
+rotation = 0.28640512
+texture = ExtResource("16_80h62")
+
+[node name="Sleeping" type="Node2D" parent="." unique_id=1256468079]
+position = Vector2(-12.000001, -125)
+rotation = -1.3756988
+scale = Vector2(0.35, 0.35)
+
+[node name="Head" type="Sprite2D" parent="Sleeping" unique_id=267572383]
+position = Vector2(-405.37015, -135.4115)
+rotation = 0.62793696
+texture = ExtResource("9_g7ktq")
+
+[node name="Leg2" type="Node2D" parent="Sleeping" unique_id=1714575951]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="BackLegUpper" type="Sprite2D" parent="Sleeping/Leg2" unique_id=340438664]
+position = Vector2(-440.29584, 188.9412)
+rotation = 1.5650977
+texture = ExtResource("10_i8rb1")
+
+[node name="BackLegLower" type="Sprite2D" parent="Sleeping/Leg2" unique_id=1052433176]
+position = Vector2(-440.7699, 354.85168)
+rotation = 0.113554694
+texture = ExtResource("11_6o3y2")
+
+[node name="BackFoot" type="Sprite2D" parent="Sleeping/Leg2" unique_id=1607544830]
+position = Vector2(-436.40042, 444.46216)
+rotation = 0.4291371
+texture = ExtResource("12_0ovry")
+
+[node name="Leg" type="Node2D" parent="Sleeping" unique_id=30684092]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Sleeping/Leg" unique_id=843085142]
+position = Vector2(-469.9869, 186.07127)
+rotation = 1.5822965
+texture = ExtResource("10_i8rb1")
+
+[node name="BackLegLower" type="Sprite2D" parent="Sleeping/Leg" unique_id=699927986]
+position = Vector2(-455.74213, 351.64557)
+rotation = -0.15419236
+texture = ExtResource("11_6o3y2")
+
+[node name="BackFoot" type="Sprite2D" parent="Sleeping/Leg" unique_id=1981615365]
+position = Vector2(-430.74216, 435.64557)
+texture = ExtResource("12_0ovry")
+
+[node name="Torso" type="Sprite2D" parent="Sleeping" unique_id=311809696]
+position = Vector2(-433, -12)
+texture = ExtResource("13_hqqo5")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Sleeping" unique_id=1980084711]
+position = Vector2(-494.68796, 52.830074)
+rotation = 0.22171073
+texture = ExtResource("14_esy2h")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Sleeping" unique_id=167660571]
+position = Vector2(-466.64835, -47.58002)
+rotation = 0.40090665
+texture = ExtResource("15_v3xhr")
+
+[node name="FrontHand" type="Sprite2D" parent="Sleeping" unique_id=920260846]
+position = Vector2(-490.68796, 122.83006)
+rotation = 0.28640512
+texture = ExtResource("16_80h62")

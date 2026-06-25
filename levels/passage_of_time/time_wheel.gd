@@ -87,11 +87,11 @@ func _handle_reach_checkpoint() -> void:
                 get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
             else:
                 await get_tree().create_timer(_wait_before_next_scene).timeout
-                push_warning("Don't know how to load sleep")
+                get_tree().change_scene_to_file(&"res://levels/sleeping/bed_room.tscn")
 
         _PT_SHORT_SLEEP:
             await get_tree().create_timer(_wait_before_next_scene).timeout
-            push_warning("Don't know how to load sleep")
+            get_tree().change_scene_to_file(&"res://levels/sleeping/bed_room.tscn")
 
         _PT_DOOR_CHECK:
             await get_tree().create_timer(_wait_before_next_scene).timeout
@@ -99,7 +99,7 @@ func _handle_reach_checkpoint() -> void:
 
         _PT_WAKUP_FIRST_EXERCISE:
             await get_tree().create_timer(_wait_before_next_scene).timeout
-            push_warning("Don't know how to load wakeup")
+            get_tree().change_scene_to_file(&"res://levels/sleeping/bed_room.tscn")
 
 func tween_to_short_sleep() -> void:
     _night_line.rotation_degrees = _night_line_start_angle
