@@ -53,6 +53,8 @@ func progress_time() -> void:
 
     if next_time == 0:
         GlobalStateVicious.day += 1
+        print_debug("Gain one crisis from new day")
+        GlobalStateVicious.crisis_counter += 1
 
     var target_a: float = _checkpoint_time_angles[next_time]
     var delta: float = target_a - _wheel.rotation_degrees

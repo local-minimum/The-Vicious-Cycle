@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0oqx6or8yx02"]
 
 [ext_resource type="Script" uid="uid://djjsoha3o4wd7" path="res://ui/status_bars.gd" id="1_wl5ax"]
+[ext_resource type="Texture2D" uid="uid://cjfmhvgplyom" path="res://ui/stomach.png" id="2_74toj"]
 [ext_resource type="Texture2D" uid="uid://chkakvssut55y" path="res://ui/barBG.png" id="2_vkava"]
 [ext_resource type="Texture2D" uid="uid://c2sxoxmt275yf" path="res://ui/barFG.png" id="3_tf0e0"]
 [ext_resource type="Script" uid="uid://dlg6vt0u2fdul" path="res://ui/eating_option_panel.gd" id="4_vkava"]
@@ -41,17 +42,33 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 script = ExtResource("1_wl5ax")
-calories_bar = NodePath("Calories Bar")
-happiness_bar = NodePath("Happiness Bar")
+calories_bar = NodePath("HBoxContainer/Calories Bar")
+happiness_bar = NodePath("HBoxContainer2/Happiness Bar")
 
-[node name="Calories Bar" type="TextureProgressBar" parent="MarginContainer/StatusBars" unique_id=536910103]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/StatusBars" unique_id=968008009]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/StatusBars/HBoxContainer" unique_id=1301120598]
+layout_mode = 2
+texture = ExtResource("2_74toj")
+expand_mode = 2
+
+[node name="Calories Bar" type="TextureProgressBar" parent="MarginContainer/StatusBars/HBoxContainer" unique_id=536910103]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 value = 70.0
 texture_under = ExtResource("2_vkava")
 texture_progress = ExtResource("3_tf0e0")
 
-[node name="Happiness Bar" type="TextureProgressBar" parent="MarginContainer/StatusBars" unique_id=1156804885]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/StatusBars" unique_id=1982753667]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/StatusBars/HBoxContainer2" unique_id=1680241242]
+layout_mode = 2
+texture = ExtResource("6_obcwv")
+expand_mode = 2
+
+[node name="Happiness Bar" type="TextureProgressBar" parent="MarginContainer/StatusBars/HBoxContainer2" unique_id=1156804885]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 value = 40.0

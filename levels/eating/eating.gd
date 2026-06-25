@@ -9,6 +9,7 @@ extends Node2D
 @export var hide_wheel_btn: Button
 @export var exit_fridge_btn: Button
 @export var refuse_food_happiness: Array[Node2D]
+@export var refuse_food_full: Array[Node2D]
 
 var good_slices: int = 0
 
@@ -43,11 +44,6 @@ var _refuse_tween: Tween
 var _refusals: int = 0
 
 func _handle_refuse_eat(_food: Food2D, reason: _SignalBus.RefuseFood) -> void:
-    if reason == _SignalBus.RefuseFood.CALORIES:
-        exit_fridge_btn.visible = true
-        show_wheel_btn.visible = false
-        return
-
     if _refuse_tween && _refuse_tween.is_running():
         _refuse_tween.kill()
         for n in refuse_food_happiness:
@@ -55,6 +51,20 @@ func _handle_refuse_eat(_food: Food2D, reason: _SignalBus.RefuseFood) -> void:
                 n.position.x = 2200
             else:
                 n.position.x = -1000
+        for n in refuse_food_full:
+            if n.position.x > 600:
+                n.position.x = 2200
+            else:
+                n.position.x = -1000
+
+    if reason == _SignalBus.RefuseFood.CALORIES:
+        exit_fridge_btn.visible = true
+        show_wheel_btn.visible = false
+        _refuse_tween = create_tween()
+        _refuse_tween.set_parallel()
+        for n in refuse_food_full:
+            _refuse_tween.tween_property(n, "position:x", -1000.0 if n.position.x > 0 else 2200.0, 6.0)
+        return
 
     _refuse_tween = create_tween()
     _refuse_tween.set_parallel()

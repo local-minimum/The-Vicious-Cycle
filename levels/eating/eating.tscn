@@ -3,12 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://b7bjig5vixkig" path="res://levels/eating/fridge.tscn" id="1_e73j3"]
 [ext_resource type="Script" uid="uid://dkhkm0rqkuv0u" path="res://levels/eating/eating.gd" id="1_t18ug"]
 [ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="2_14ci6"]
+[ext_resource type="Texture2D" uid="uid://d32qmsjrut26k" path="res://levels/eating/text_full.png" id="3_0eqb5"]
 [ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="3_pdp1v"]
 [ext_resource type="Texture2D" uid="uid://w1tbv4elpkbd" path="res://character/front_leg_lower.png" id="4_hiobt"]
 [ext_resource type="Texture2D" uid="uid://cli3knxnwompc" path="res://character/back_foot.png" id="5_40quf"]
+[ext_resource type="Texture2D" uid="uid://dpblv87hahc5x" path="res://levels/eating/text_bite.png" id="5_nynkc"]
 [ext_resource type="Texture2D" uid="uid://chf433g5l735s" path="res://character/torso.png" id="6_4mvm5"]
 [ext_resource type="Texture2D" uid="uid://coyg6gsf7lwfu" path="res://character/back_arm_upper.png" id="6_dsfj8"]
 [ext_resource type="Texture2D" uid="uid://rxtbgvvmaltq" path="res://character/front_leg_upper.png" id="7_dsfj8"]
+[ext_resource type="Texture2D" uid="uid://c1j6ekbsyjo6e" path="res://levels/eating/text_throwup.png" id="7_lr00x"]
 [ext_resource type="Texture2D" uid="uid://b04sp1yeolkps" path="res://character/back_arm_lower.png" id="7_lyxv6"]
 [ext_resource type="Texture2D" uid="uid://bbpko3wya1vk3" path="res://character/back_hand.png" id="8_i4lgw"]
 [ext_resource type="Texture2D" uid="uid://4wddwjvmjk0k" path="res://character/front_foot.png" id="8_lyxv6"]
@@ -26,7 +29,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 radius = 2.236068
 
-[node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn", "refuse_food_happiness")]
+[node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn", "refuse_food_happiness", "refuse_food_full")]
 script = ExtResource("1_t18ug")
 fridge = NodePath("Fridge")
 wheel_mouse_stopper = NodePath("SpinUI/Mouse Stopper")
@@ -37,21 +40,37 @@ show_wheel_btn = NodePath("SpinUI/MarginContainer/Show Wheel Btn")
 hide_wheel_btn = NodePath("SpinUI/MarginContainer/Eat More Btn")
 exit_fridge_btn = NodePath("SpinUI/MarginContainer/Leave Btn")
 refuse_food_happiness = [NodePath("TextBetter"), NodePath("TextCannot"), NodePath("TextHealthy")]
+refuse_food_full = [NodePath("TextFull"), NodePath("TextBite"), NodePath("TextTrhowup")]
 
 [node name="TextBetter" type="Sprite2D" parent="." unique_id=532014473]
 position = Vector2(2155, 337)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_k1yxi")
 
+[node name="TextFull" type="Sprite2D" parent="." unique_id=1779410883]
+position = Vector2(2155, 337)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_0eqb5")
+
 [node name="TextCannot" type="Sprite2D" parent="." unique_id=1360639855]
 position = Vector2(-707.5, 134)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("21_h6tou")
 
+[node name="TextBite" type="Sprite2D" parent="." unique_id=1290938672]
+position = Vector2(-773, 134)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_nynkc")
+
 [node name="TextHealthy" type="Sprite2D" parent="." unique_id=2091394393]
 position = Vector2(-626.5, 528)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("22_olhua")
+
+[node name="TextTrhowup" type="Sprite2D" parent="." unique_id=1991859164]
+position = Vector2(-626.5, 528)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_lr00x")
 
 [node name="Fridge" parent="." unique_id=56752052 instance=ExtResource("1_e73j3")]
 position = Vector2(595, 370)
