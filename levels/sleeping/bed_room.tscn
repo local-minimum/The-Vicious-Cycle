@@ -52,18 +52,6 @@ visible = false
 position = Vector2(-160, 59)
 texture = ExtResource("5_i0n3l")
 
-[node name="AlarmClockBig" type="Sprite2D" parent="." unique_id=998671022]
-visible = false
-position = Vector2(3, 23)
-texture = ExtResource("6_6df56")
-
-[node name="AlarmClockBigNoColon" type="Sprite2D" parent="." unique_id=1577401420]
-visible = false
-position = Vector2(7, 21)
-texture = ExtResource("7_y6osd")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=99744274]
-
 [node name="Standing" type="Node2D" parent="." unique_id=1391220897]
 position = Vector2(28.999998, -58.999996)
 scale = Vector2(0.8, 0.8)
@@ -125,7 +113,8 @@ texture = ExtResource("16_80h62")
 
 [node name="Sitting" type="Node2D" parent="." unique_id=1782715167]
 position = Vector2(-196, -9)
-scale = Vector2(-0.5, 0.5)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
 
 [node name="Head" type="Sprite2D" parent="Sitting" unique_id=2102645276]
 position = Vector2(-430, -148)
@@ -244,3 +233,17 @@ texture = ExtResource("15_v3xhr")
 position = Vector2(-490.68796, 122.83006)
 rotation = 0.28640512
 texture = ExtResource("16_80h62")
+
+[node name="AlarmClockBig" type="Sprite2D" parent="." unique_id=998671022]
+visible = false
+position = Vector2(3.000001, 22.999985)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_6df56")
+
+[node name="AlarmClockBigNoColon" type="Sprite2D" parent="." unique_id=1577401420]
+visible = false
+position = Vector2(7.000003, 20.999985)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_y6osd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=99744274]

@@ -25,7 +25,7 @@ func _ready() -> void:
     _set_small_clock()
 
     if GlobalStateVicious.time_checkpoint == _PT_WAKUP_FIRST_EXERCISE:
-        pass
+        _animate_waking_up()
     else:
         _animate_going_to_sleep()
 
@@ -54,3 +54,27 @@ func _animate_going_to_sleep() -> void:
     person_sleeping.visible = true
     await get_tree().create_timer(1.5).timeout
     get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
+
+func _animate_waking_up() -> void:
+    person_sleeping.visible = true
+
+    await get_tree().create_timer(1.0).timeout
+    small_clock_0529.visible = false
+    small_clock_0530.visible = true
+    await get_tree().create_timer(0.5).timeout
+    for idx in 15:
+        large_clock_colon.visible = (idx % 2) == 0
+        large_clock_no_colon.visible = (idx % 2) == 1
+        await get_tree().create_timer(0.1).timeout
+
+    large_clock_colon.visible = false
+    large_clock_no_colon.visible = false
+
+    await get_tree().create_timer(1.5).timeout
+    person_sleeping.visible = false
+    person_sitting.visible = true
+    await get_tree().create_timer(2.0).timeout
+    person_sitting.visible = false
+    person_standing.visible = true
+    await get_tree().create_timer(1.5).timeout
+    get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
