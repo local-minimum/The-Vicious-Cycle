@@ -149,7 +149,8 @@ func _spin() -> void:
 
         if results.has(Icon.EXERCISE):
             _phase = Phase.DONE
-            push_warning("No transition to fail yet")
+            await get_tree().create_timer(1.0).timeout
+            get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
         elif results.has(Icon.UNDECIDED):
             _phase = Phase.READY
         else:

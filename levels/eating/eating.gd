@@ -62,7 +62,7 @@ func _handle_hide_wheel() -> void:
         show_wheel_btn.visible = true
 
 func _handle_exit_scene(_success: bool = false) -> void:
-    push_warning("Not implemented scene switching")
+    get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _handle_start_spin() -> void:
     hide_wheel_btn.visible = false

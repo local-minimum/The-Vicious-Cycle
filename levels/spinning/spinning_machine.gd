@@ -26,6 +26,8 @@ func _handle_no_calories() -> void:
         joint.queue_free()
     collapsed = true
     GlobalStateVicious.crisis_counter += 1
+    await get_tree().create_timer(5.0).timeout
+    get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _ready() -> void:
     _wheel_pos = wheel.position

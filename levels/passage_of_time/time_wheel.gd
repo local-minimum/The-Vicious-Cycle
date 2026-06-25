@@ -17,6 +17,7 @@ extends Node2D
 @export var _angle_rotation_duration: float = 0.1
 @export var _wait_before_next_scene: float = 1.0
 
+
 const _PT_WAKUP_FIRST_EXERCISE: int = 0
 const _PT_BREAKFAST: int = 1
 const _PT_SECOND_EXERCISE: int = 2
@@ -45,8 +46,12 @@ func progress_time() -> void:
         GlobalStateVicious.day += 1
 
     var target_a: float = _checkpoint_time_angles[next_time]
-    var delta: float = fposmod(_wheel.rotation_degrees - target_a, 180)
-    print_debug([_wheel.rotation_degrees, target_a, delta, _wheel.rotation_degrees + delta])
+    var delta: float = target_a - _wheel.rotation_degrees
+    if delta < 180:
+        delta += 360
+    elif delta > 180:
+        delta -= 360
+
     var duration: float = absf(delta) * _angle_rotation_duration
 
     GlobalStateVicious.time_checkpoint = next_time
@@ -61,7 +66,7 @@ func _handle_reach_checkpoint() -> void:
     match GlobalStateVicious.time_checkpoint:
         _PT_BREAKFAST, _PT_LUNCH, _PT_SUPPER:
             await get_tree().create_timer(_wait_before_next_scene).timeout
-            push_warning("Don't know how to load eating")
+            get_tree().change_scene_to_file(&"res://levels/eating/eating.tscn")
 
         _PT_ATTEMPT_SLEEP:
             if GlobalStateVicious.happiness < 20.0 || GlobalStateVicious.calories > 60.0:
@@ -74,12 +79,12 @@ func _handle_reach_checkpoint() -> void:
 
         _PT_SECOND_EXERCISE, _PT_THIRD_EXERCISE:
             await get_tree().create_timer(_wait_before_next_scene).timeout
-            push_warning("Don't know how to load exercise")
+            get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
 
         _PT_NIGHT_EXERCISE_OR_SLEEP:
             if _short_sleep:
                 await get_tree().create_timer(_wait_before_next_scene).timeout
-                push_warning("Don't know how to load exercise")
+                get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
             else:
                 await get_tree().create_timer(_wait_before_next_scene).timeout
                 push_warning("Don't know how to load sleep")
@@ -90,7 +95,7 @@ func _handle_reach_checkpoint() -> void:
 
         _PT_DOOR_CHECK:
             await get_tree().create_timer(_wait_before_next_scene).timeout
-            push_warning("Don't know how to load door check")
+            get_tree().change_scene_to_file(&"res://levels/door/exit_appartment_check.tscn")
 
         _PT_WAKUP_FIRST_EXERCISE:
             await get_tree().create_timer(_wait_before_next_scene).timeout
