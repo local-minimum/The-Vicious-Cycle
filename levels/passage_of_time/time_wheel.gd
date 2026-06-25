@@ -95,7 +95,7 @@ func _handle_reach_checkpoint() -> void:
 
         _PT_NIGHT_EXERCISE_OR_SLEEP:
             if _short_sleep:
-                await get_tree().create_timer(_wait_before_next_scene * 5).timeout
+                await get_tree().create_timer(_wait_before_next_scene * 3).timeout
                 get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
             else:
                 await get_tree().create_timer(_wait_before_next_scene).timeout

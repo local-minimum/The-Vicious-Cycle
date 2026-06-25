@@ -63,7 +63,7 @@ func build_cylinders() -> void:
             var mod: SlotModification = get_mod(idx, icon_idx)
 
             if mod:
-                var replace_ico = mod.icon
+                var replace_ico: Texture2D = get_replacement_icons(mod.icon)
                 var replace_sprite: Sprite2D = Sprite2D.new()
                 replace_sprite.texture = replace_ico
                 n.add_child(replace_sprite)
@@ -75,6 +75,9 @@ func build_cylinders() -> void:
         set_cylinder(idx, 0.0)
 
 func get_mod(cyl_idx: int, icon_idx: int) -> SlotModification:
+    if GlobalStateVicious.day == 1:
+        return
+
     var mod_idx: int = crisis_mods.find_custom(func (mod: SlotModification) -> bool: return mod.cylinder == cyl_idx && mod.position == icon_idx)
     if mod_idx < 0 || mod_idx >= GlobalStateVicious.crisis_counter:
         return null
@@ -95,6 +98,16 @@ func get_icon_scene(icon: Icon) -> PackedScene:
             return icon_exercise
         Icon.UNDECIDED:
             return icon_undecided
+    return null
+
+func get_replacement_icons(icon: Icon) -> Texture2D:
+    match icon:
+        Icon.EXIT:
+            return replace_exit
+        Icon.EXERCISE:
+            return replace_exercise
+        Icon.UNDECIDED:
+            return replace_undecided
     return null
 
 func _input(event: InputEvent) -> void:

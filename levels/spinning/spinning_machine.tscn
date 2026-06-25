@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://4wddwjvmjk0k" path="res://character/front_foot.png" id="13_6h7p5"]
 [ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="14_omjog"]
 [ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="15_ea5yj"]
+[ext_resource type="Texture2D" uid="uid://11cehhub42yg" path="res://levels/spinning/sweat.png" id="16_1nolk"]
 [ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="16_78nwm"]
 
 [sub_resource type="Resource" id="Resource_v5qya"]
@@ -42,15 +43,30 @@ angular_speed_decay_per_second = 0.05
 pedaling_force = 130.0
 metadata/_custom_type_script = "uid://j7ssncj7u68p"
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kjfgv"]
+lifetime_randomness = 0.48
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 50.0
+inherit_velocity_ratio = 0.475
+initial_velocity_min = -100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 98, 0)
+turbulence_noise_strength = 0.01
+turbulence_noise_scale = 2.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 
-[node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel", "collapse_joints")]
+[node name="Spinning Machine" type="Node2D" unique_id=1886062501 node_paths=PackedStringArray("front_pedal_spoke", "back_pedal_spoke", "wheel", "collapse_joints", "sweat", "head")]
 script = ExtResource("2_dgv2w")
 front_pedal_spoke = NodePath("Machine FG/FrontPedalSpokeBody")
 back_pedal_spoke = NodePath("Machine Mid G/BackPedalSpokeBody")
 wheel = NodePath("Machine Mid G/WheelBody")
 spinning_settings = Array[ExtResource("2_8n1wk")]([SubResource("Resource_v5qya"), SubResource("Resource_8n1wk"), SubResource("Resource_1nolk")])
 collapse_joints = [NodePath("Human BG/Back Handle"), NodePath("Human BG/Back Handle2"), NodePath("Human BG/Back Pedal"), NodePath("Human BG/Back Pedal2"), NodePath("Human FG/Pedal"), NodePath("Human FG/Pedal2"), NodePath("Human FG/Handle"), NodePath("Human FG/Handle2"), NodePath("Human FG/Ass Slider"), NodePath("Human FG/Posture"), NodePath("Human FG/Head Posture")]
+sweat = NodePath("Human FG/Head/Sweat")
+head = NodePath("Human FG/Head")
 
 [node name="Human BG" type="Node2D" parent="." unique_id=737449664]
 
@@ -296,7 +312,7 @@ position = Vector2(-31, -242)
 position = Vector2(41, -74)
 collision_mask = 2
 
-[node name="Head" type="Sprite2D" parent="Human FG/Head" unique_id=594074560]
+[node name="Head Sprite" type="Sprite2D" parent="Human FG/Head" unique_id=594074560]
 position = Vector2(-19, 26)
 rotation = 0.18203351
 texture = ExtResource("10_jqn66")
@@ -304,6 +320,16 @@ offset = Vector2(-4.29, -23.91)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Human FG/Head" unique_id=1234937492]
 polygon = PackedVector2Array(-26, 4, -30, 13, -36, 19, -21, 26, -10, 38, 0, 24, 18, 28, 28, 13, 35, 7, 35, -5, 39, -13, 35, -40, 10, -60, -14, -56, -21, -47, -29, -29, -30, -9)
+
+[node name="Sweat" type="GPUParticles2D" parent="Human FG/Head" unique_id=1791914223]
+position = Vector2(11, -25)
+emitting = false
+amount = 20
+texture = ExtResource("16_1nolk")
+lifetime = 5.0
+explosiveness = 0.48
+randomness = 0.37
+process_material = SubResource("ParticleProcessMaterial_kjfgv")
 
 [node name="Torso" type="RigidBody2D" parent="Human FG" unique_id=946705131]
 position = Vector2(-31, 60)

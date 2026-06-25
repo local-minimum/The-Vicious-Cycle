@@ -7,6 +7,10 @@ extends Node2D
 @export var spinning_settings: Array[SpinningSetting]
 
 @export var collapse_joints: Array[Joint2D]
+
+@export var sweat: GPUParticles2D
+@export var head: RigidBody2D
+
 var collapsed: bool
 var completed: bool
 
@@ -41,7 +45,17 @@ func _handle_no_calories() -> void:
     collapsed = true
     print_debug("Gained crisis by collapsing")
     GlobalStateVicious.crisis_counter += 1
-    await get_tree().create_timer(5.0).timeout
+    await get_tree().create_timer(2.0).timeout
+    var t: Tween = create_tween()
+    t.tween_method(
+        func (_p: float) -> void:
+            head.linear_velocity.x += 4
+            ,
+        0.0,
+        1.0,
+        4.0,
+    )
+    await get_tree().create_timer(4.0).timeout
     get_tree().change_scene_to_file(&"res://levels/passage_of_time/passage_of_time.tscn")
 
 func _ready() -> void:
@@ -81,4 +95,10 @@ func _apply_force(delta: float, direction: float) -> void:
     if front_pedal_spoke.angular_velocity > 0:
         wheel.angular_velocity = setting.wheel_velocity_factor * front_pedal_spoke.angular_velocity / setting.angular_speed_decay_per_second
     if effort > 0:
+        if !sweat.emitting:
+            sweat.emitting = true
+
         __SignalBus.on_exercise.emit(effort / setting.angular_speed_decay_per_second)
+    else:
+        if sweat.emitting:
+            sweat.emitting = false
