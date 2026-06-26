@@ -1,5 +1,6 @@
 extends Node2D
 
+@export_file("*.mp3") var alarm_sfx: String
 @export var small_clock_2200: Node2D
 @export var small_clock_0145: Node2D
 @export var small_clock_0529: Node2D
@@ -63,7 +64,8 @@ func _animate_waking_up() -> void:
     small_clock_0529.visible = false
     small_clock_0530.visible = true
     await get_tree().create_timer(0.5).timeout
-    for idx in 15:
+    AudioHub.play_sfx(alarm_sfx)
+    for idx in 45:
         large_clock_colon.visible = (idx % 2) == 0
         large_clock_no_colon.visible = (idx % 2) == 1
         await get_tree().create_timer(0.1).timeout

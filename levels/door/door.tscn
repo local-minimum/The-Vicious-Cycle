@@ -104,17 +104,16 @@ metadata/_custom_type_script = "uid://b2qcce36plhc3"
 
 [node name="Door" type="Node2D" unique_id=301636524 node_paths=PackedStringArray("slider", "lock", "handle", "cylinders")]
 script = ExtResource("1_2e5mw")
+unlock_sfx = "uid://cun4m57hjv4le"
+handle_sfx = "uid://bvsxma36lwj1j"
 icon_exit = ExtResource("3_2e5mw")
 icon_exercise = ExtResource("2_b8ksc")
 icon_undecided = ExtResource("4_43ykg")
 replace_exit = ExtResource("5_md4ch")
 replace_exercise = ExtResource("6_6em2w")
 replace_undecided = ExtResource("7_xah6j")
-icon_height = null
 slider = NodePath("Slider")
 lock = NodePath("Lock")
-slider_duration = null
-slider_distance = null
 handle = NodePath("Handle")
 handle_motion_duration = 0.4
 cylinders = [NodePath("Cylinders/Cylinder 1"), NodePath("Cylinders/Cylinder 2"), NodePath("Cylinders/Cylinder 3")]

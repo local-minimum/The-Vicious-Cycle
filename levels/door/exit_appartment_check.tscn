@@ -48,9 +48,8 @@ _data = {
 
 [node name="Door" parent="." unique_id=301636524 node_paths=PackedStringArray("mouse", "mouse_anim") instance=ExtResource("1_n6gsg")]
 position = Vector2(0, 16)
-icon_height = 96.0
-slider_duration = 1.0
-slider_distance = 222.0
+spinning_sfx = "uid://d03g24dxorslc"
+spin_end_sfx = "uid://dog31giu6r66b"
 mouse = NodePath("../Mouse")
 mouse_anim = NodePath("../Mouse/AnimationPlayer")
 

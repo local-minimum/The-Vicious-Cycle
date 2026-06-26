@@ -20,6 +20,7 @@
 
 [node name="BedRoom" type="Node2D" unique_id=1936281499 node_paths=PackedStringArray("small_clock_2200", "small_clock_0145", "small_clock_0529", "small_clock_0530", "large_clock_colon", "large_clock_no_colon", "person_standing", "person_sitting", "person_sleeping")]
 script = ExtResource("1_d87cn")
+alarm_sfx = "uid://bwlhfyxv5vii3"
 small_clock_2200 = NodePath("AlarmClockSmall2200")
 small_clock_0145 = NodePath("AlarmClockSmall0145")
 small_clock_0529 = NodePath("AlarmClockSmall0529")

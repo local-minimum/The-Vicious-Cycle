@@ -4,6 +4,11 @@ class_name Door
 enum Icon { EXIT, EXERCISE, UNDECIDED }
 enum Phase { LOCKED, SLIDING, READY, SPINNING, SPUN, DONE }
 
+@export_file("*.mp3") var unlock_sfx: String
+@export_file("*.mp3") var handle_sfx: String
+@export_file("*.mp3") var spinning_sfx: String
+@export_file("*.mp3") var spin_end_sfx: String
+
 @export var icon_exit: PackedScene
 @export var icon_exercise: PackedScene
 @export var icon_undecided: PackedScene
@@ -126,6 +131,7 @@ func _input(event: InputEvent) -> void:
     if _phase == Phase.LOCKED || _phase == Phase.READY:
         if event is InputEventMouseButton && !event.is_echo() && event.is_pressed() && (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
             if _phase == Phase.LOCKED:
+                AudioHub.play_sfx(unlock_sfx)
                 mouse.visible = false
                 _phase = Phase.SLIDING
                 var t = create_tween()
@@ -134,14 +140,18 @@ func _input(event: InputEvent) -> void:
                 t.tween_property(lock, "rotation_degrees", -170.0, slider_duration)
                 t.finished.connect(_done_sliding)
             elif _phase == Phase.READY:
+                AudioHub.play_sfx(handle_sfx)
+                AudioHub.play_sfx(spinning_sfx)
                 mouse.visible = false
                 var t = create_tween()
                 t.tween_property(handle, "rotation_degrees", -30.0, handle_motion_duration)
                 t.tween_property(handle, "rotation_degrees", 0.0, handle_motion_duration * 0.3)
+                _spin_done = [false, false, false]
                 _phase = Phase.SPINNING
                 t0 = Time.get_ticks_msec()
 
 var t0: int
+var _spin_done: Array[bool]
 
 func _process(_delta: float) -> void:
     match _phase:
@@ -155,7 +165,12 @@ func _spin() -> void:
         offset *= offset
     var done: bool = true
     for idx in _cylinder_icons.size():
-        done = set_cylinder(idx, offset) && done
+        var cyl_done: bool = set_cylinder(idx, offset)
+        if cyl_done && !_spin_done[idx]:
+            _spin_done[idx] = true
+            AudioHub.play_sfx(spin_end_sfx)
+
+        done = cyl_done && done
 
     if done:
         var results: Array[Icon] = []
@@ -182,6 +197,7 @@ func _spin() -> void:
             _phase = Phase.READY
         else:
             _phase = Phase.DONE
+            await get_tree().create_timer(1.0).timeout
             get_tree().change_scene_to_file(&"res://levels/freedom/freedom.tscn")
 
 func set_cylinder(idx: int, offset: float) -> bool:

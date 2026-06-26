@@ -9,6 +9,8 @@
 
 [node name="Time Wheel" type="Node2D" unique_id=281772505 node_paths=PackedStringArray("_wheel", "_bed", "_short_sleep_bed", "_night_line", "_night_exercise")]
 script = ExtResource("1_6i40a")
+start_sfx = "uid://dkj3bj32lw2nn"
+stop_sfx = "uid://5yo4ho3rkc2r"
 _wheel = NodePath("Wheel")
 _bed = NodePath("Wheel/Bed")
 _short_sleep_bed = NodePath("Wheel/ShortSleepBedTarget")

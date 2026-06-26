@@ -1,9 +1,11 @@
 extends Node2D
 
+@export_file("*.mp3") var music_track: String
 @export var player: AnimationPlayer
 @export var storage_provider: SaveStorageProvider
 
 func _ready() -> void:
+    AudioHub.play_music(music_track)
     player.play(&"Blinking Press")
 
 func _input(event: InputEvent) -> void:

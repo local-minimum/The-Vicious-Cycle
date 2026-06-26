@@ -63,6 +63,7 @@ _data = {
 
 [node name="Title" type="Node2D" unique_id=1195321305 node_paths=PackedStringArray("player")]
 script = ExtResource("1_isq66")
+music_track = "uid://bjjq70gqef5gc"
 player = NodePath("AnimationPlayer")
 storage_provider = ExtResource("2_8p8ih")
 

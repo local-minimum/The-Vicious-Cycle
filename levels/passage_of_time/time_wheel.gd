@@ -1,5 +1,8 @@
 extends Node2D
 
+@export_file("*.mp3") var start_sfx: String
+@export_file("*.mp3") var stop_sfx: String
+
 @export var _wheel: Node2D
 @export var _bed: Node2D
 @export var _short_sleep_bed: Node2D
@@ -70,6 +73,9 @@ func progress_time() -> void:
     elif delta > 180:
         delta -= 360
 
+    if absf(delta) > 10:
+        AudioHub.play_sfx(start_sfx)
+
     var duration: float = absf(delta) * _angle_rotation_duration
 
     GlobalStateVicious.time_checkpoint = next_time
@@ -83,6 +89,7 @@ var _short_sleep: bool = false
 func _handle_reach_checkpoint() -> void:
     match GlobalStateVicious.time_checkpoint:
         _PT_BREAKFAST, _PT_LUNCH, _PT_SUPPER:
+            AudioHub.play_sfx(stop_sfx)
             await get_tree().create_timer(_wait_before_next_scene).timeout
             get_tree().change_scene_to_file(&"res://levels/eating/eating.tscn")
 
@@ -96,10 +103,12 @@ func _handle_reach_checkpoint() -> void:
                 progress_time()
 
         _PT_SECOND_EXERCISE, _PT_THIRD_EXERCISE:
+            AudioHub.play_sfx(stop_sfx)
             await get_tree().create_timer(_wait_before_next_scene).timeout
             get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
 
         _PT_NIGHT_EXERCISE_OR_SLEEP:
+            AudioHub.play_sfx(stop_sfx)
             if _short_sleep:
                 await get_tree().create_timer(_wait_before_next_scene * 3).timeout
                 get_tree().change_scene_to_file(&"res://levels/spinning/spinning.tscn")
@@ -108,14 +117,17 @@ func _handle_reach_checkpoint() -> void:
                 get_tree().change_scene_to_file(&"res://levels/sleeping/bed_room.tscn")
 
         _PT_SHORT_SLEEP:
+            AudioHub.play_sfx(stop_sfx)
             await get_tree().create_timer(_wait_before_next_scene).timeout
             get_tree().change_scene_to_file(&"res://levels/sleeping/bed_room.tscn")
 
         _PT_DOOR_CHECK:
+            AudioHub.play_sfx(stop_sfx)
             await get_tree().create_timer(_wait_before_next_scene).timeout
             get_tree().change_scene_to_file(&"res://levels/door/exit_appartment_check.tscn")
 
         _PT_WAKUP_FIRST_EXERCISE:
+            AudioHub.play_sfx(stop_sfx)
             await get_tree().create_timer(_wait_before_next_scene).timeout
             get_tree().change_scene_to_file(&"res://levels/sleeping/bed_room.tscn")
 
