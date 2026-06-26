@@ -1,0 +1,2353 @@
+[gd_scene format=3 uid="uid://dc1qeqy006w3c"]
+
+[ext_resource type="Script" uid="uid://clhmgccemtibt" path="res://levels/freedom/freedom.gd" id="1_3k3ic"]
+[ext_resource type="Texture2D" uid="uid://dhia4elb1patt" path="res://levels/freedom/house.png" id="1_t80bv"]
+[ext_resource type="Texture2D" uid="uid://cf3t7m4coe2eh" path="res://levels/freedom/bike.png" id="2_xxkop"]
+[ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="3_c5t65"]
+[ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="4_bx0pj"]
+[ext_resource type="Texture2D" uid="uid://c43g3y7j4ded2" path="res://character/back_leg_lower.png" id="5_judhc"]
+[ext_resource type="Texture2D" uid="uid://cli3knxnwompc" path="res://character/back_foot.png" id="6_iqcwi"]
+[ext_resource type="Texture2D" uid="uid://chf433g5l735s" path="res://character/torso.png" id="7_25635"]
+[ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="8_um7a4"]
+[ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="9_o42oj"]
+[ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="10_ro0mn"]
+[ext_resource type="Texture2D" uid="uid://br0jpg5k6nlta" path="res://levels/freedom/side_path_hills.png" id="11_25635"]
+[ext_resource type="Texture2D" uid="uid://c6tcy67w5a311" path="res://levels/freedom/side_paths_trees.png" id="12_o42oj"]
+[ext_resource type="Texture2D" uid="uid://b771cqvju2xpa" path="res://levels/freedom/side_path_fields.png" id="12_um7a4"]
+[ext_resource type="Texture2D" uid="uid://bae807lxibddp" path="res://levels/freedom/side_path_road.png" id="13_o42oj"]
+[ext_resource type="Texture2D" uid="uid://dsb3gj6gyhtut" path="res://levels/freedom/side_path_grass.png" id="14_ro0mn"]
+[ext_resource type="Texture2D" uid="uid://ynfqweguwc8j" path="res://levels/freedom/bird.png" id="14_w6ewe"]
+[ext_resource type="Texture2D" uid="uid://c2y6yb1i2unqx" path="res://levels/freedom/ice_cream_stand.png" id="16_03uf4"]
+[ext_resource type="Texture2D" uid="uid://cn4jol86njw4c" path="res://levels/freedom/park_bench.png" id="17_rpran"]
+[ext_resource type="Texture2D" uid="uid://dt7a1ijm22jvt" path="res://levels/freedom/ice_cream.png" id="18_03uf4"]
+[ext_resource type="Texture2D" uid="uid://b847p0lh77ka1" path="res://levels/freedom/bunny.png" id="19_q71jd"]
+[ext_resource type="Texture2D" uid="uid://cwa4m53twjoop" path="res://levels/freedom/path_to_horizon.png" id="21_rpran"]
+[ext_resource type="Texture2D" uid="uid://c1psy7ows6s7w" path="res://levels/freedom/pole1.png" id="22_hmlxm"]
+[ext_resource type="Texture2D" uid="uid://bosv6rgpxd608" path="res://levels/freedom/pole2.png" id="23_tey37"]
+[ext_resource type="Texture2D" uid="uid://b1p04xn445lgr" path="res://levels/freedom/pole3.png" id="24_3k3ic"]
+[ext_resource type="Texture2D" uid="uid://cs3k5huu5siqf" path="res://levels/freedom/pole4.png" id="25_51jkc"]
+[ext_resource type="Texture2D" uid="uid://bdnofay8k0y8c" path="res://levels/freedom/pole5.png" id="26_7yobr"]
+[ext_resource type="Texture2D" uid="uid://dgw8fsn8bpexb" path="res://levels/freedom/theend.png" id="27_tey37"]
+
+[sub_resource type="Animation" id="Animation_c5t65"]
+resource_name = "Exit House"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("House Scene/Standing by bike:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5666666, 5.48),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("House Scene/Exit house:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6666665, 2.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("House Scene/Exit house2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.7666664, 3.7333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("House Scene/Exit house3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.6333334, 4.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("House Scene/Bike and person:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.62),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("House Scene/Bike:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335, 5.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("House Scene/Bike and person:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(5.62, 8.31),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-83, 9), Vector2(-655, 303)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("House Scene:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bx0pj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("House Scene/Standing by bike:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("House Scene/Exit house:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("House Scene/Exit house2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("House Scene/Exit house3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("House Scene/Bike and person:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("House Scene/Bike:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("House Scene/Bike and person:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, 9)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("House Scene:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("To Ice Cream Stand:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("To Ice Cream Stand/IceCream:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("To Ice Cream Stand/SidePathRoad/Bike and person:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-984.5, -124.16667)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("To Ice Cream Stand/SidePathHills:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(722.75, 16.25)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("To Ice Cream Stand/SidePathsTrees:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(239, 40)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("To Ice Cream Stand/SidePathFields:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(675.75, 136.25)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("To Ice Cream Stand/SidePathRoad:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(672.75, 213.25)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("To Ice Cream Stand/SidePathGrass:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_ro0mn")]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("To Ice Cream Stand/SidePathGrass:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(465, 279)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("To Ice Cream Stand/SidePathFields/Bird:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11.5, -196.83336)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("To Ice Cream Stand/SidePathFields/Bird2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(151.5, -211.5)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(545.5, -14.833338)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.1415927]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("To Ice Cream Stand/SidePathRoad/Standing Near bike:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("To Ice Cream Stand/SidePathRoad/Bike:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("To Ice Cream Stand/SidePathRoad/Sitting:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("To Ice Cream Stand/SidePathRoad/Standing:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("To Ice Cream Stand/SidePathRoad/Bike and person:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny2:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2319.5, -12.166671)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny2:rotation")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.1415927]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("To Horizon:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("To Horizon/PathToHorizon/Bike and person2:visible")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("To Horizon/PathToHorizon/Bike and person3:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("To Horizon/PathToHorizon/Bike and person5:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("To Horizon/PathToHorizon/Bike and person:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(553.806, 136.1618)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("To Horizon/PathToHorizon/Bike and person:rotation")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25520313]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("To Horizon/PathToHorizon/Bike and person:scale")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.78890526, 0.78890526)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("To Horizon/PathToHorizon/Bike and person:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("To Horizon/PathToHorizon/Bike and person2:position")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-90.978035, -10.380058)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("To Horizon/PathToHorizon/Bike and person2:rotation")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-3.4435346]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("To Horizon/PathToHorizon/Bike and person2:scale")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.30410522, -0.30410522)]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("To Horizon/PathToHorizon/Bike and person3:position")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(65.94382, -92.80982)]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("To Horizon/PathToHorizon/Bike and person3:rotation")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.8613002]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("To Horizon/PathToHorizon/Bike and person3:scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.14781658, -0.14781658)]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("To Horizon/PathToHorizon/Bike and person4:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("To Horizon/PathToHorizon/Bike and person4:scale")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.09004689, -0.09004689)]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("To Horizon/PathToHorizon/Bike and person4:rotation")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-3.2971494]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("To Horizon/PathToHorizon/Bike and person4:position")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-54.95318, -116.62288)]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("To Horizon/PathToHorizon/Bike and person5:scale")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.06295347, 0.06295347)]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("To Horizon/PathToHorizon/Bike and person5:rotation")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17160127]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("To Horizon/PathToHorizon/Bike and person5:position")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(77.54505, -150.20538)]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("To Horizon/PathToHorizon/Theend:visible")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_03uf4"]
+resource_name = "To Horizon"
+length = 18.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("To Horizon:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("To Horizon/PathToHorizon/Bike and person2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.73, 3.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("To Horizon/PathToHorizon/Bike and person3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.35, 5.23),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("To Horizon/PathToHorizon/Bike and person5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("To Horizon/PathToHorizon/Bike and person:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.67),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(553.806, 136.1618), Vector2(24.423637, 0.6105881)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("To Horizon/PathToHorizon/Bike and person:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.67),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.25520313, 0.3944444]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("To Horizon/PathToHorizon/Bike and person:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.67),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.78890526, 0.78890526), Vector2(-0.42925707, 0.42925707)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("To Horizon/PathToHorizon/Bike and person:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.73),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("To Horizon/PathToHorizon/Bike and person2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.73, 3.22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-90.978035, -10.380058), Vector2(43.35195, -84.87214)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("To Horizon/PathToHorizon/Bike and person2:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.73, 3.22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-3.4435346, -3.2566311]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("To Horizon/PathToHorizon/Bike and person2:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.73, 3.22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.30410522, -0.30410522), Vector2(-0.19215749, -0.19215749)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("To Horizon/PathToHorizon/Bike and person3:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(3.35, 5.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(65.94382, -92.80982), Vector2(-61.059093, -102.579285)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("To Horizon/PathToHorizon/Bike and person3:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(3.35, 5.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-2.8613002, -3.0819237]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("To Horizon/PathToHorizon/Bike and person3:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(3.35, 5.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.14781658, -0.14781658), Vector2(0.07181702, -0.07181702)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("To Horizon/PathToHorizon/Bike and person4:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 5.23, 7.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("To Horizon/PathToHorizon/Bike and person4:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(5.23, 7.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.09004689, -0.09004689), Vector2(-0.058743615, -0.058743615)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("To Horizon/PathToHorizon/Bike and person4:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(5.23, 7.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-3.2971494, -3.2971494]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("To Horizon/PathToHorizon/Bike and person4:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(5.23, 7.41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-54.95318, -116.62288), Vector2(77.54505, -139.82533)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("To Horizon/PathToHorizon/Bike and person5:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(7.5, 9.889999, 13.879999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.06295347, 0.06295347), Vector2(-0.030626666, 0.030626666), Vector2(-0.022863278, 0.022863278)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("To Horizon/PathToHorizon/Bike and person5:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(7.5, 9.889999, 13.879999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.17160127, 0.45029494, -0.09234741]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("To Horizon/PathToHorizon/Bike and person5:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(7.5, 9.889999, 13.879999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(77.54505, -150.20538), Vector2(-23.202454, -158.14304), Vector2(-6.1059055, -211.26443)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("To Horizon/PathToHorizon/Theend:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 13.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_judhc"]
+resource_name = "To Ice Cream Stand"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("To Ice Cream Stand:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("To Ice Cream Stand/IceCream:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 17.32, 17.94),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("To Ice Cream Stand/SidePathRoad/Bike and person:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.05, 12.63, 15.0199995),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-984.5, -124.16667), Vector2(-467.83337, -124.16668), Vector2(1453.5392, -124.0305), Vector2(1586.6667, -156.66667)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("To Ice Cream Stand/SidePathHills:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.05, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(722.75, 16.25), Vector2(-757, 16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("To Ice Cream Stand/SidePathsTrees:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.05, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(239, 40), Vector2(-1941, 40)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("To Ice Cream Stand/SidePathFields:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.05, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(675.75, 136.25), Vector2(-2574, 136)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("To Ice Cream Stand/SidePathRoad:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.05, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(672.75, 213.25), Vector2(-2839, 213)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("To Ice Cream Stand/SidePathGrass:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_ro0mn")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("To Ice Cream Stand/SidePathGrass:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.05, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(465, 279), Vector2(-3044, 279)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("To Ice Cream Stand/SidePathFields/Bird:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.29, 4.23, 5.05, 5.91, 6.3999996),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(11.5, -196.83336), Vector2(0.20812988, -260.80527), Vector2(-73.27474, -260.79474), Vector2(-136.06577, -187.45032), Vector2(-175.42352, -178.11067)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("To Ice Cream Stand/SidePathFields/Bird2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.01, 3.5, 4.06, 4.69, 5.34, 5.9300003, 6.74),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(151.5, -211.5), Vector2(118.08109, -142.81467), Vector2(57.767574, -155.47414), Vector2(27.164875, -224.13269), Vector2(-43.425217, -282.12433), Vector2(-88.05311, -259.45004), Vector2(-121.20907, -186.1063)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(4.39, 4.94, 5.3900003, 5.74, 7.76, 8.07, 8.22),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(545.5, -14.833338), Vector2(545.5, -14.833338), Vector2(548.6827, -27.333338), Vector2(533.2411, -10.000023), Vector2(533.2411, -10.000023), Vector2(520.14044, -26.000002), Vector2(508.57037, -16.66666)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(4.39, 4.94, 5.3900003, 5.74, 5.79, 7.76, 8.22, 8.49),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.1415927, 3.1415927, 3.5133479, 3.0944688, 3.234095, 3.234095, 3.234095, 3.1415927]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("To Ice Cream Stand/SidePathRoad/Standing Near bike:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(10.0199995, 15.509999, 16.43),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("To Ice Cream Stand/SidePathRoad/Bike:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(10.0199995, 15.509999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("To Ice Cream Stand/SidePathRoad/Sitting:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(10.0199995, 17.94),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("To Ice Cream Stand/SidePathRoad/Standing:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(10.0199995, 16.67, 17.94),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("To Ice Cream Stand/SidePathRoad/Bike and person:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 15.509999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(15.56, 16.15, 16.4, 16.67, 17.7, 18.21, 18.44, 18.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2319.5, -12.166671), Vector2(2270.6667, -0.6666708), Vector2(2252.6667, -12.000005), Vector2(2233.3335, -2.6666317), Vector2(2233.3335, -2.6666317), Vector2(2198, -6.6666727), Vector2(2185.3333, -20.000008), Vector2(2170, -2.666645)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("To Ice Cream Stand/SidePathGrass/Bunny2:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(15.56, 16.15, 16.4, 16.67, 17.7, 18.21, 18.44, 18.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.1415927, 3.1415927, 3.3737214, 3.1415927, 3.1415927, 3.1415927, 3.281219, 3.185226]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_judhc"]
+_data = {
+&"Exit House": SubResource("Animation_c5t65"),
+&"RESET": SubResource("Animation_bx0pj"),
+&"To Horizon": SubResource("Animation_03uf4"),
+&"To Ice Cream Stand": SubResource("Animation_judhc")
+}
+
+[node name="Freedom" type="Node2D" unique_id=1038665688 node_paths=PackedStringArray("scene_house", "scene_to_stand", "scene_to_horizon", "player")]
+script = ExtResource("1_3k3ic")
+scene_house = NodePath("House Scene")
+scene_to_stand = NodePath("To Ice Cream Stand")
+scene_to_horizon = NodePath("To Horizon")
+player = NodePath("AnimationPlayer")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=860542064]
+
+[node name="House Scene" type="Node2D" parent="." unique_id=1144786987]
+
+[node name="House" type="Sprite2D" parent="House Scene" unique_id=1243887556]
+position = Vector2(91, -69)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_t80bv")
+
+[node name="Bike" type="Sprite2D" parent="House Scene" unique_id=1263075573]
+position = Vector2(-165.99997, 92.99999)
+rotation = -0.066514395
+scale = Vector2(0.6517883, 0.6517883)
+texture = ExtResource("2_xxkop")
+
+[node name="Standing by bike" type="Node2D" parent="House Scene" unique_id=1779182281]
+position = Vector2(-49, 5.999996)
+rotation = -0.0665144
+scale = Vector2(0.4082806, 0.4082806)
+
+[node name="Head" type="Sprite2D" parent="House Scene/Standing by bike" unique_id=1201286280]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="House Scene/Standing by bike" unique_id=54411237]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Standing by bike/Leg" unique_id=190060663]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Standing by bike/Leg" unique_id=1952181021]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Standing by bike/Leg" unique_id=1455594942]
+position = Vector2(-434, 391)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="House Scene/Standing by bike" unique_id=1777723383]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="House Scene/Standing by bike" unique_id=195108711]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Standing by bike/Leg2" unique_id=1978240308]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Standing by bike/Leg2" unique_id=791749979]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Standing by bike/Leg2" unique_id=399358409]
+position = Vector2(-413, 389)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="House Scene/Standing by bike" unique_id=1156752078]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="House Scene/Standing by bike" unique_id=392676257]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="House Scene/Standing by bike" unique_id=1004696645]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("10_ro0mn")
+
+[node name="Exit house" type="Node2D" parent="House Scene" unique_id=1342083026]
+position = Vector2(65.000046, -39)
+rotation = 3.0750782
+scale = Vector2(0.235, -0.235)
+
+[node name="Head" type="Sprite2D" parent="House Scene/Exit house" unique_id=1088033704]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="House Scene/Exit house" unique_id=1186401995]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Exit house/Leg" unique_id=1876184230]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Exit house/Leg" unique_id=1967349853]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Exit house/Leg" unique_id=1946429009]
+position = Vector2(-434, 391)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="House Scene/Exit house" unique_id=1358036954]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="House Scene/Exit house" unique_id=1807825231]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Exit house/Leg2" unique_id=2113428277]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Exit house/Leg2" unique_id=1595315916]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Exit house/Leg2" unique_id=236286825]
+position = Vector2(-413, 389)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="House Scene/Exit house" unique_id=1486086871]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="House Scene/Exit house" unique_id=2102352820]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="House Scene/Exit house" unique_id=1533022430]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("10_ro0mn")
+
+[node name="Exit house2" type="Node2D" parent="House Scene" unique_id=1055573634]
+position = Vector2(-70, -10.999998)
+rotation = 3.110223
+scale = Vector2(0.37073836, -0.37073836)
+
+[node name="Head" type="Sprite2D" parent="House Scene/Exit house2" unique_id=455343661]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="House Scene/Exit house2" unique_id=907431837]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Exit house2/Leg" unique_id=1012114072]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Exit house2/Leg" unique_id=1142196795]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Exit house2/Leg" unique_id=302171607]
+position = Vector2(-434, 391)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="House Scene/Exit house2" unique_id=1183161299]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="House Scene/Exit house2" unique_id=1148460917]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Exit house2/Leg2" unique_id=1134176631]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Exit house2/Leg2" unique_id=1711424799]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Exit house2/Leg2" unique_id=1179398435]
+position = Vector2(-413, 389)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="House Scene/Exit house2" unique_id=1555944934]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="House Scene/Exit house2" unique_id=1232759607]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="House Scene/Exit house2" unique_id=1609874437]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("10_ro0mn")
+
+[node name="Exit house3" type="Node2D" parent="House Scene" unique_id=1571688761]
+position = Vector2(-254.00003, 38)
+rotation = 3.110223
+scale = Vector2(0.46531352, -0.46531352)
+
+[node name="Head" type="Sprite2D" parent="House Scene/Exit house3" unique_id=390441413]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="House Scene/Exit house3" unique_id=174071032]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Exit house3/Leg" unique_id=79404730]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Exit house3/Leg" unique_id=1517838181]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Exit house3/Leg" unique_id=2101552432]
+position = Vector2(-434, 391)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="House Scene/Exit house3" unique_id=1432067721]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="House Scene/Exit house3" unique_id=973489177]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Exit house3/Leg2" unique_id=1415806822]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Exit house3/Leg2" unique_id=1349648830]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Exit house3/Leg2" unique_id=1253561957]
+position = Vector2(-413, 389)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="House Scene/Exit house3" unique_id=155233359]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="House Scene/Exit house3" unique_id=691136159]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="House Scene/Exit house3" unique_id=508024434]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("10_ro0mn")
+
+[node name="Bike and person" type="Node2D" parent="House Scene" unique_id=1428812830]
+position = Vector2(-83, 9)
+rotation = -0.09727954
+scale = Vector2(-1, 1)
+
+[node name="BackLeg" type="Node2D" parent="House Scene/Bike and person" unique_id=1545855178]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Bike and person/BackLeg" unique_id=1996743963]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Bike and person/BackLeg" unique_id=1638644965]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Bike and person/BackLeg" unique_id=291749458]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="House Scene/Bike and person" unique_id=1749113085]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="House Scene/Bike and person" unique_id=707253853]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="House Scene/Bike and person/Sitting" unique_id=131064173]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="House Scene/Bike and person/Sitting" unique_id=123901358]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="House Scene/Bike and person/Sitting" unique_id=1070341890]
+
+[node name="BackLegUpper" type="Sprite2D" parent="House Scene/Bike and person/Sitting/Leg2" unique_id=1733237013]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="House Scene/Bike and person/Sitting/Leg2" unique_id=1026675842]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="House Scene/Bike and person/Sitting/Leg2" unique_id=202941630]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="House Scene/Bike and person/Sitting" unique_id=1967273928]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="House Scene/Bike and person/Sitting" unique_id=1154609446]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="House Scene/Bike and person/Sitting" unique_id=1766795415]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="To Ice Cream Stand" type="Node2D" parent="." unique_id=1046340084]
+
+[node name="SidePathHills" type="Sprite2D" parent="To Ice Cream Stand" unique_id=835390240]
+position = Vector2(722.75, 16.25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_25635")
+
+[node name="SidePathsTrees" type="Sprite2D" parent="To Ice Cream Stand" unique_id=1486126878]
+position = Vector2(239, 40)
+texture = ExtResource("12_o42oj")
+
+[node name="SidePathsTrees2" type="Sprite2D" parent="To Ice Cream Stand/SidePathsTrees" unique_id=7718333]
+position = Vector2(1701, 0)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("12_o42oj")
+
+[node name="SidePathFields" type="Sprite2D" parent="To Ice Cream Stand" unique_id=841676374]
+position = Vector2(675.75, 136.25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_um7a4")
+
+[node name="SidePathFields2" type="Sprite2D" parent="To Ice Cream Stand/SidePathFields" unique_id=380162907]
+position = Vector2(1710, 0)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("12_um7a4")
+
+[node name="Bird" type="Sprite2D" parent="To Ice Cream Stand/SidePathFields" unique_id=895319191]
+position = Vector2(11.5, -196.83336)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_w6ewe")
+
+[node name="Bird2" type="Sprite2D" parent="To Ice Cream Stand/SidePathFields" unique_id=1139144941]
+position = Vector2(151.5, -211.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_w6ewe")
+
+[node name="SidePathRoad" type="Sprite2D" parent="To Ice Cream Stand" unique_id=1978526889]
+position = Vector2(672.75, 213.25)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_o42oj")
+
+[node name="SidePathRoad2" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=1293846713]
+position = Vector2(1689, 0)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("13_o42oj")
+
+[node name="IceCreamStand" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=986452135]
+position = Vector2(2073.5002, -178.83334)
+scale = Vector2(0.8000001, 0.8000001)
+texture = ExtResource("16_03uf4")
+
+[node name="ParkBench" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=791022646]
+position = Vector2(1745.5, -86.166664)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("17_rpran")
+
+[node name="Bike" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=1670545964]
+position = Vector2(1645.5, -99.5)
+rotation = 0.05116646
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=917816389]
+position = Vector2(1672.8335, -133.5)
+rotation = -3.1021678
+scale = Vector2(0.25, -0.25)
+
+[node name="Head" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=2112531868]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=1284514405]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting/Leg" unique_id=163986026]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting/Leg" unique_id=757856511]
+position = Vector2(-319.49997, 260.19135)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting/Leg" unique_id=173591199]
+position = Vector2(-294.5, 344.19135)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=233420884]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=542613987]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting/Leg2" unique_id=1526057074]
+position = Vector2(-402, 129.99998)
+rotation = 0.28173184
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting/Leg2" unique_id=879199947]
+position = Vector2(-327.5, 211.55573)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting/Leg2" unique_id=51030307]
+position = Vector2(-322.5, 297.55573)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=193074109]
+position = Vector2(-388.82068, -20.674614)
+rotation = -1.9860542
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=1096862544]
+position = Vector2(-441.16626, -46.758064)
+rotation = -0.28046098
+texture = ExtResource("9_o42oj")
+
+[node name="IceCream" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=1154287848]
+position = Vector2(-338.1254, -88.062195)
+rotation = -0.25182328
+scale = Vector2(0.35322356, 0.35322356)
+texture = ExtResource("18_03uf4")
+
+[node name="FrontHand" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Sitting" unique_id=1204801871]
+position = Vector2(-336.51163, -61.311157)
+rotation = -1.9892029
+texture = ExtResource("10_ro0mn")
+
+[node name="Standing" type="Node2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=425349072]
+position = Vector2(2002.8333, -192.16666)
+scale = Vector2(-0.45, 0.45)
+
+[node name="Head" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=2115220859]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=559270355]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing/Leg" unique_id=1006320327]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing/Leg" unique_id=654669129]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing/Leg" unique_id=99938748]
+position = Vector2(-434, 391)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=194367934]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=677800203]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing/Leg2" unique_id=809473184]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing/Leg2" unique_id=1767025500]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing/Leg2" unique_id=347139117]
+position = Vector2(-413, 389)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=140727318]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=597136333]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing" unique_id=703906610]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("10_ro0mn")
+
+[node name="Standing Near bike" type="Node2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=157216567]
+position = Vector2(1710.671, -153.39224)
+scale = Vector2(0.3, 0.3)
+
+[node name="Head" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=193255751]
+position = Vector2(-430, -148)
+texture = ExtResource("3_c5t65")
+
+[node name="Leg" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=187559332]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike/Leg" unique_id=2147241429]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike/Leg" unique_id=1865626281]
+position = Vector2(-458.99997, 307)
+rotation = -0.15419236
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike/Leg" unique_id=1490781523]
+position = Vector2(-434, 391)
+texture = ExtResource("6_iqcwi")
+
+[node name="Torso" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=1224903971]
+position = Vector2(-433, -12)
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=1726513816]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike/Leg2" unique_id=1687403838]
+position = Vector2(-430.00006, 163.00002)
+rotation = 1.3108268
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike/Leg2" unique_id=1551667102]
+position = Vector2(-418, 303)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike/Leg2" unique_id=367122777]
+position = Vector2(-413, 389)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=933719004]
+position = Vector2(-481.00006, 37.000008)
+rotation = -0.2967163
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=1614781070]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Standing Near bike" unique_id=62339560]
+position = Vector2(-445.99997, 88.00001)
+rotation = -0.49551007
+texture = ExtResource("10_ro0mn")
+
+[node name="Bike and person" type="Node2D" parent="To Ice Cream Stand/SidePathRoad" unique_id=2087587208]
+position = Vector2(-984.5, -124.16667)
+scale = Vector2(0.46666667, 0.46666667)
+
+[node name="BackLeg" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person" unique_id=401292484]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/BackLeg" unique_id=1435625276]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/BackLeg" unique_id=356645203]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/BackLeg" unique_id=1142346464]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person" unique_id=1606996111]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person" unique_id=1202526560]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting" unique_id=55078314]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting" unique_id=2013968865]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting" unique_id=1523122877]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting/Leg2" unique_id=211559591]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting/Leg2" unique_id=1218890029]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting/Leg2" unique_id=1200123113]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting" unique_id=1927030775]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting" unique_id=668714448]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Ice Cream Stand/SidePathRoad/Bike and person/Sitting" unique_id=887514835]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="SidePathGrass" type="Sprite2D" parent="To Ice Cream Stand" unique_id=372910111]
+position = Vector2(465, 279)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_ro0mn")
+
+[node name="SidePathGrass2" type="Sprite2D" parent="To Ice Cream Stand/SidePathGrass" unique_id=1341920235]
+position = Vector2(1627, 0)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("14_ro0mn")
+
+[node name="Bunny" type="Sprite2D" parent="To Ice Cream Stand/SidePathGrass" unique_id=1310062498]
+position = Vector2(545.5, -14.833338)
+rotation = 3.1415927
+scale = Vector2(0.33333334, -0.33333334)
+texture = ExtResource("19_q71jd")
+
+[node name="Bunny2" type="Sprite2D" parent="To Ice Cream Stand/SidePathGrass" unique_id=543166835]
+position = Vector2(2319.5, -12.166671)
+rotation = 3.1415927
+scale = Vector2(0.33333334, -0.33333334)
+texture = ExtResource("19_q71jd")
+
+[node name="IceCream" type="Sprite2D" parent="To Ice Cream Stand" unique_id=2006934858]
+position = Vector2(-33, -22)
+scale = Vector2(2, 2)
+texture = ExtResource("18_03uf4")
+
+[node name="To Horizon" type="Node2D" parent="." unique_id=1057535527]
+
+[node name="PathToHorizon" type="Sprite2D" parent="To Horizon" unique_id=228195363]
+position = Vector2(-2.000001, 3.0000076)
+scale = Vector2(1.6377578, 1.6377578)
+texture = ExtResource("21_rpran")
+
+[node name="Bike and person5" type="Node2D" parent="To Horizon/PathToHorizon" unique_id=186746606]
+visible = false
+position = Vector2(77.54505, -150.20538)
+rotation = 0.17160127
+scale = Vector2(-0.06295347, 0.06295347)
+
+[node name="BackLeg" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person5" unique_id=581686971]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/BackLeg" unique_id=157372496]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/BackLeg" unique_id=1591918624]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/BackLeg" unique_id=1472143157]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5" unique_id=1145185078]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person5" unique_id=1334657898]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting" unique_id=627886114]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting" unique_id=2016046102]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting" unique_id=651498987]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting/Leg2" unique_id=986546206]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting/Leg2" unique_id=124910786]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting/Leg2" unique_id=741211162]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting" unique_id=78491080]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting" unique_id=1664990999]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person5/Sitting" unique_id=1516024293]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="Pole5" type="Sprite2D" parent="To Horizon/PathToHorizon" unique_id=443338459]
+position = Vector2(15.875362, -127.6135)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("26_7yobr")
+
+[node name="Bike and person4" type="Node2D" parent="To Horizon/PathToHorizon" unique_id=1677238412]
+position = Vector2(-54.95318, -116.62288)
+rotation = -3.2971494
+scale = Vector2(-0.09004689, -0.09004689)
+
+[node name="BackLeg" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person4" unique_id=1671654819]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/BackLeg" unique_id=982240270]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/BackLeg" unique_id=1921227620]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/BackLeg" unique_id=569022190]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4" unique_id=449886111]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person4" unique_id=1485753841]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting" unique_id=882382820]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting" unique_id=2008460859]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting" unique_id=408873039]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting/Leg2" unique_id=1810671958]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting/Leg2" unique_id=1250011809]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting/Leg2" unique_id=628940986]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting" unique_id=352276084]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting" unique_id=1963737205]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person4/Sitting" unique_id=505759135]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="Pole4" type="Sprite2D" parent="To Horizon/PathToHorizon" unique_id=236211692]
+position = Vector2(-11.601227, -116.62286)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("25_51jkc")
+
+[node name="Bike and person3" type="Node2D" parent="To Horizon/PathToHorizon" unique_id=826620640]
+visible = false
+position = Vector2(65.94382, -92.80982)
+rotation = -2.8613002
+scale = Vector2(0.14781658, -0.14781658)
+
+[node name="BackLeg" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person3" unique_id=15367669]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/BackLeg" unique_id=891122290]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/BackLeg" unique_id=750173134]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/BackLeg" unique_id=693118895]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3" unique_id=13932081]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person3" unique_id=1861130702]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting" unique_id=2039564727]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting" unique_id=1369039215]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting" unique_id=1502133147]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting/Leg2" unique_id=335020535]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting/Leg2" unique_id=800241952]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting/Leg2" unique_id=68800114]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting" unique_id=107348874]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting" unique_id=638616267]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person3/Sitting" unique_id=807188848]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="Pole3" type="Sprite2D" parent="To Horizon/PathToHorizon" unique_id=1649522747]
+position = Vector2(-28.697754, -90.367455)
+texture = ExtResource("24_3k3ic")
+
+[node name="Pole2" type="Sprite2D" parent="To Horizon/PathToHorizon" unique_id=1997899540]
+position = Vector2(-76.323875, -51.90022)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("23_tey37")
+
+[node name="Bike and person2" type="Node2D" parent="To Horizon/PathToHorizon" unique_id=829233059]
+visible = false
+position = Vector2(-90.978035, -10.380058)
+rotation = -3.4435346
+scale = Vector2(-0.30410522, -0.30410522)
+
+[node name="BackLeg" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person2" unique_id=24719816]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/BackLeg" unique_id=2067621699]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/BackLeg" unique_id=981371489]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/BackLeg" unique_id=774165198]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2" unique_id=1779006023]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person2" unique_id=1841207333]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting" unique_id=2106727219]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting" unique_id=2022578917]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting" unique_id=658971823]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting/Leg2" unique_id=1139477915]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting/Leg2" unique_id=428783027]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting/Leg2" unique_id=352502571]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting" unique_id=1605159353]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting" unique_id=480329169]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person2/Sitting" unique_id=1602289532]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="Pole1" type="Sprite2D" parent="To Horizon/PathToHorizon" unique_id=535729833]
+position = Vector2(-164.85953, -10.38005)
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("22_hmlxm")
+
+[node name="Bike and person" type="Node2D" parent="To Horizon/PathToHorizon" unique_id=977216116]
+position = Vector2(553.806, 136.1618)
+rotation = 0.25520313
+scale = Vector2(-0.78890526, 0.78890526)
+
+[node name="BackLeg" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person" unique_id=1391463526]
+position = Vector2(260, 24)
+scale = Vector2(0.6, 0.6)
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/BackLeg" unique_id=2086273283]
+position = Vector2(-414, 142)
+rotation = 0.65141416
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/BackLeg" unique_id=1107367826]
+position = Vector2(-383.3333, 238.33334)
+rotation = 0.632223
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/BackLeg" unique_id=49382662]
+position = Vector2(-421.66663, 306.66672)
+rotation = 0.36816132
+texture = ExtResource("6_iqcwi")
+
+[node name="Bike2" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person" unique_id=1175121761]
+position = Vector2(48, 172)
+texture = ExtResource("2_xxkop")
+
+[node name="Sitting" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person" unique_id=490949656]
+position = Vector2(257, 19.000004)
+rotation = 3.1415927
+scale = Vector2(-0.6, -0.6)
+
+[node name="Head" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting" unique_id=289643903]
+position = Vector2(-388.3333, -83.33331)
+rotation = 0.12825154
+texture = ExtResource("3_c5t65")
+
+[node name="Torso" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting" unique_id=39576195]
+position = Vector2(-428.33328, 40.000015)
+rotation = 0.36011997
+texture = ExtResource("7_25635")
+
+[node name="Leg2" type="Node2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting" unique_id=1766246691]
+
+[node name="BackLegUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting/Leg2" unique_id=1505164125]
+position = Vector2(-408.3333, 183.33334)
+rotation = 0.9461231
+texture = ExtResource("4_bx0pj")
+
+[node name="BackLegLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting/Leg2" unique_id=1617586354]
+position = Vector2(-364.99994, 308.33334)
+rotation = 0.113554694
+texture = ExtResource("5_judhc")
+
+[node name="BackFoot" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting/Leg2" unique_id=512610673]
+position = Vector2(-363.33328, 398.33334)
+texture = ExtResource("6_iqcwi")
+
+[node name="FrontArmLower" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting" unique_id=1684430071]
+position = Vector2(-333.3333, 71.66669)
+rotation = -1.2978946
+texture = ExtResource("8_um7a4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting" unique_id=393097065]
+position = Vector2(-398.3333, 5.000024)
+rotation = -0.36140162
+texture = ExtResource("9_o42oj")
+
+[node name="FrontHand" type="Sprite2D" parent="To Horizon/PathToHorizon/Bike and person/Sitting" unique_id=434391507]
+position = Vector2(-281.66666, 84.999985)
+rotation = -0.91615033
+texture = ExtResource("10_ro0mn")
+
+[node name="Theend" type="Sprite2D" parent="To Horizon/PathToHorizon" unique_id=1945033912]
+visible = false
+position = Vector2(98.30514, 151.42653)
+texture = ExtResource("27_tey37")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1526220622]
+libraries/ = SubResource("AnimationLibrary_judhc")
+"next/Exit House" = &"To Ice Cream Stand"
+"next/To Ice Cream Stand" = &"To Horizon"

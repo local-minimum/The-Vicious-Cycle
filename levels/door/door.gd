@@ -173,7 +173,7 @@ func _spin() -> void:
             _phase = Phase.READY
         else:
             _phase = Phase.DONE
-            push_warning("No transition to success yet")
+            get_tree().change_scene_to_file(&"res://levels/freedom/freedom.tscn")
 
 func set_cylinder(idx: int, offset: float) -> bool:
     var icons: Array[Node2D] = _cylinder_icons[idx]
