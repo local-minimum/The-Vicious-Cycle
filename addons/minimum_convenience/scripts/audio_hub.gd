@@ -1,5 +1,5 @@
 extends Node
-class_name AudioHub
+class_name _AudioHub
 
 enum Bus { SFX, DIALGUE, MUSIC }
 

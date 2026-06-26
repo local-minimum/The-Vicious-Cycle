@@ -1002,7 +1002,7 @@ tracks/21/keys = {
 
 [sub_resource type="Animation" id="Animation_judhc"]
 resource_name = "To Ice Cream Stand"
-length = 20.0
+length = 24.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1010,7 +1010,7 @@ tracks/0/path = NodePath("To Ice Cream Stand:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 20),
+"times": PackedFloat32Array(0, 24),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1022,7 +1022,7 @@ tracks/1/path = NodePath("To Ice Cream Stand/IceCream:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 17.32, 17.94),
+"times": PackedFloat32Array(0, 18.613333, 20.633333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -1190,7 +1190,7 @@ tracks/15/path = NodePath("To Ice Cream Stand/SidePathRoad/Sitting:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(10.0199995, 17.94),
+"times": PackedFloat32Array(10.0199995, 20.433332),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1202,7 +1202,7 @@ tracks/16/path = NodePath("To Ice Cream Stand/SidePathRoad/Standing:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(10.0199995, 16.67, 17.94),
+"times": PackedFloat32Array(10.0199995, 17.2, 20.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -1258,6 +1258,9 @@ scene_house = NodePath("House Scene")
 scene_to_stand = NodePath("To Ice Cream Stand")
 scene_to_horizon = NodePath("To Horizon")
 player = NodePath("AnimationPlayer")
+verse_one = "uid://cm31b6hmyyw21"
+verse_two = "uid://c10sv27wnqa5c"
+verse_three = "uid://cj1bw47n4dnn6"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=860542064]
 
