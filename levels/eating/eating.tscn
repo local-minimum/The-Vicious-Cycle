@@ -71,6 +71,57 @@ _data = {
 &"click": SubResource("Animation_y2akf")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbvov"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.50980395, 0.101960786, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axaig"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9529412, 0.91764706, 0.3529412, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2akf"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.50980395, 0.101960786, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn", "refuse_food_happiness", "refuse_food_full")]
 script = ExtResource("1_t18ug")
 fridge = NodePath("Fridge")
@@ -210,6 +261,7 @@ script = ExtResource("15_i6qjo")
 wheel = NodePath("Wheel")
 
 [node name="Wheel" parent="Exit Wheel" unique_id=1120826367 node_paths=PackedStringArray("mouse", "mouse_anim") instance=ExtResource("16_i4lgw")]
+spin_start_sfx = "uid://xsabkhy5sx7n"
 mouse = NodePath("../Mouse")
 mouse_anim = NodePath("../Mouse/AnimationPlayer")
 
@@ -260,11 +312,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -139.0
-offset_top = -25.0
+offset_top = -50.0
 offset_right = 39.0
-offset_bottom = -2.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.28235295, 0.8, 0.47843137, 1)
 text = "Spin to leave the fridge"
 horizontal_alignment = 1
 
@@ -286,6 +339,14 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_focus_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_hover_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbvov")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_axaig")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y2akf")
 text = "  Try to leave"
 icon = ExtResource("27_8fnjy")
 alignment = 2
@@ -294,6 +355,14 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_focus_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_hover_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbvov")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_axaig")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y2akf")
 text = "  Eat some more"
 icon = ExtResource("28_vdx6k")
 alignment = 2
@@ -303,6 +372,14 @@ autowrap_trim_flags = 0
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_focus_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_hover_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.50980395, 0.101960786, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbvov")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_axaig")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y2akf")
 text = "  Leave"
 icon = ExtResource("27_8fnjy")
 

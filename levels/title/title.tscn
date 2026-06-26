@@ -536,6 +536,7 @@ rotation = -1.0474873
 texture = ExtResource("9_r1v7m")
 
 [node name="PressAnyKey" type="Sprite2D" parent="." unique_id=1031213720]
+visible = false
 position = Vector2(383, 267)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("21_1r00a")

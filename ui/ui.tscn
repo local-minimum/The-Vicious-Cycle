@@ -19,8 +19,17 @@
 [ext_resource type="Texture2D" uid="uid://bxs2bi6e2u5j0" path="res://levels/spinning/rprogress_filled.png" id="15_mf2ns"]
 [ext_resource type="Texture2D" uid="uid://cllkwqnrws3lv" path="res://levels/spinning/pointer.png" id="17_74toj"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co7pv"]
+bg_color = Color(0.26666668, 0.28235295, 0.28627452, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.50980395, 0.101960786, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
 font_size = 29
+font_color = Color(0.9843137, 0.14509805, 0.21960784, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=355930785]
 
@@ -79,6 +88,7 @@ texture_progress = ExtResource("3_tf0e0")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_co7pv")
 script = ExtResource("4_vkava")
 title = NodePath("MarginContainer/Eating Option/Food Title")
 count = NodePath("MarginContainer/Eating Option/Count")
@@ -110,6 +120,7 @@ label_settings = SubResource("LabelSettings_kjfgv")
 
 [node name="Count" type="Label" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=237652839]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9843137, 0.14509805, 0.21960784, 1)
 text = "Servings: 7/7"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=2130428200]
@@ -156,6 +167,7 @@ text = "EAT"
 
 [node name="Info" type="Label" parent="MarginContainer/Eating Option Panel/MarginContainer/Eating Option" unique_id=541336388]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9843137, 0.14509805, 0.21960784, 1)
 text = "Left click to consume"
 horizontal_alignment = 1
 

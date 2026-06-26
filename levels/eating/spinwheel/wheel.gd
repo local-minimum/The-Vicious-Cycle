@@ -1,6 +1,7 @@
 extends Node2D
 class_name SpinWheel
 
+@export_file("*.mp3") var spin_start_sfx: String
 @export var good_slice: PackedScene
 @export var bad_slice: PackedScene
 @export var peak_spin: float = PI * 1.5
@@ -66,6 +67,7 @@ func spin() -> void:
     if _phase != Phase.UNSPUN:
         return
 
+    AudioHub.play_sfx(spin_start_sfx)
     mouse.visible = false
     __SignalBus.on_start_spin.emit()
     _phase = Phase.SPIN
