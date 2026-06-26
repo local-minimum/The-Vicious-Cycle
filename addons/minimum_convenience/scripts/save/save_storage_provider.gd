@@ -1,5 +1,5 @@
 @tool
-extends Node
+extends Resource
 class_name SaveStorageProvider
 
 @warning_ignore_start("unused_parameter")

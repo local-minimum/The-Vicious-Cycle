@@ -1,5 +1,6 @@
 @tool
 extends SaveStorageProvider
+class_name DiskJsonStorageProvider
 
 @export var save_file_pattern: String = "user://save_game_%s.json"
 

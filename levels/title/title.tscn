@@ -1,0 +1,544 @@
+[gd_scene format=3 uid="uid://c6vrg2y11klvg"]
+
+[ext_resource type="Script" uid="uid://ce7qb5oqfm48w" path="res://levels/title/title.gd" id="1_isq66"]
+[ext_resource type="Texture2D" uid="uid://bntjqlg63mf14" path="res://levels/title/vicious_cycle.png" id="1_vucde"]
+[ext_resource type="Resource" uid="uid://btnn7qa5520ev" path="res://disk_storage.tres" id="2_8p8ih"]
+[ext_resource type="Texture2D" uid="uid://b4hdvekgm7jtd" path="res://levels/spinning/machine_frame.png" id="2_b34ks"]
+[ext_resource type="Script" uid="uid://bn603x632txrd" path="res://levels/title/spinner.gd" id="2_ea2td"]
+[ext_resource type="Texture2D" uid="uid://b0tb3iardvdpa" path="res://character/head.png" id="2_yk36c"]
+[ext_resource type="Texture2D" uid="uid://c7ys8w0oqirge" path="res://character/back_leg_upper.png" id="3_46ysu"]
+[ext_resource type="Texture2D" uid="uid://crw7j2b53s87w" path="res://levels/spinning/wheel.png" id="3_qi2e4"]
+[ext_resource type="Texture2D" uid="uid://bskun771bi6k" path="res://levels/spinning/chain_protection.png" id="4_25vgx"]
+[ext_resource type="Texture2D" uid="uid://c43g3y7j4ded2" path="res://character/back_leg_lower.png" id="4_n2ogb"]
+[ext_resource type="Texture2D" uid="uid://cli3knxnwompc" path="res://character/back_foot.png" id="5_55tiu"]
+[ext_resource type="Texture2D" uid="uid://bsa2xyrtaisvp" path="res://levels/spinning/front_pedal_spoke.png" id="5_r1v7m"]
+[ext_resource type="Texture2D" uid="uid://chf433g5l735s" path="res://character/torso.png" id="6_b34ks"]
+[ext_resource type="Texture2D" uid="uid://b553vk0s70516" path="res://levels/eating/apple.png" id="6_mxfe6"]
+[ext_resource type="Texture2D" uid="uid://co1s5grnw1pgv" path="res://levels/eating/avocado.png" id="7_ea2td"]
+[ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="7_qi2e4"]
+[ext_resource type="Texture2D" uid="uid://c48nxn7jlsqqk" path="res://levels/eating/carrot.png" id="8_1r00a"]
+[ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="8_25vgx"]
+[ext_resource type="Texture2D" uid="uid://wq6v04mnarcx" path="res://levels/eating/ketchup.png" id="9_isq66"]
+[ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="9_r1v7m"]
+[ext_resource type="Texture2D" uid="uid://dviyag1ip4f1j" path="res://levels/eating/soda.png" id="10_8p8ih"]
+[ext_resource type="Texture2D" uid="uid://3f22iiey6le6" path="res://levels/eating/takeaway.png" id="11_1xr01"]
+[ext_resource type="Texture2D" uid="uid://tcag4h1h0u3v" path="res://levels/title/press_any_key.png" id="21_1r00a"]
+
+[sub_resource type="Animation" id="Animation_1r00a"]
+resource_name = "Blinking Press"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressAnyKey:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.12, 1.61, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_isq66"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressAnyKey:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8p8ih"]
+_data = {
+&"Blinking Press": SubResource("Animation_1r00a"),
+&"RESET": SubResource("Animation_isq66")
+}
+
+[node name="Title" type="Node2D" unique_id=1195321305 node_paths=PackedStringArray("player")]
+script = ExtResource("1_isq66")
+player = NodePath("AnimationPlayer")
+storage_provider = ExtResource("2_8p8ih")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=375389818]
+
+[node name="Exercise" type="Node2D" parent="." unique_id=368107065]
+script = ExtResource("2_ea2td")
+direction = 1.5
+child_rotation = 1.0
+
+[node name="Machine" type="Node2D" parent="Exercise" unique_id=437200038]
+position = Vector2(-439, 218)
+rotation = 0.23911011
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine" unique_id=665523226]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine" unique_id=593660983]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine" unique_id=1622714212]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine" unique_id=63135324]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine2" type="Node2D" parent="Exercise" unique_id=2026988962]
+position = Vector2(-282, 23)
+rotation = -1.5114552
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine2" unique_id=1644010308]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine2" unique_id=365806039]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine2" unique_id=914872725]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine2" unique_id=1666545729]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine3" type="Node2D" parent="Exercise" unique_id=2058068511]
+position = Vector2(-340, -203)
+rotation = 0.89360857
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine3" unique_id=1581644531]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine3" unique_id=1301076048]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine3" unique_id=173403058]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine3" unique_id=714422207]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine4" type="Node2D" parent="Exercise" unique_id=1189629655]
+position = Vector2(-37.999996, -226)
+rotation = -1.98793
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine4" unique_id=1991799443]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine4" unique_id=246259354]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine4" unique_id=7202602]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine4" unique_id=519884582]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine5" type="Node2D" parent="Exercise" unique_id=1130276954]
+position = Vector2(238, -292)
+rotation = -1.98793
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine5" unique_id=259197404]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine5" unique_id=643824738]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine5" unique_id=468650055]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine5" unique_id=2082082710]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine6" type="Node2D" parent="Exercise" unique_id=825481898]
+position = Vector2(415, -28)
+rotation = 1.4329153
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine6" unique_id=795034122]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine6" unique_id=951985639]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine6" unique_id=435582306]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine6" unique_id=259987562]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine7" type="Node2D" parent="Exercise" unique_id=1118250179]
+position = Vector2(350, 263)
+rotation = -1.3508848
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine7" unique_id=1522944783]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine7" unique_id=892588991]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine7" unique_id=2049459780]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine7" unique_id=1599536836]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine8" type="Node2D" parent="Exercise" unique_id=1059819909]
+position = Vector2(51, 233)
+rotation = 0.47822022
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine8" unique_id=2053457268]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine8" unique_id=4848484]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine8" unique_id=180230134]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine8" unique_id=889249133]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Machine9" type="Node2D" parent="Exercise" unique_id=1331940735]
+position = Vector2(-209, 407)
+rotation = -2.6633725
+scale = Vector2(0.5, 0.5)
+
+[node name="MachineFrame" type="Sprite2D" parent="Exercise/Machine9" unique_id=1427827608]
+position = Vector2(-11, -42)
+texture = ExtResource("2_b34ks")
+
+[node name="Wheel" type="Sprite2D" parent="Exercise/Machine9" unique_id=655764320]
+position = Vector2(112, 35)
+texture = ExtResource("3_qi2e4")
+
+[node name="ChainProtection" type="Sprite2D" parent="Exercise/Machine9" unique_id=227996022]
+position = Vector2(11, 40)
+texture = ExtResource("4_25vgx")
+
+[node name="FrontPedalSpoke" type="Sprite2D" parent="Exercise/Machine9" unique_id=1154421222]
+position = Vector2(-25, 69)
+texture = ExtResource("5_r1v7m")
+
+[node name="Food" type="Node2D" parent="." unique_id=1720641994]
+script = ExtResource("2_ea2td")
+direction = -1.0
+child_rotation = -2.0
+
+[node name="Apple" type="Sprite2D" parent="Food" unique_id=562476943]
+position = Vector2(-489, 4)
+texture = ExtResource("6_mxfe6")
+
+[node name="Avocado" type="Sprite2D" parent="Food" unique_id=1716319426]
+position = Vector2(-23, 369)
+texture = ExtResource("7_ea2td")
+
+[node name="Carrot" type="Sprite2D" parent="Food" unique_id=1897781510]
+position = Vector2(311, 298)
+texture = ExtResource("8_1r00a")
+
+[node name="Ketchup" type="Sprite2D" parent="Food" unique_id=805044814]
+position = Vector2(427, -53)
+texture = ExtResource("9_isq66")
+
+[node name="Soda" type="Sprite2D" parent="Food" unique_id=1001905704]
+position = Vector2(-341, 300)
+texture = ExtResource("10_8p8ih")
+
+[node name="Takeaway" type="Sprite2D" parent="Food" unique_id=2101591089]
+position = Vector2(-1, -379)
+texture = ExtResource("11_1xr01")
+
+[node name="Apple2" type="Sprite2D" parent="Food" unique_id=188017661]
+position = Vector2(302, -145.00002)
+rotation = -1.2322024
+texture = ExtResource("6_mxfe6")
+
+[node name="Avocado2" type="Sprite2D" parent="Food" unique_id=303929273]
+position = Vector2(-279, -118)
+rotation = -1.2322024
+texture = ExtResource("7_ea2td")
+
+[node name="Carrot2" type="Sprite2D" parent="Food" unique_id=1542347894]
+position = Vector2(-120.99997, 180)
+rotation = -1.2322024
+texture = ExtResource("8_1r00a")
+
+[node name="Ketchup2" type="Sprite2D" parent="Food" unique_id=2001735955]
+position = Vector2(-233, -282)
+rotation = -1.2322024
+texture = ExtResource("9_isq66")
+
+[node name="Soda2" type="Sprite2D" parent="Food" unique_id=90318305]
+position = Vector2(498, 283)
+rotation = -1.2322024
+texture = ExtResource("10_8p8ih")
+
+[node name="Takeaway2" type="Sprite2D" parent="Food" unique_id=1858774657]
+position = Vector2(-511, -204.00002)
+rotation = -1.2322024
+texture = ExtResource("11_1xr01")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1114990040]
+custom_minimum_size = Vector2(2000, 2000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.6627451, 0.6666667, 0.6784314, 0.70980394)
+
+[node name="ViciousCycle" type="Sprite2D" parent="." unique_id=875744991]
+texture = ExtResource("1_vucde")
+
+[node name="Women" type="Node2D" parent="." unique_id=1171899317]
+script = ExtResource("2_ea2td")
+
+[node name="Woman" type="Node2D" parent="Women" unique_id=117515772]
+position = Vector2(28.999998, -58.999996)
+scale = Vector2(0.8, 0.8)
+
+[node name="Head" type="Sprite2D" parent="Women/Woman" unique_id=1297519230]
+position = Vector2(-417.5, -145)
+rotation = 0.21689746
+texture = ExtResource("2_yk36c")
+
+[node name="Leg" type="Node2D" parent="Women/Woman" unique_id=1243945344]
+position = Vector2(-85, -213.75)
+rotation = -0.56992865
+
+[node name="BackLegUpper" type="Sprite2D" parent="Women/Woman/Leg" unique_id=1123123567]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("3_46ysu")
+
+[node name="BackLegLower" type="Sprite2D" parent="Women/Woman/Leg" unique_id=405290098]
+position = Vector2(-474.46783, 300.18835)
+rotation = 0.09834245
+texture = ExtResource("4_n2ogb")
+
+[node name="BackFoot" type="Sprite2D" parent="Women/Woman/Leg" unique_id=829302214]
+position = Vector2(-482.06628, 397.76086)
+rotation = 0.6365714
+texture = ExtResource("5_55tiu")
+
+[node name="Torso" type="Sprite2D" parent="Women/Woman" unique_id=1119416705]
+position = Vector2(-433, -12)
+texture = ExtResource("6_b34ks")
+
+[node name="Leg2" type="Node2D" parent="Women/Woman" unique_id=1758604877]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Women/Woman/Leg2" unique_id=931745180]
+position = Vector2(-382.49994, 127.50003)
+rotation = 0.6009121
+texture = ExtResource("3_46ysu")
+
+[node name="BackLegLower" type="Sprite2D" parent="Women/Woman/Leg2" unique_id=1953362501]
+position = Vector2(-332.5, 233.75002)
+rotation = 0.48845515
+texture = ExtResource("4_n2ogb")
+
+[node name="BackFoot" type="Sprite2D" parent="Women/Woman/Leg2" unique_id=1479384549]
+position = Vector2(-360.00003, 311.25003)
+rotation = 0.5011927
+texture = ExtResource("5_55tiu")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Women/Woman" unique_id=1947990727]
+position = Vector2(-486.24997, 42.5)
+rotation = -0.19140387
+texture = ExtResource("7_qi2e4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Women/Woman" unique_id=400195861]
+position = Vector2(-472, -54.000015)
+rotation = 0.5300107
+texture = ExtResource("8_25vgx")
+
+[node name="FrontHand" type="Sprite2D" parent="Women/Woman" unique_id=1684799689]
+position = Vector2(-456.24994, 102.50001)
+rotation = -0.28498006
+texture = ExtResource("9_r1v7m")
+
+[node name="Woman2" type="Node2D" parent="Women" unique_id=1897866450]
+position = Vector2(4.999998, 87)
+rotation = 2.0065491
+scale = Vector2(0.8, 0.8)
+
+[node name="Head" type="Sprite2D" parent="Women/Woman2" unique_id=1326944142]
+position = Vector2(-373.60358, -139.04825)
+rotation = -0.3842589
+texture = ExtResource("2_yk36c")
+
+[node name="Leg" type="Node2D" parent="Women/Woman2" unique_id=950084059]
+position = Vector2(-85, -213.75)
+rotation = -0.56992865
+
+[node name="BackLegUpper" type="Sprite2D" parent="Women/Woman2/Leg" unique_id=1347316136]
+position = Vector2(-462, 162)
+rotation = 1.7004434
+texture = ExtResource("3_46ysu")
+
+[node name="BackLegLower" type="Sprite2D" parent="Women/Woman2/Leg" unique_id=1557495596]
+position = Vector2(-499.78094, 305.54224)
+rotation = 0.40802246
+texture = ExtResource("4_n2ogb")
+
+[node name="BackFoot" type="Sprite2D" parent="Women/Woman2/Leg" unique_id=1840706377]
+position = Vector2(-527.9246, 392.55942)
+rotation = 0.82683337
+texture = ExtResource("5_55tiu")
+
+[node name="Torso" type="Sprite2D" parent="Women/Woman2" unique_id=591260762]
+position = Vector2(-393.34805, -12.652875)
+rotation = 0.4737412
+texture = ExtResource("6_b34ks")
+
+[node name="Leg2" type="Node2D" parent="Women/Woman2" unique_id=2089890141]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Women/Woman2/Leg2" unique_id=705257379]
+position = Vector2(-382.49994, 127.50003)
+rotation = 0.7678968
+texture = ExtResource("3_46ysu")
+
+[node name="BackLegLower" type="Sprite2D" parent="Women/Woman2/Leg2" unique_id=1242781707]
+position = Vector2(-266.03668, 254.85806)
+rotation = -0.6616615
+texture = ExtResource("4_n2ogb")
+
+[node name="BackFoot" type="Sprite2D" parent="Women/Woman2/Leg2" unique_id=905574476]
+position = Vector2(-205.09071, 335.41064)
+rotation = 0.047867805
+texture = ExtResource("5_55tiu")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Women/Woman2" unique_id=4438111]
+position = Vector2(-277.93665, -40.190598)
+rotation = -2.3139467
+texture = ExtResource("7_qi2e4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Women/Woman2" unique_id=1464500296]
+position = Vector2(-344.387, -43.722404)
+rotation = -0.750962
+texture = ExtResource("8_25vgx")
+
+[node name="FrontHand" type="Sprite2D" parent="Women/Woman2" unique_id=570033305]
+position = Vector2(-247.22635, -98.61259)
+rotation = -2.6384346
+texture = ExtResource("9_r1v7m")
+
+[node name="Woman3" type="Node2D" parent="Women" unique_id=1276964534]
+position = Vector2(-2.999998, -83)
+rotation = 4.3897552
+scale = Vector2(0.8, 0.8)
+
+[node name="Head" type="Sprite2D" parent="Women/Woman3" unique_id=1582520541]
+position = Vector2(-396.74768, -133.9567)
+rotation = -0.36743015
+texture = ExtResource("2_yk36c")
+
+[node name="Leg" type="Node2D" parent="Women/Woman3" unique_id=47466185]
+position = Vector2(-85, -213.75)
+rotation = -0.56992865
+
+[node name="BackLegUpper" type="Sprite2D" parent="Women/Woman3/Leg" unique_id=1412308700]
+position = Vector2(-436.67123, 134.667)
+rotation = 1.2135063
+texture = ExtResource("3_46ysu")
+
+[node name="BackLegLower" type="Sprite2D" parent="Women/Woman3/Leg" unique_id=1167543057]
+position = Vector2(-401.74393, 297.5524)
+rotation = -0.065238774
+texture = ExtResource("4_n2ogb")
+
+[node name="BackFoot" type="Sprite2D" parent="Women/Woman3/Leg" unique_id=405911235]
+position = Vector2(-393.59366, 395.32834)
+rotation = 0.48437938
+texture = ExtResource("5_55tiu")
+
+[node name="Torso" type="Sprite2D" parent="Women/Woman3" unique_id=1047594649]
+position = Vector2(-400.81567, -3.5162506)
+rotation = 0.2260301
+texture = ExtResource("6_b34ks")
+
+[node name="Leg2" type="Node2D" parent="Women/Woman3" unique_id=1692293653]
+
+[node name="BackLegUpper" type="Sprite2D" parent="Women/Woman3/Leg2" unique_id=265030467]
+position = Vector2(-418.35556, 163.27844)
+rotation = 1.3171762
+texture = ExtResource("3_46ysu")
+
+[node name="BackLegLower" type="Sprite2D" parent="Women/Woman3/Leg2" unique_id=846009429]
+position = Vector2(-379.37003, 330.51837)
+rotation = -0.065421104
+texture = ExtResource("4_n2ogb")
+
+[node name="BackFoot" type="Sprite2D" parent="Women/Woman3/Leg2" unique_id=1957101828]
+position = Vector2(-358.89697, 423.0331)
+rotation = 0.047867805
+texture = ExtResource("5_55tiu")
+
+[node name="FrontArmLower" type="Sprite2D" parent="Women/Woman3" unique_id=2029461181]
+position = Vector2(-344.3393, 52.26875)
+rotation = -0.91780955
+texture = ExtResource("7_qi2e4")
+
+[node name="FrontArmUpper" type="Sprite2D" parent="Women/Woman3" unique_id=335445409]
+position = Vector2(-392.4928, -28.411911)
+rotation = -0.115694344
+texture = ExtResource("8_25vgx")
+
+[node name="FrontHand" type="Sprite2D" parent="Women/Woman3" unique_id=159556451]
+position = Vector2(-283.4857, 75.24899)
+rotation = -1.0474873
+texture = ExtResource("9_r1v7m")
+
+[node name="PressAnyKey" type="Sprite2D" parent="." unique_id=1031213720]
+position = Vector2(383, 267)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_1r00a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=854248470]
+libraries/ = SubResource("AnimationLibrary_8p8ih")
+"next/Blinking Press" = &"Blinking Press"
