@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://x84wh1oe13d6" path="res://levels/spinning/spinning_machine.tscn" id="1_0p5ow"]
 [ext_resource type="Script" uid="uid://j7ssncj7u68p" path="res://levels/spinning/spinning_setting.gd" id="2_05p7j"]
 [ext_resource type="PackedScene" uid="uid://d0oqx6or8yx02" path="res://ui/ui.tscn" id="2_bbsge"]
+[ext_resource type="Texture2D" uid="uid://c4gv4lwsddvrh" path="res://levels/spinning/dontwish.png" id="4_vmyl3"]
+[ext_resource type="Texture2D" uid="uid://dwn8t3cqi0fgc" path="res://levels/spinning/candoit.png" id="5_jmtkj"]
 
 [sub_resource type="Resource" id="Resource_1nolk"]
 script = ExtResource("2_05p7j")
@@ -42,3 +44,13 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor Collider" unique_id=1459773455]
 shape = SubResource("RectangleShape2D_kjfgv")
+
+[node name="Dontwish" type="Sprite2D" parent="." unique_id=1301892956]
+position = Vector2(891, 471)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_vmyl3")
+
+[node name="Candoit" type="Sprite2D" parent="." unique_id=322860046]
+position = Vector2(160, 202)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_jmtkj")
