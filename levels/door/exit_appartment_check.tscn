@@ -3,16 +3,56 @@
 [ext_resource type="PackedScene" uid="uid://hacxla3kwpla" path="res://levels/door/door.tscn" id="1_n6gsg"]
 [ext_resource type="Texture2D" uid="uid://csn6itjfe11nu" path="res://levels/door/motivation_doubt.png" id="2_p71ee"]
 [ext_resource type="Texture2D" uid="uid://8lys768yt5ok" path="res://levels/door/motivation_exercise.png" id="3_eoqwi"]
+[ext_resource type="Texture2D" uid="uid://cdjm877j83ua7" path="res://ui/mouse.png" id="4_byrn2"]
+[ext_resource type="Texture2D" uid="uid://qflducu3sfjj" path="res://ui/mouse_click_left.png" id="5_qho0t"]
+
+[sub_resource type="Animation" id="Animation_byrn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseClickLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qho0t"]
+resource_name = "click"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseClickLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49414095, 0.7137592),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnblx"]
+_data = {
+&"RESET": SubResource("Animation_byrn2"),
+&"click": SubResource("Animation_qho0t")
+}
 
 [node name="ExitAppartmentCheck" type="Node2D" unique_id=1712316775]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=908046246]
 
-[node name="Door" parent="." unique_id=301636524 instance=ExtResource("1_n6gsg")]
+[node name="Door" parent="." unique_id=301636524 node_paths=PackedStringArray("mouse", "mouse_anim") instance=ExtResource("1_n6gsg")]
 position = Vector2(0, 16)
 icon_height = 96.0
 slider_duration = 1.0
 slider_distance = 222.0
+mouse = NodePath("../Mouse")
+mouse_anim = NodePath("../Mouse/AnimationPlayer")
 
 [node name="MotivationDoubt" type="Sprite2D" parent="." unique_id=260335372]
 position = Vector2(381, -136)
@@ -22,3 +62,16 @@ texture = ExtResource("2_p71ee")
 position = Vector2(-394, -52)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_eoqwi")
+
+[node name="Mouse" type="Sprite2D" parent="." unique_id=2021608003]
+visible = false
+position = Vector2(67, 190)
+texture = ExtResource("4_byrn2")
+
+[node name="MouseClickLeft" type="Sprite2D" parent="Mouse" unique_id=1129172976]
+visible = false
+texture = ExtResource("5_qho0t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mouse" unique_id=100271253]
+libraries/ = SubResource("AnimationLibrary_qnblx")
+next/click = &"click"

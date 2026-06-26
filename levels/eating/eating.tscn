@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b04sp1yeolkps" path="res://character/back_arm_lower.png" id="7_lyxv6"]
 [ext_resource type="Texture2D" uid="uid://bbpko3wya1vk3" path="res://character/back_hand.png" id="8_i4lgw"]
 [ext_resource type="Texture2D" uid="uid://4wddwjvmjk0k" path="res://character/front_foot.png" id="8_lyxv6"]
+[ext_resource type="Texture2D" uid="uid://dgxixo5lr82fl" path="res://levels/eating/whatyoueat.png" id="8_nynkc"]
 [ext_resource type="Texture2D" uid="uid://dmmlrwgiy2b7i" path="res://character/front_arm_upper.png" id="12_hlt2s"]
 [ext_resource type="Texture2D" uid="uid://bcbkn24ti3u0r" path="res://character/front_arm_lower.png" id="13_i6qjo"]
 [ext_resource type="Texture2D" uid="uid://d4cf60262u2rm" path="res://character/front_hand.png" id="14_t18ug"]
@@ -25,9 +26,50 @@
 [ext_resource type="Texture2D" uid="uid://dbcsekliasden" path="res://levels/eating/text_better.png" id="20_k1yxi"]
 [ext_resource type="Texture2D" uid="uid://oe3o0qp7bfba" path="res://levels/eating/text_cannot.png" id="21_h6tou"]
 [ext_resource type="Texture2D" uid="uid://b3v36xepwpg51" path="res://levels/eating/text_healthy.png" id="22_olhua"]
+[ext_resource type="Texture2D" uid="uid://cqya02fr7dq1h" path="res://levels/eating/leave.png" id="27_8fnjy"]
+[ext_resource type="Texture2D" uid="uid://cjfmhvgplyom" path="res://ui/stomach.png" id="28_vdx6k"]
+[ext_resource type="Texture2D" uid="uid://cdjm877j83ua7" path="res://ui/mouse.png" id="29_vdx6k"]
+[ext_resource type="Texture2D" uid="uid://qflducu3sfjj" path="res://ui/mouse_click_left.png" id="30_rbvov"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjfgv"]
 radius = 2.236068
+
+[sub_resource type="Animation" id="Animation_rbvov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseClickLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_y2akf"]
+resource_name = "click"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MouseClickLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axaig"]
+_data = {
+&"RESET": SubResource("Animation_rbvov"),
+&"click": SubResource("Animation_y2akf")
+}
 
 [node name="Eating" type="Node2D" unique_id=128111494 node_paths=PackedStringArray("fridge", "wheel_mouse_stopper", "wheel_base", "wheel_moving_ui_base", "wheel", "show_wheel_btn", "hide_wheel_btn", "exit_fridge_btn", "refuse_food_happiness", "refuse_food_full")]
 script = ExtResource("1_t18ug")
@@ -41,6 +83,16 @@ hide_wheel_btn = NodePath("SpinUI/MarginContainer/Eat More Btn")
 exit_fridge_btn = NodePath("SpinUI/MarginContainer/Leave Btn")
 refuse_food_happiness = [NodePath("TextBetter"), NodePath("TextCannot"), NodePath("TextHealthy")]
 refuse_food_full = [NodePath("TextFull"), NodePath("TextBite"), NodePath("TextTrhowup")]
+
+[node name="Whatyoueat" type="Sprite2D" parent="." unique_id=1945437028]
+position = Vector2(949, 348)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_nynkc")
+
+[node name="Whatyoueat2" type="Sprite2D" parent="." unique_id=1972736687]
+position = Vector2(191, 348)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_nynkc")
 
 [node name="TextBetter" type="Sprite2D" parent="." unique_id=532014473]
 position = Vector2(2155, 337)
@@ -157,7 +209,9 @@ position = Vector2(529, 353)
 script = ExtResource("15_i6qjo")
 wheel = NodePath("Wheel")
 
-[node name="Wheel" parent="Exit Wheel" unique_id=1120826367 instance=ExtResource("16_i4lgw")]
+[node name="Wheel" parent="Exit Wheel" unique_id=1120826367 node_paths=PackedStringArray("mouse", "mouse_anim") instance=ExtResource("16_i4lgw")]
+mouse = NodePath("../Mouse")
+mouse_anim = NodePath("../Mouse/AnimationPlayer")
 
 [node name="Pointer" type="Sprite2D" parent="Exit Wheel" unique_id=520195001]
 position = Vector2(0, -228)
@@ -171,6 +225,18 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit Wheel/Pointer/Pointer Area" unique_id=1078210312]
 shape = SubResource("CircleShape2D_kjfgv")
+
+[node name="Mouse" type="Sprite2D" parent="Exit Wheel" unique_id=328365171]
+position = Vector2(2, 0)
+texture = ExtResource("29_vdx6k")
+
+[node name="MouseClickLeft" type="Sprite2D" parent="Exit Wheel/Mouse" unique_id=572652852]
+visible = false
+texture = ExtResource("30_rbvov")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Exit Wheel/Mouse" unique_id=263609311]
+libraries/ = SubResource("AnimationLibrary_axaig")
+next/click = &"click"
 
 [node name="UI" parent="." unique_id=355930785 instance=ExtResource("15_lyxv6")]
 
@@ -220,19 +286,25 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Done Eating"
+text = "  Try to leave"
+icon = ExtResource("27_8fnjy")
+alignment = 2
 
 [node name="Eat More Btn" type="Button" parent="SpinUI/MarginContainer" unique_id=647984293]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Eat Some More"
+text = "  Eat some more"
+icon = ExtResource("28_vdx6k")
+alignment = 2
+autowrap_trim_flags = 0
 
 [node name="Leave Btn" type="Button" parent="SpinUI/MarginContainer" unique_id=767440179]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "Leave"
+text = "  Leave"
+icon = ExtResource("27_8fnjy")
 
 [connection signal="area_entered" from="Exit Wheel/Pointer/Pointer Area" to="Exit Wheel/Wheel" method="_on_pointer_area_area_entered"]
 [connection signal="gui_input" from="SpinUI/Mouse Stopper" to="Exit Wheel" method="_on_mouse_stopper_gui_input"]

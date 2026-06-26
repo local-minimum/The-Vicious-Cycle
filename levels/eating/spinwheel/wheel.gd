@@ -5,6 +5,9 @@ class_name SpinWheel
 @export var bad_slice: PackedScene
 @export var peak_spin: float = PI * 1.5
 @export var decay_spin: float = 0.4
+@export var mouse: Node2D
+@export var mouse_anim: AnimationPlayer
+
 var over_good: bool
 
 const STOPPING_VELOCITY: float = 0.01
@@ -45,6 +48,8 @@ func create_wheel(good_slices: int = 2) -> void:
         piece.rotation_degrees = a + idx * SLICE_DEGREES
 
     _phase = Phase.UNSPUN
+    mouse.visible = true
+    mouse_anim.play(&"click")
 
 func _on_pointer_area_area_entered(area: Area2D) -> void:
     if _good_areas.has(area):
@@ -61,6 +66,7 @@ func spin() -> void:
     if _phase != Phase.UNSPUN:
         return
 
+    mouse.visible = false
     __SignalBus.on_start_spin.emit()
     _phase = Phase.SPIN
     _held = true
@@ -129,6 +135,7 @@ func _handle_spin_end() -> void:
 
         if !_good_slices.is_empty():
             _phase = Phase.UNSPUN
+            mouse.visible = true
 
         __SignalBus.on_complete_spin.emit(false, _phase == Phase.UNSPUN)
     else:

@@ -30,6 +30,9 @@ enum Phase { LOCKED, SLIDING, READY, SPINNING, SPUN, DONE }
 
 @export var crisis_mods: Array[SlotModification]
 
+@export var mouse: Node2D
+@export var mouse_anim: AnimationPlayer
+
 #region SaveState
 var _cylinder_offsets: Array[int] = [0, 0, 0]
 #endregion
@@ -43,6 +46,10 @@ func _ready() -> void:
             _cylinder_offsets.append(off)
 
     build_cylinders()
+    await get_tree().create_timer(2.0).timeout
+    if _phase == Phase.LOCKED:
+        mouse.visible = true
+        mouse_anim.play(&"click")
 
 var _cylinder_icons: Array[Array] = []
 
@@ -119,6 +126,7 @@ func _input(event: InputEvent) -> void:
     if _phase == Phase.LOCKED || _phase == Phase.READY:
         if event is InputEventMouseButton && !event.is_echo() && event.is_pressed() && (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
             if _phase == Phase.LOCKED:
+                mouse.visible = false
                 _phase = Phase.SLIDING
                 var t = create_tween()
                 t.set_parallel()
@@ -126,6 +134,7 @@ func _input(event: InputEvent) -> void:
                 t.tween_property(lock, "rotation_degrees", -170.0, slider_duration)
                 t.finished.connect(_done_sliding)
             elif _phase == Phase.READY:
+                mouse.visible = false
                 var t = create_tween()
                 t.tween_property(handle, "rotation_degrees", -30.0, handle_motion_duration)
                 t.tween_property(handle, "rotation_degrees", 0.0, handle_motion_duration * 0.3)
@@ -188,3 +197,7 @@ func set_cylinder(idx: int, offset: float) -> bool:
 
 func _done_sliding() -> void:
     _phase = Phase.READY
+    await get_tree().create_timer(2.0).timeout
+    if _phase == Phase.READY:
+        mouse.visible = true
+        mouse_anim.play(&"click")
