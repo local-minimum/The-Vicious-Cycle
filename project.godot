@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Vicious Cycle"
-run/main_scene="uid://cuph6c5ycw0lk"
+run/main_scene="uid://c6vrg2y11klvg"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

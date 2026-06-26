@@ -27,7 +27,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
     if click_to_eat:
         _handle_eat()
-        __SignalBus.on_inspect_food.emit(food, pieces.size(), _handle_eat)
     elif _focus_food == self:
         _clicked_focus = true
     else:

@@ -15,7 +15,7 @@ _short_sleep_bed = NodePath("Wheel/ShortSleepBedTarget")
 _night_line = NodePath("Wheel/NightLine")
 _night_exercise = NodePath("Wheel/NightExercise")
 _checkpoint_time_angles = Array[float]([111.0, 86.0, 51.0, -12.0, -32.5, -39.0, -103.0, -121.0, -125.0, -171.0])
-_angle_rotation_duration = 0.05
+_angle_rotation_duration = 0.01
 
 [node name="Wheel" type="Sprite2D" parent="." unique_id=1054595854]
 rotation = 1.9477874
